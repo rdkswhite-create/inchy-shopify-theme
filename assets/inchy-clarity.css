@@ -30,16 +30,17 @@
 .inchy-section .inchy-section-title { font-family: Arial, Helvetica, sans-serif; font-size: clamp(30px, 3.5vw, 47px); font-weight: 500; line-height: 1.08; letter-spacing: -.035em; text-align: left; }
 .inchy-night { background: #111; color: white; }
 .inchy-night .inchy-shell { color: inherit; }
-.inchy-night__inner { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 80px; padding-block: 88px; }
-.inchy-night__time { margin-bottom: 26px !important; font: 20px/1.4 'Courier New', monospace; letter-spacing: .08em; }
+.inchy-night__inner { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 80px; padding-block: 88px; }
+.inchy-night__label, .inchy-night__copy > .inchy-night__time { margin: 0 0 26px !important; font: 24px/1.4 'Courier New', monospace; letter-spacing: .06em; }
 .inchy-night h2 { font: 600 clamp(40px, 5.4vw, 72px)/1.02 Arial, sans-serif; letter-spacing: -.045em; }
 .inchy-night__copy > p { font-size: 23px; line-height: 1.5; }
 .inchy-night__copy > p + p { margin-top: 24px; }
-.inchy-night__copy > .inchy-night__question { font-weight: 600; }
+.inchy-night__copy > .inchy-night__story { font: 24px/1.55 'Courier New', monospace; }
+.inchy-night__copy > .inchy-night__time + p { margin-top: 0; }
 .inchy-night__copy > .inchy-night__science { font-size: 17px; line-height: 1.6; color: #d2d2d2; }
 .inchy-night .inchy-text-link { color: white; border-color: currentColor; }
-.inchy-shell.inchy-chapter { width: min(100% - 64px, 1320px); display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 40px; padding-block: 88px; }
-.inchy-chapter__number { align-self: start; min-height: 168px; padding-right: 24px; border-right: 1px solid var(--inchy-line); font: 400 180px/.9 Arial, sans-serif; letter-spacing: -.07em; font-variant-numeric: tabular-nums; }
+.inchy-shell.inchy-chapter { width: min(100% - 64px, 1320px); display: grid; grid-template-columns: 244px minmax(0, 1fr); gap: 44px; padding-block: 88px; }
+.inchy-chapter__number { align-self: start; min-height: 168px; padding-right: 24px; border-right: 1px solid var(--inchy-line); font: 400 180px/.9 Arial, sans-serif; letter-spacing: .03em; font-variant-numeric: tabular-nums; }
 .inchy-chapter__body { min-width: 0; }
 .inchy-chapter-heading { margin-bottom: 34px; }
 .inchy-chapter .inchy-section-title { font-size: clamp(32px, 4vw, 54px); font-weight: 600; line-height: 1.05; letter-spacing: -.04em; }
@@ -147,7 +148,7 @@
   .inchy-hero__opening { gap: 28px; padding-block: 28px 48px; }
 }
 @media (min-width: 750px) and (max-width: 989px) {
-  .inchy-shell.inchy-chapter { grid-template-columns: 130px minmax(0, 1fr); gap: 28px; }
+  .inchy-shell.inchy-chapter { grid-template-columns: 156px minmax(0, 1fr); gap: 28px; }
   .inchy-chapter__number { font-size: 112px; min-height: 112px; padding-right: 16px; }
   .inchy-chapter__columns { grid-template-columns: 1fr; gap: 24px; }
   .inchy-night__inner { gap: 40px; }
@@ -174,7 +175,9 @@
   .inchy-night__inner { grid-template-columns: 1fr; gap: 36px; padding-block: 56px; }
   .inchy-night h2 { font-size: clamp(40px, 10vw, 60px); }
   .inchy-night__copy > p { font-size: 20px; }
-  .inchy-shell.inchy-chapter { width: calc(100% - 40px); grid-template-columns: 88px minmax(0, 1fr); gap: 28px 20px; padding-block: 56px; }
+  .inchy-night__label, .inchy-night__copy > .inchy-night__time { font-size: 22px; }
+  .inchy-night__copy > .inchy-night__story { font-size: 21px; }
+  .inchy-shell.inchy-chapter { width: calc(100% - 40px); grid-template-columns: 108px minmax(0, 1fr); gap: 28px 20px; padding-block: 56px; }
   .inchy-chapter__number { font-size: 76px; min-height: 80px; padding-right: 12px; }
   .inchy-chapter__body { display: contents; }
   .inchy-chapter-heading { grid-column: 2; align-self: center; margin-bottom: 0; }
