@@ -12,13 +12,17 @@ The product page uses the store product description for confirmed ingredients, l
 
 ## Homepage and guides
 
-The homepage opens with an oversized centred wordmark and a tightly framed, larger pouch on white. A sticky header keeps shopping accessible on desktop and mobile. The four aligned product/research/routine/origin sections retain their spacious explanations; the routine images are labelled as three uses rather than a preparation sequence. The purchase block and product page display the part of the product title before a `|`, while the complete catalog title remains available to metadata. Longer explanations are served through Shopify alternate index templates, so no separate admin Page records are required:
+The homepage opens with an oversized centred wordmark and a larger, light-weight satiety headline. The short description and Shop button appear above the tightly framed pouch, so visitors can understand the product and start shopping sooner. A sticky header keeps shopping accessible on desktop and mobile. The four aligned product/research/routine/origin sections retain their spacious explanations; the routine images are labelled as three uses rather than a preparation sequence. The purchase block and product page display the part of the product title before a `|`, while the complete catalog title remains available to metadata. Longer explanations are served through Shopify alternate index templates, so no separate admin Page records are required:
 
 - `/?view=research`: original study, plain-language explanation and limitations.
 - `/?view=how-to-use`: label-led directions, mixing ideas, storage and suitability information.
 - `/?view=support`: policy links and a native Shopify contact form.
 
 Each guide has its own title, description and canonical URL. Homepage metadata has INCHY defaults while preserving a store-provided custom title/description. The contact form uses Shopify's native submission handling and sends enquiries to the store's configured email; it does not use an external form service.
+
+The routine section accepts an actual preparation video, caption and transcript in the theme editor; the existing images remain until a video is supplied. The origin image picker accepts real grower or crop photography. The optional customer experiences section remains hidden until genuine quotations and attributions are entered. No testimonials, ratings or footage have been fabricated. Support displays the store's configured delivery and returns policies, with a contact enquiry route while those policies are absent. The contact form includes an optional delivery country and postal code.
+
+Shopify's native storefront scripts and commerce forms are retained, including `content_for_header`. Use Shopify Analytics to review the shopping funnel once customers begin browsing and ordering. This theme does not install an advertising pixel or a second analytics tracker.
 
 The research source is Zhang et al., 2023, *Isolation and identification of dipeptidyl peptidase-IV inhibitory peptides from Sacha inchi meal*, DOI `10.1002/jsfa.12464`, PubMed `36692392`. Its abstract was checked for the laboratory findings described on the site. This is not a human trial of finished INCHY and does not establish product effects on GLP-1, appetite or weight. Nutrition figures from early design drafts are no longer displayed in the hero; use verified finished-product label information in the product description.
 

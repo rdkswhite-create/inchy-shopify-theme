@@ -12,7 +12,8 @@
     </div>
     <div class="inchy-origin-panel__image">
       {% if section.settings.image != blank %}
-        {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '500, 800, 1200', alt: 'Botanical illustration of Plukenetia volubilis' }}
+        {% assign origin_alt = section.settings.image.alt | default: 'Sacha inchi grown in Colombia' %}
+        {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '500, 800, 1200', alt: origin_alt }}
       {% else %}
         <img src="{{ 'inchy-botanical.jpg' | asset_url }}" width="1254" height="1254" loading="lazy" alt="Botanical illustration of Plukenetia volubilis">
       {% endif %}
@@ -25,7 +26,7 @@
 {
   "name": "INCHY origin",
   "settings": [
-    { "type": "image_picker", "id": "image", "label": "Botanical image" },
+    { "type": "image_picker", "id": "image", "label": "Grower, crop or origin image", "info": "Use your own crop or grower photograph when available. The botanical illustration appears until an image is selected." },
     { "type": "url", "id": "origin_link", "label": "Origin page link" }
   ],
   "presets": [{ "name": "INCHY origin" }]

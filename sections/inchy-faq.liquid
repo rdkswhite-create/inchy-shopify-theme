@@ -5,6 +5,14 @@
       <div class="inchy-faq__answer">{% render 'inchy-brand-text', text: block.settings.answer, rich_text: true %}</div>
     </details>
   {% endfor %}
+  <details>
+    <summary><span class="inchy-faq__question">DELIVERY & RETURNS</span><span class="inchy-faq__toggle" aria-hidden="true">+</span></summary>
+    <div class="inchy-faq__answer">
+      {% if shop.shipping_policy != blank %}<p><a href="{{ shop.shipping_policy.url }}">Read the shipping policy</a> for delivery information.</p>{% else %}<p>For delivery availability, costs and timing, contact us with your country and postal code before ordering.</p>{% endif %}
+      {% if shop.refund_policy != blank %}<p><a href="{{ shop.refund_policy.url }}">Read the returns policy</a> before placing your order.</p>{% endif %}
+      <a class="inchy-text-link" href="{{ routes.root_url }}?view=support">DELIVERY, RETURNS & CONTACT →</a>
+    </div>
+  </details>
 </section>
 
 {% schema %}
@@ -25,8 +33,8 @@
     {
       "name": "INCHY FAQ",
       "blocks": [
-        { "type": "question", "settings": { "question": "WHAT DOES INCHY TASTE LIKE?", "answer": "<p>INCHY is unflavoured and designed to sit quietly inside what you already eat or drink.</p>" } },
-        { "type": "question", "settings": { "question": "HOW DO I USE IT?", "answer": "<p>Add one measured serving to food or a drink and mix thoroughly.</p>" } },
+        { "type": "question", "settings": { "question": "WHAT DOES INCHY TASTE LIKE?", "answer": "<p>Unflavoured means no added flavour. Sacha inchi still has its own taste and texture, which can come through depending on what you mix it with.</p>" } },
+        { "type": "question", "settings": { "question": "HOW DO I USE IT?", "answer": "<p>Measure the amount stated on your pouch, add it to food or a drink and mix thoroughly. Follow the product label for serving size and frequency.</p>" } },
         { "type": "question", "settings": { "question": "WHAT DOES THE RESEARCH SHOW?", "answer": "<p>Laboratory research has investigated how sacha inchi-derived peptides interact with DPP-IV. It was not a human trial of finished INCHY.</p>" } },
         { "type": "question", "settings": { "question": "WHERE IS INCHY MADE?", "answer": "<p>INCHY begins with sacha inchi grown in Colombia and sourced through growers with whom we work directly.</p>" } }
       ]

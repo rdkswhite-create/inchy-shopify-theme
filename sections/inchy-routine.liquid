@@ -3,6 +3,13 @@
     <div><p class="inchy-kicker">03 / THE ROUTINE</p><h2 class="inchy-section-title">MADE FOR YOUR EVERYDAY.</h2></div>
     <a class="inchy-text-link" href="{{ routes.root_url }}?view=how-to-use">HOW TO USE →</a>
   </header>
+  {% if section.settings.demonstration != blank %}
+    <figure class="inchy-routine-demo">
+      {{ section.settings.demonstration | video_tag: image_size: '1600x', controls: true, autoplay: false, loop: false, preload: 'metadata' }}
+      {% if section.settings.video_caption != blank %}<figcaption>{{ section.settings.video_caption | escape }}</figcaption>{% endif %}
+      {% if section.settings.video_transcript != blank %}<details class="inchy-disclosure"><summary>READ THE DEMONSTRATION</summary><div>{{ section.settings.video_transcript }}</div></details>{% endif %}
+    </figure>
+  {% else %}
   <div class="inchy-routine-grid">
     {% assign routine_image = section.settings.image %}
     {% for step in (1..3) %}
@@ -20,13 +27,19 @@
       </figure>
     {% endfor %}
   </div>
+  {% endif %}
   <p class="inchy-routine-note">One nutraceutical. Different ways to use it.<br>Measure the serving stated on your pouch, add it to food or a drink, and mix thoroughly.</p>
 </section>
 
 {% schema %}
 {
   "name": "INCHY routine",
-  "settings": [{ "type": "image_picker", "id": "image", "label": "Routine image" }],
+  "settings": [
+    { "type": "video", "id": "demonstration", "label": "Real preparation video", "info": "Select footage of the actual INCHY product. When selected, it replaces the three use images." },
+    { "type": "text", "id": "video_caption", "label": "Video caption" },
+    { "type": "richtext", "id": "video_transcript", "label": "Video description or transcript" },
+    { "type": "image_picker", "id": "image", "label": "Routine image" }
+  ],
   "presets": [{ "name": "INCHY routine" }]
 }
 {% endschema %}

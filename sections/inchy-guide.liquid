@@ -41,21 +41,36 @@
     {% when 'how-to-use' %}
       <section class="inchy-guide__row"><h2>01 / MEASURE</h2><div>{% render 'inchy-directions' %}</div></section>
       <section class="inchy-guide__row"><h2>02 / MIX</h2><div>
-        <p>Add your measured serving to food or a drink and stir thoroughly. Yogurt, porridge and smoothies are ways to include the powder in your routine.</p>
+        <p>Add your measured serving to food or a drink and mix thoroughly to distribute the powder. Yogurt, oats and smoothies are ways to include it in your routine.</p>
+        <p>Choose something you already enjoy eating or drinking. Follow the directions on your pouch for the amount to use.</p>
       </div></section>
       <img class="inchy-guide__image" src="{{ 'inchy-routine.jpg' | asset_url }}" width="1942" height="809" loading="lazy" alt="Examples of mixing INCHY powder into food and drinks">
       <section class="inchy-guide__row"><h2>03 / YOUR ROUTINE</h2><div>
         <p>Choose a familiar part of your day and follow the frequency stated on your pouch. Check the label for the full directions before you begin.</p>
       </div></section>
       <section class="inchy-guide__row"><h2>GOOD TO KNOW</h2><div>
-        <h3>TASTE & TEXTURE</h3><p>Unflavoured means no added flavouring. The powder can still contribute its own taste and texture to what you mix it with.</p>
+        <h3>TASTE & TEXTURE</h3><p>Unflavoured means no added flavouring; it does not mean tasteless. Sacha inchi has its own taste and texture, which can come through depending on what you mix it with.</p>
         <h3 class="inchy-spaced-heading">STORAGE</h3>{% if settings.inchy_storage != blank %}<p>{{ settings.inchy_storage | escape | newline_to_br }}</p>{% else %}<p>Follow the storage instructions and date shown on your pouch.</p>{% endif %}
         <h3 class="inchy-spaced-heading">PRODUCT SUITABILITY</h3><p>Read the ingredients and allergen information on your label. If you take medication, including a GLP-1 medicine, ask your clinician or pharmacist about suitability before use.</p>
       </div></section>
     {% when 'support' %}
-      <section class="inchy-guide__row"><h2>DELIVERY & RETURNS</h2><div>
-        <p>For help with a delivery destination or a return, send us a message. If you already placed an order, include your order number.</p>
-        {% render 'inchy-policy-links' %}
+      <section class="inchy-guide__row" id="delivery"><h2>DELIVERY</h2><div>
+        {% if shop.shipping_policy != blank %}
+          <div class="inchy-policy-copy">{{ shop.shipping_policy.body }}</div>
+          <a class="inchy-text-link" href="{{ shop.shipping_policy.url }}">SHIPPING POLICY →</a>
+        {% else %}
+          <p>For delivery availability, shipping costs and estimated timing, contact us with your country and postal code before ordering.</p>
+        {% endif %}
+        <a class="inchy-quiet-link" href="#contact">ASK ABOUT DELIVERY →</a>
+      </div></section>
+      <section class="inchy-guide__row" id="returns"><h2>RETURNS</h2><div>
+        {% if shop.refund_policy != blank %}
+          <div class="inchy-policy-copy">{{ shop.refund_policy.body }}</div>
+          <a class="inchy-text-link" href="{{ shop.refund_policy.url }}">RETURNS POLICY →</a>
+        {% else %}
+          <p>Contact us to confirm return conditions before ordering. For an existing order, include your order number and what you need help with.</p>
+        {% endif %}
+        <a class="inchy-quiet-link" href="#contact">ASK ABOUT A RETURN →</a>
       </div></section>
       <section class="inchy-guide__row"><h2>PRODUCT QUESTIONS</h2><div>
         <p>Explore the usage guide for mixing and routine information, or the research guide for the study behind our laboratory summary.</p>

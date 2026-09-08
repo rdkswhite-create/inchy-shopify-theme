@@ -3,7 +3,6 @@
     <h1 class="inchy-wordmark" id="inchy-hero-title">{% render 'inchy-logo' %}</h1>
     <p class="inchy-eyebrow">{% render 'inchy-brand-text', text: section.settings.eyebrow %}</p>
   </div>
-  <div class="inchy-hero__visual">{% render 'inchy-packaging', image_class: 'inchy-hero__product', loading: 'eager' %}</div>
   <div class="inchy-hero__copy">
     <p class="inchy-hero__description">
       {% assign description_lines = section.settings.body | split: '. ' %}
@@ -12,7 +11,9 @@
       {% endfor %}
     </p>
     <a class="inchy-button" href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}{% render 'inchy-shop-url' %}{% endif %}">{% render 'inchy-brand-text', text: section.settings.button_label %}</a>
+    <p class="inchy-hero__format">UNFLAVOURED POWDER · MIX INTO FOOD OR DRINKS</p>
   </div>
+  <div class="inchy-hero__visual">{% render 'inchy-packaging', image_class: 'inchy-hero__product', loading: 'eager' %}</div>
 </section>
 
 {% schema %}

@@ -1,0 +1,44 @@
+{% assign has_experiences = false %}
+{% for block in section.blocks %}
+  {% if block.settings.quote != blank and block.settings.author != blank %}
+    {% assign has_experiences = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+{% if has_experiences %}
+  <section class="inchy-shell inchy-section inchy-experiences" aria-labelledby="Experiences-{{ section.id }}">
+    <h2 class="inchy-section-title" id="Experiences-{{ section.id }}">{{ section.settings.heading | escape }}</h2>
+    <div class="inchy-experience-grid">
+      {% for block in section.blocks %}
+        {% if block.settings.quote != blank and block.settings.author != blank %}
+          <figure class="inchy-experience" {{ block.shopify_attributes }}>
+            <blockquote><p>{{ block.settings.quote | escape | newline_to_br }}</p></blockquote>
+            <figcaption>{{ block.settings.author | escape }}{% if block.settings.context != blank %}<span>{{ block.settings.context | escape }}</span>{% endif %}</figcaption>
+          </figure>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
+{% schema %}
+{
+  "name": "INCHY experiences",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "EVERYDAY EXPERIENCES." },
+    { "type": "paragraph", "content": "Use genuine customer feedback with permission. This section stays hidden until a quotation and attribution are supplied. Include any gifted-product or paid relationship in the context field." }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "experience",
+      "name": "Customer experience",
+      "settings": [
+        { "type": "textarea", "id": "quote", "label": "Exact customer quotation" },
+        { "type": "text", "id": "author", "label": "Customer attribution" },
+        { "type": "text", "id": "context", "label": "Context or disclosure" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "INCHY experiences" }]
+}
+{% endschema %}
