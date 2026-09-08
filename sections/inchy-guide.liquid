@@ -4,7 +4,7 @@
     {% case section.settings.kind %}
       {% when 'research' %}
         <h1>SATIETY. GLP-1.<br>THE RESEARCH.</h1>
-        <p>A closer look at the laboratory research into sacha inchi peptides, and what the findings mean.</p>
+        <p>Protein, dietary fiber and sacha inchi peptides: three parts of the science, explained in everyday language.</p>
       {% when 'how-to-use' %}
         <h1>A SIMPLE ADDITION.<br>AN EVERYDAY ROUTINE.</h1>
         <p>{% render 'inchy-logo', inline: true %} is an unflavoured sacha inchi nutraceutical designed to mix into food or drinks.</p>
@@ -16,28 +16,7 @@
 
   {% case section.settings.kind %}
     {% when 'research' %}
-      <section class="inchy-guide__row"><h2>RESEARCH SHOWS</h2><div>
-        <p>Researchers isolated peptides from hydrolysed sacha inchi meal and tested their effects on DPP-IV. Several inhibited the enzyme in laboratory assays.</p>
-        <p class="inchy-small">Zhang et al. · 2023 · Laboratory study</p>
-        <a class="inchy-text-link" href="https://doi.org/10.1002/jsfa.12464">READ THE ORIGINAL STUDY →</a>
-      </div></section>
-      <section class="inchy-guide__row"><h2>WHY IT MATTERS</h2><div>
-        <p>GLP-1 is a hormone involved in signalling fullness. An enzyme called DPP-IV breaks it down.</p>
-        <p>The research examines how specific peptides interact with this enzyme.</p>
-      </div></section>
-      <section class="inchy-guide__row"><h2>WHAT DOES<br>THIS MEAN?</h2><div>
-        <p>In laboratory tests, small fragments of sacha inchi protein, called peptides, slowed this enzyme’s activity.</p>
-        <p>In principle, slowing that breakdown could allow GLP-1 to stay active for longer. This study did not establish that effect in people.</p>
-      </div></section>
-      <section class="inchy-guide__row"><h2>WHAT THIS<br>DOES NOT PROVE</h2><div>
-        <p>This was not a human trial of finished {% render 'inchy-logo', inline: true %}. It does not establish that taking {% render 'inchy-logo', inline: true %} increases GLP-1, changes appetite or causes weight loss.</p>
-        <p>The preparation and concentrations used in a laboratory study cannot be assumed to match a serving of the finished product.</p>
-      </div></section>
-      <section class="inchy-guide__row"><h2>THE SOURCE</h2><div>
-        <p>Isolation and identification of dipeptidyl peptidase-IV inhibitory peptides from Sacha inchi meal.</p>
-        <p class="inchy-small">Journal of the Science of Food and Agriculture · 2023<br>DOI: 10.1002/jsfa.12464</p>
-        <div class="inchy-guide__links"><a href="https://pubmed.ncbi.nlm.nih.gov/36692392/">PubMed abstract</a><a href="https://doi.org/10.1002/jsfa.12464">Publisher’s article</a></div>
-      </div></section>
+      {% render 'inchy-science-guide' %}
     {% when 'how-to-use' %}
       <section class="inchy-guide__row"><h2>01 / MEASURE</h2><div>{% render 'inchy-directions' %}</div></section>
       <section class="inchy-guide__row"><h2>02 / MIX</h2><div>
@@ -47,6 +26,10 @@
       <img class="inchy-guide__image" src="{{ 'inchy-routine.jpg' | asset_url }}" width="1942" height="809" loading="lazy" alt="Examples of mixing INCHY powder into food and drinks">
       <section class="inchy-guide__row"><h2>03 / YOUR ROUTINE</h2><div>
         <p>Choose a familiar part of your day and follow the frequency stated on your pouch. Check the label for the full directions before you begin.</p>
+      </div></section>
+      <section class="inchy-guide__row"><h2>DEVELOPED FOR<br>EVERYDAY USE</h2><div>
+        <p>Our proprietary process transforms sacha inchi into a functional nutraceutical ingredient while keeping protein and fiber together. Taste, texture and the ways it mixes into food and drinks are central to that development.</p>
+        <p>Stir into yogurt or oats, or blend into a smoothie. The result depends on the preparation and serving size. Unflavored does not mean tasteless, and mixing a powder into a drink does not necessarily mean it dissolves completely.</p>
       </div></section>
       <section class="inchy-guide__row"><h2>GOOD TO KNOW</h2><div>
         <h3>TASTE & TEXTURE</h3><p>Unflavoured means no added flavouring; it does not mean tasteless. Sacha inchi has its own taste and texture, which can come through depending on what you mix it with.</p>
@@ -78,7 +61,7 @@
         <a class="inchy-quiet-link" href="#contact">ASK ABOUT A RETURN →</a>
       </div></section>
       <section class="inchy-guide__row"><h2>PRODUCT QUESTIONS</h2><div>
-        <p>Explore the usage guide for mixing and routine information, or the research guide for the study behind our laboratory summary.</p>
+        <p>Explore the usage guide for mixing and routine information, or the research guide for the evidence on protein, fiber and sacha inchi peptides.</p>
         <div class="inchy-guide__links"><a href="{{ routes.root_url }}?view=how-to-use">How to use</a><a href="{{ routes.root_url }}?view=research">The research</a></div>
       </div></section>
   {% endcase %}

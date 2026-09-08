@@ -1,26 +1,145 @@
 {
   "sections": {
-    "inchy_hero": { "type": "inchy-hero", "settings": {} },
-    "inchy_night": { "type": "inchy-night-moment", "settings": {} },
-    "inchy_research": { "type": "inchy-research-summary", "settings": {} },
-    "inchy_nutraceutical": { "type": "inchy-nutraceutical", "settings": {} },
-    "inchy_routine": { "type": "inchy-routine", "settings": {} },
-    "inchy_experiences": { "type": "inchy-experiences", "settings": {}, "blocks": {}, "block_order": [] },
-    "inchy_origin": { "type": "inchy-origin", "settings": {} },
-    "inchy_product": { "type": "inchy-product", "settings": {} },
+    "inchy_hero": {
+      "type": "inchy-hero",
+      "settings": {}
+    },
+    "inchy_night": {
+      "type": "inchy-night-moment",
+      "settings": {}
+    },
+    "inchy_research": {
+      "type": "inchy-research-summary",
+      "settings": {}
+    },
+    "inchy_nutraceutical": {
+      "type": "inchy-nutraceutical",
+      "settings": {}
+    },
+    "inchy_routine": {
+      "type": "inchy-routine",
+      "settings": {}
+    },
+    "inchy_experiences": {
+      "type": "inchy-experiences",
+      "settings": {},
+      "blocks": {},
+      "block_order": []
+    },
+    "inchy_origin": {
+      "type": "inchy-origin",
+      "settings": {}
+    },
+    "inchy_product": {
+      "type": "inchy-product",
+      "settings": {}
+    },
     "inchy_faq": {
       "type": "inchy-faq",
       "blocks": {
-        "satiety": { "type": "question", "settings": { "question": "WHAT DOES SATIETY MEAN?", "answer": "<p>Satiety is the feeling of fullness after eating. It is the focus of INCHY and the subject explored in our research guide.</p>" } },
-        "taste": { "type": "question", "settings": { "question": "WHAT DOES INCHY TASTE LIKE?", "answer": "<p>Unflavoured means no added flavour. Sacha inchi still has its own taste and texture, which can come through depending on what you mix it with.</p>" } },
-        "use": { "type": "question", "settings": { "question": "HOW DO I USE IT?", "answer": "<p>Measure the amount stated on your pouch, add it to food or a drink and mix thoroughly. Follow the product label for serving size and frequency.</p>" } },
-        "research": { "type": "question", "settings": { "question": "WHAT DOES THE RESEARCH SHOW?", "answer": "<p>Laboratory research has investigated how sacha inchi-derived peptides interact with DPP-IV. It was not a human trial of finished INCHY.</p>" } },
-        "medicine": { "type": "question", "settings": { "question": "IS INCHY A GLP-1 MEDICINE?", "answer": "<p>INCHY is a sacha inchi nutraceutical powder, not a GLP-1 medicine. Our research guide explains the ingredient research and what it does and does not establish about finished INCHY.</p>" } },
-        "made": { "type": "question", "settings": { "question": "WHERE DOES YOUR SACHA INCHI COME FROM?", "answer": "<p>INCHY begins with sacha inchi grown in Colombia and sourced through growers with whom we work directly.</p>" } }
+        "satiety": {
+          "type": "question",
+          "settings": {
+            "question": "WHAT DOES SATIETY MEAN?",
+            "answer": "<p>Satiety is the feeling of fullness after eating. It is the focus of INCHY and the subject explored in our research guide.</p>"
+          }
+        },
+        "taste": {
+          "type": "question",
+          "settings": {
+            "question": "WHAT DOES INCHY TASTE LIKE?",
+            "answer": "<p>Unflavoured means no added flavour. Sacha inchi still has its own taste and texture, which can come through depending on what you mix it with.</p>"
+          }
+        },
+        "use": {
+          "type": "question",
+          "settings": {
+            "question": "HOW DO I USE IT?",
+            "answer": "<p>Measure the amount stated on your pouch, add it to food or a drink and mix thoroughly. Follow the product label for serving size and frequency.</p>"
+          }
+        },
+        "research": {
+          "type": "question",
+          "settings": {
+            "question": "WHAT DOES THE RESEARCH SHOW?",
+            "answer": "<p>Protein and certain dietary fibers can stimulate GLP-1 release. Separate laboratory research has investigated sacha inchi-derived peptides and DPP-IV. These findings do not establish effects on GLP-1 or appetite in people taking INCHY. Our research page explains each subject and links to the papers.</p>"
+          }
+        },
+        "medicine": {
+          "type": "question",
+          "settings": {
+            "question": "IS INCHY A GLP-1 MEDICINE?",
+            "answer": "<p>INCHY is a sacha inchi nutraceutical powder, not a GLP-1 medicine. Our research guide explains the ingredient research and what it does and does not establish about finished INCHY.</p>"
+          }
+        },
+        "made": {
+          "type": "question",
+          "settings": {
+            "question": "WHERE DOES YOUR SACHA INCHI COME FROM?",
+            "answer": "<p>INCHY begins with sacha inchi grown in Colombia and sourced through growers with whom we work directly.</p>"
+          }
+        },
+        "isolate": {
+          "type": "question",
+          "settings": {
+            "question": "HOW IS INCHY DIFFERENT FROM A PROTEIN ISOLATE?",
+            "answer": "<p>A protein isolate is processed to concentrate protein, usually removing much of the other seed material. INCHY is a sacha inchi nutraceutical that keeps protein and fiber from the same seed together. Its focus is satiety and everyday use, rather than protein content alone.</p>"
+          }
+        },
+        "flour": {
+          "type": "question",
+          "settings": {
+            "question": "HOW IS INCHY DIFFERENT FROM ORDINARY SACHA INCHI FLOUR?",
+            "answer": "<p>INCHY uses our proprietary process, developed over years, to turn sacha inchi into a functional ingredient designed for everyday foods and drinks. Taste, texture and mixing are central to development. Sacha inchi flours vary in composition and processing; we do not claim that every flour is identical or inferior.</p>"
+          }
+        },
+        "matrix": {
+          "type": "question",
+          "settings": {
+            "question": "WHY KEEP PROTEIN AND FIBER TOGETHER?",
+            "answer": "<p>INCHY brings both components of the same seed into one preparation. The food matrix describes how an ingredient’s components are held together. Our processing changes the seed’s structure while retaining protein and fiber together; this alone does not prove a stronger GLP-1 response than taking them separately.</p>"
+          }
+        },
+        "ip": {
+          "type": "question",
+          "settings": {
+            "question": "WHAT DOES YOUR PROPRIETARY PROCESS CHANGE?",
+            "answer": "<p>Our proprietary processing know-how is INCHY intellectual property. We transform the seed into an ingredient for use across foods and drinks, with taste, texture and mixing at the center of development. The result keeps protein and fiber together in one preparation.</p>"
+          }
+        },
+        "human": {
+          "type": "question",
+          "settings": {
+            "question": "HAS FINISHED INCHY BEEN TESTED IN PEOPLE?",
+            "answer": "<p>The studies presented on this site are not human trials of finished INCHY. They investigate particular meals, fibers or laboratory peptide preparations. They do not establish how a serving of INCHY affects GLP-1, fullness or weight.</p>"
+          }
+        }
       },
-      "block_order": ["satiety", "taste", "use", "research", "medicine", "made"],
+      "block_order": [
+        "satiety",
+        "isolate",
+        "flour",
+        "matrix",
+        "ip",
+        "taste",
+        "use",
+        "research",
+        "human",
+        "medicine",
+        "made"
+      ],
       "settings": {}
     }
   },
-  "order": ["inchy_hero", "inchy_night", "inchy_nutraceutical", "inchy_research", "inchy_routine", "inchy_experiences", "inchy_origin", "inchy_product", "inchy_faq"]
+  "order": [
+    "inchy_hero",
+    "inchy_night",
+    "inchy_nutraceutical",
+    "inchy_research",
+    "inchy_routine",
+    "inchy_experiences",
+    "inchy_origin",
+    "inchy_product",
+    "inchy_faq"
+  ]
 }
