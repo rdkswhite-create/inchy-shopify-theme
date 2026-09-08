@@ -224,7 +224,8 @@
 .inchy-science-nav a { color: inherit; text-underline-offset: 5px; }
 
 /* Shared research rows keep headings, explanations and evidence links aligned. */
-.inchy-seed-line { display: block; margin-top: 24px; }
+.inchy-seed-line { display: block; }
+.inchy-intro__copy > .inchy-feature-heading { margin-bottom: 32px; }
 .inchy-evidence-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; row-gap: 20px; }
 .inchy-evidence-column { display: grid; grid-template-rows: subgrid; grid-row: span 5; min-width: 0; }
 .inchy-evidence-column > .inchy-kicker,
@@ -237,3 +238,5 @@
   .inchy-evidence-column { grid-row: auto; grid-template-rows: none; gap: 20px; }
   .inchy-evidence-column + .inchy-evidence-column { border-top: 1px solid var(--inchy-line, #d4d4d4); padding-top: 32px; }
 }
+
+.inchy-chapter-heading > .inchy-kicker { font-size: 16px; }
