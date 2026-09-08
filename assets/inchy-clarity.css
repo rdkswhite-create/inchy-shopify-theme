@@ -272,3 +272,5 @@
   .inchy-origin-feature__story p { font-size: 18px; }
   .inchy-form-name { font-size: 17px; }
 }
+
+.inchy-product-panel__content .inchy-form-identity { width: 100%; max-width: 460px; }

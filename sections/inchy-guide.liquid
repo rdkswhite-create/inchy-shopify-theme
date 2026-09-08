@@ -8,6 +8,10 @@
       {% when 'how-to-use' %}
         <h1>A SIMPLE ADDITION.<br>AN EVERYDAY ROUTINE.</h1>
         <p>{% render 'inchy-logo', inline: true %} is an unflavoured sacha inchi nutraceutical designed to mix into food or drinks.</p>
+      {% when 'process' %}
+        <p class="inchy-kicker">OUR PROPRIETARY PROCESS</p>
+        <h1>NATURE GIVES US THE SEED.<br>CARE GIVES IT FORM.</h1>
+        <p>Working with the character of sacha inchi. Shaping its possibilities for everyday life.</p>
       {% when 'support' %}
         <h1>HELP & CONTACT.</h1>
         <p>Questions about the product, your order or delivery? Get in touch below.</p>
@@ -15,6 +19,8 @@
   </header>
 
   {% case section.settings.kind %}
+    {% when 'process' %}
+      {% render 'inchy-process-guide' %}
     {% when 'research' %}
       {% render 'inchy-science-guide' %}
     {% when 'how-to-use' %}
@@ -68,5 +74,5 @@
   {% unless section.settings.kind == 'support' %}<a class="inchy-button" href="{% render 'inchy-shop-url' %}">SHOP {% render 'inchy-logo', inline: true %}</a>{% endunless %}
 </article>
 {% schema %}
-{"name":"INCHY guide","settings":[{"type":"select","id":"kind","label":"Guide","options":[{"value":"research","label":"Research"},{"value":"how-to-use","label":"How to use"},{"value":"support","label":"Support"}],"default":"research"}],"presets":[{"name":"INCHY guide"}]}
+{"name":"INCHY guide","settings":[{"type":"select","id":"kind","label":"Guide","options":[{"value":"research","label":"Research"},{"value":"how-to-use","label":"How to use"},{"value":"support","label":"Support"},{"value":"process","label":"Our process"}],"default":"research"}],"presets":[{"name":"INCHY guide"}]}
 {% endschema %}
