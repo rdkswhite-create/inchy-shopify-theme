@@ -31,8 +31,10 @@
 .inchy-night { background: #111; color: white; }
 .inchy-night .inchy-shell { color: inherit; }
 .inchy-night__inner { display: grid; grid-template-columns: 1fr 1fr; align-items: start; gap: 80px; padding-block: 88px; }
-.inchy-night__label, .inchy-night__copy > .inchy-night__time { margin: 0 0 26px !important; font: 24px/1.4 'Courier New', monospace; letter-spacing: .06em; }
-.inchy-night h2 { font: 600 clamp(40px, 5.4vw, 72px)/1.02 Arial, sans-serif; letter-spacing: -.045em; }
+.inchy-night__copy > .inchy-night__time { margin: 0 0 26px !important; font: 24px/1.4 'Courier New', monospace; letter-spacing: .06em; }
+.inchy-night .inchy-night__heading { color: #fff; font-family: Arial, Helvetica, sans-serif; font-size: clamp(44px, 5.8vw, 80px); font-weight: 600; line-height: 1.05; letter-spacing: -.04em; text-align: left; }
+.inchy-night__heading > span { display: block; }
+.inchy-night__heading > span + span { margin-top: .4em; }
 .inchy-night__copy > p { font-size: 23px; line-height: 1.5; }
 .inchy-night__copy > p + p { margin-top: 24px; }
 .inchy-night__copy > .inchy-night__story { font: 24px/1.55 'Courier New', monospace; }
@@ -173,9 +175,9 @@
   .inchy-hero__visual { width: min(100%, 380px); }
   .inchy-hero__packaging .inchy-button { margin-top: 28px; }
   .inchy-night__inner { grid-template-columns: 1fr; gap: 36px; padding-block: 56px; }
-  .inchy-night h2 { font-size: clamp(40px, 10vw, 60px); }
+  .inchy-night .inchy-night__heading { font-size: clamp(40px, 11vw, 64px); }
   .inchy-night__copy > p { font-size: 20px; }
-  .inchy-night__label, .inchy-night__copy > .inchy-night__time { font-size: 22px; }
+  .inchy-night__copy > .inchy-night__time { font-size: 22px; }
   .inchy-night__copy > .inchy-night__story { font-size: 21px; }
   .inchy-shell.inchy-chapter { width: calc(100% - 40px); grid-template-columns: 108px minmax(0, 1fr); gap: 28px 20px; padding-block: 56px; }
   .inchy-chapter__number { font-size: 76px; min-height: 80px; padding-right: 12px; }
