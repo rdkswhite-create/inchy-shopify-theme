@@ -1,0 +1,4 @@
+<a href="{% render 'inchy-shop-url' %}">SHOP</a>
+<a href="{{ routes.root_url }}?view=research"{% if template.suffix == 'research' %} aria-current="page"{% endif %}>RESEARCH</a>
+<a href="{{ routes.root_url }}?view=how-to-use"{% if template.suffix == 'how-to-use' %} aria-current="page"{% endif %}>HOW TO USE</a>
+<a href="{{ routes.root_url }}#origin">OUR ORIGIN</a>

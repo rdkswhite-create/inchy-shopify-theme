@@ -1,0 +1,11 @@
+{%- liquid
+  assign selected_product = settings.inchy_product
+  if selected_product == blank and collections.all.products_count == 1
+    assign selected_product = collections.all.products.first
+  endif
+  if selected_product != blank
+    echo selected_product.url
+  else
+    echo routes.root_url | append: '#shop-inchy'
+  endif
+-%}

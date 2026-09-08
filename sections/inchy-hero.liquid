@@ -1,26 +1,12 @@
-<section class="inchy-shell inchy-hero" id="satiety">
-  <div class="inchy-wordmark">{% render 'inchy-logo' %}</div>
-
-  {% render 'inchy-packaging', image_class: 'inchy-hero__product', loading: 'eager' %}
-
+<section class="inchy-shell inchy-hero">
   <div class="inchy-hero__copy">
-    <p class="inchy-eyebrow inchy-eyebrow--large">{% render 'inchy-brand-text', text: section.settings.eyebrow %}</p>
-    <p>{% render 'inchy-brand-text', text: section.settings.body %}</p>
-    <a class="inchy-button" href="{{ section.settings.button_link | default: '#shop-inchy' }}">{% render 'inchy-brand-text', text: section.settings.button_label %}</a>
+    <h1 class="inchy-wordmark">{% render 'inchy-logo' %}</h1>
+    <p class="inchy-eyebrow">{% render 'inchy-brand-text', text: section.settings.eyebrow %}</p>
+    <p class="inchy-hero__description">{% render 'inchy-brand-text', text: section.settings.body %}</p>
+    <a class="inchy-button" href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}{% render 'inchy-shop-url' %}{% endif %}">{% render 'inchy-brand-text', text: section.settings.button_label %}</a>
+    <a class="inchy-quiet-link" href="#what-is-inchy">GET TO KNOW {% render 'inchy-logo', inline: true %}</a>
   </div>
-
-  <ul class="inchy-stats" aria-label="Product highlights" role="list">
-    <li>{{ section.settings.stat_1 }}</li>
-    <li>{{ section.settings.stat_2 }}</li>
-    <li>{{ section.settings.stat_3 }}</li>
-    <li>{{ section.settings.stat_4 }}</li>
-  </ul>
-
-  <div class="inchy-era">
-    <h1>{% render 'inchy-brand-text', text: section.settings.heading %}</h1>
-    <p>{% render 'inchy-brand-text', text: section.settings.line_1 %}</p>
-    <p><strong>{% render 'inchy-brand-text', text: section.settings.line_2 %}</strong></p>
-  </div>
+  <div class="inchy-hero__visual">{% render 'inchy-packaging', image_class: 'inchy-hero__product', loading: 'eager' %}</div>
 </section>
 
 {% schema %}
@@ -31,14 +17,7 @@
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "NONPHARMACEUTICAL SATIETY." },
     { "type": "textarea", "id": "body", "label": "Description", "default": "A sacha inchi nutraceutical focused on satiety. Made for everyday use." },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "SHOP INCHY" },
-    { "type": "url", "id": "button_link", "label": "Button link" },
-    { "type": "text", "id": "stat_1", "label": "First statistic", "default": "120 KCAL / 30 G" },
-    { "type": "text", "id": "stat_2", "label": "Second statistic", "default": "66% PROTEIN" },
-    { "type": "text", "id": "stat_3", "label": "Third statistic", "default": "14% FIBRE" },
-    { "type": "text", "id": "stat_4", "label": "Fourth statistic", "default": "0% ADDITIVES" },
-    { "type": "text", "id": "heading", "label": "Story heading", "default": "SATIETY. GLP-1." },
-    { "type": "text", "id": "line_1", "label": "Story line one", "default": "GLP-1 changed how we understand appetite." },
-    { "type": "text", "id": "line_2", "label": "Story line two", "default": "INCHY was created for the satiety era." }
+    { "type": "url", "id": "button_link", "label": "Button link" }
   ],
   "presets": [{ "name": "INCHY hero" }]
 }

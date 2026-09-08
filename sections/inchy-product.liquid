@@ -1,4 +1,6 @@
 {% assign featured_product = section.settings.product %}
+{% if featured_product == blank %}{% assign featured_product = settings.inchy_product %}{% endif %}
+{% if featured_product == blank and collections.all.products_count == 1 %}{% assign featured_product = collections.all.products.first %}{% endif %}
 <section class="inchy-shell" id="shop-inchy">
   <div class="inchy-product-panel">
     <div class="inchy-product-panel__image">
@@ -8,6 +10,7 @@
       <h2>{% if featured_product != blank %}{% render 'inchy-brand-text', text: featured_product.title %}{% else %}{% render 'inchy-logo', inline: true %}{% endif %}</h2>
       <p>A sacha inchi nutraceutical focused on satiety.<br>Made for everyday use.</p>
       <p class="inchy-product-spec">PROTEIN + FIBRE<br>NO SWEETENERS. NO FLAVOURS. NO ADDITIVES.</p>
+      {% if featured_product.metafields.custom.pack_size != blank %}<p>{{ featured_product.metafields.custom.pack_size | metafield_text }}</p>{% endif %}
 
       {% if featured_product != blank %}
         <p class="inchy-price">{% if featured_product.price_varies %}From {% endif %}{{ featured_product.price_min | money }}</p>
@@ -21,10 +24,12 @@
         {% else %}
           <a class="inchy-button inchy-button--wide" href="{{ featured_product.url }}">CHOOSE OPTIONS</a>
         {% endif %}
+        <a class="inchy-quiet-link" href="{{ featured_product.url }}">FULL PRODUCT DETAILS →</a>
       {% else %}
         {% if request.design_mode %}<p>Select the INCHY product in this section’s settings to enable purchasing.</p>{% endif %}
         <button class="inchy-button inchy-button--wide" type="button" disabled>COMING SOON</button>
       {% endif %}
+      <a class="inchy-quiet-link" href="{{ routes.root_url }}?view=support">DELIVERY, RETURNS & CONTACT</a>
     </div>
   </div>
 </section>

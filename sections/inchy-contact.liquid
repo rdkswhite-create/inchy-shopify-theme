@@ -1,0 +1,16 @@
+<section class="inchy-shell inchy-contact" id="contact">
+  <h2>SEND US A MESSAGE.</h2>
+  {% assign contact_return_url = routes.root_url | append: '?view=support#contact' %}
+  {% form 'contact', id: 'InchyContactForm', return_to: contact_return_url %}
+    {% if form.posted_successfully? %}<p class="inchy-form-status" role="status" tabindex="-1" autofocus>Thank you. Your message has been sent.</p>{% endif %}
+    {% if form.errors %}<div class="inchy-form-status" role="alert">{{ form.errors | default_errors }}</div>{% endif %}
+    <div class="inchy-contact__field"><label for="InchyContactName">Name</label><input id="InchyContactName" type="text" name="contact[name]" autocomplete="name" value="{{ form.name | default: customer.name | escape }}" required></div>
+    <div class="inchy-contact__field"><label for="InchyContactEmail">Email</label><input id="InchyContactEmail" type="email" name="contact[email]" autocomplete="email" value="{{ form.email | default: customer.email | escape }}" required></div>
+    <div class="inchy-contact__field"><label for="InchyContactOrder">Order number (optional)</label><input id="InchyContactOrder" type="text" name="contact[order_number]" value="{{ form.order_number | escape }}"></div>
+    <div class="inchy-contact__field"><label for="InchyContactBody">Message</label><textarea id="InchyContactBody" name="contact[body]" rows="6" required>{{ form.body | escape }}</textarea></div>
+    <button class="inchy-button" type="submit">SEND MESSAGE</button>
+  {% endform %}
+</section>
+{% schema %}
+{"name":"INCHY contact","settings":[],"presets":[{"name":"INCHY contact"}]}
+{% endschema %}

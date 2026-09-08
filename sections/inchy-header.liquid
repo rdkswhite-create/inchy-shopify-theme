@@ -1,12 +1,13 @@
 <header class="inchy-shell inchy-nav">
   <a class="inchy-brand" href="{{ routes.root_url }}" aria-label="INCHY home">{% render 'inchy-logo' %}</a>
-  <nav aria-label="Main navigation">
-    <a href="{{ routes.root_url }}#shop-inchy">SHOP</a>
-    <a href="{{ routes.root_url }}#satiety">SATIETY</a>
-    <a href="{{ routes.root_url }}#research">RESEARCH</a>
-    <a href="{{ routes.root_url }}#how-to-use">HOW TO USE</a>
+  <nav class="inchy-desktop-nav" aria-label="Main navigation">{% render 'inchy-navigation' %}</nav>
+  <div class="inchy-nav__actions">
+    <details class="inchy-mobile-menu">
+      <summary>MENU</summary>
+      <nav aria-label="Mobile navigation">{% render 'inchy-navigation' %}</nav>
+    </details>
     <a href="{{ routes.cart_url }}">BAG ({{ cart.item_count }})</a>
-  </nav>
+  </div>
 </header>
 {% schema %}
 {"name":"INCHY header","settings":[],"enabled_on":{"groups":["header"]}}

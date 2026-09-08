@@ -1,10 +1,10 @@
 <footer class="inchy-shell inchy-footer">
   <a class="inchy-brand" href="{{ routes.root_url }}" aria-label="INCHY home">{% render 'inchy-logo' %}</a>
   <nav aria-label="Footer navigation">
-    <a href="{{ routes.root_url }}#shop-inchy">SHOP</a>
-    <a href="{{ routes.root_url }}#research">RESEARCH</a>
+    <a href="{% render 'inchy-shop-url' %}">SHOP</a>
+    <a href="{{ routes.root_url }}?view=research">RESEARCH</a>
     <a href="{{ routes.root_url }}#origin">ORIGIN</a>
-    <a href="{{ routes.root_url }}#faq">SUPPORT</a>
+    <a href="{{ routes.root_url }}?view=support">CONTACT & SUPPORT</a>
     {% for policy in shop.policies %}
       {% if policy != blank %}<a href="{{ policy.url }}">{{ policy.title | escape }}</a>{% endif %}
     {% endfor %}

@@ -1,0 +1,2 @@
+{% if settings.inchy_serving != blank %}<p><strong>Serving amount:</strong> {{ settings.inchy_serving | escape }}</p>{% endif %}
+{% if settings.inchy_directions != blank %}<p>{{ settings.inchy_directions | escape | newline_to_br }}</p>{% else %}<p>Measure the serving stated on your pouch. Add it to food or a drink and mix thoroughly. Follow the directions on the product label.</p>{% endif %}

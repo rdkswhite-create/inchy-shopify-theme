@@ -8,6 +8,15 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
+    "name": "INCHY product & directions",
+    "settings": [
+      { "type": "product", "id": "inchy_product", "label": "Main INCHY product", "info": "Used by Shop links and the homepage. If left blank and your store has one published product, it is selected automatically." },
+      { "type": "text", "id": "inchy_serving", "label": "Confirmed serving amount", "info": "Enter only the amount approved on the finished product label." },
+      { "type": "textarea", "id": "inchy_directions", "label": "Confirmed usage directions" },
+      { "type": "textarea", "id": "inchy_storage", "label": "Confirmed storage directions" }
+    ]
+  },
+  {
     "name": "t:settings_schema.logo.name",
     "settings": [
       {

@@ -1,0 +1,36 @@
+{%- liquid
+  assign site_name = shop.name
+  if site_name == 'My Store' or site_name == blank
+    assign site_name = 'inchy'
+  endif
+  assign title = page_title
+  assign description = page_description
+  assign page_url = canonical_url
+  if request.page_type == 'index'
+    case template.suffix
+      when 'research'
+        assign title = 'Satiety, GLP-1 and the research | inchy'
+        assign description = 'Explore the laboratory research into sacha inchi peptides, read the original study and understand what the findings do and do not establish.'
+        assign page_url = request.origin | append: routes.root_url | append: '?view=research'
+      when 'how-to-use'
+        assign title = 'How to use | inchy'
+        assign description = 'How to include INCHY sacha inchi nutraceutical powder in your routine, with mixing guidance and product information.'
+        assign page_url = request.origin | append: routes.root_url | append: '?view=how-to-use'
+      when 'support'
+        assign title = 'Contact and support | inchy'
+        assign description = 'Contact INCHY about product questions, delivery, returns or an existing order.'
+        assign page_url = request.origin | append: routes.root_url | append: '?view=support'
+      else
+        if title == shop.name or title == blank or title == 'My Store'
+          assign title = 'inchy | Sacha inchi nutraceutical'
+        endif
+        if description == blank
+          assign description = 'Meet INCHY, a sacha inchi nutraceutical made for everyday use. Explore the product, its Colombian origins, the research and how to use it.'
+        endif
+    endcase
+  endif
+-%}
+<title>{{ title | escape }}{% if current_tags %} — {{ current_tags | join: ', ' | escape }}{% endif %}{% if current_page != 1 %} — Page {{ current_page }}{% endif %}{% unless title contains site_name %} — {{ site_name | escape }}{% endunless %}</title>
+<link rel="canonical" href="{{ page_url | escape }}">
+{% if description != blank %}<meta name="description" content="{{ description | escape }}">{% endif %}
+{% render 'meta-tags', seo_title: title, seo_description: description, seo_url: page_url, seo_site_name: site_name %}
