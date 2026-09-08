@@ -7,7 +7,7 @@
       {% render 'inchy-packaging' %}
     </div>
     <div class="inchy-product-panel__content">
-      <h2>{% if featured_product != blank %}{% assign display_title = featured_product.title | split: '|' | first | strip %}{% render 'inchy-brand-text', text: display_title %}{% else %}{% render 'inchy-logo', inline: true %}{% endif %}</h2>
+      <h2 class="inchy-form-identity">{% render 'inchy-logo' %}<span class="inchy-form-name">FORM1</span></h2>
       <p>A sacha inchi nutraceutical focused on satiety.<br>Made for everyday use.</p>
       <p class="inchy-product-spec">PROTEIN + FIBRE<br>NO SWEETENERS. NO FLAVOURS. NO ADDITIVES.</p>
       {% if featured_product.metafields.custom.pack_size != blank or featured_product.metafields.custom.servings_per_pack != blank %}

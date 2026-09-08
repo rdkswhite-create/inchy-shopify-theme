@@ -7,12 +7,12 @@
     </div>
     <div class="inchy-hero__copy">
       {% if settings.inchy_prelaunch %}<a class="inchy-button" href="{{ routes.root_url }}?view=launch">NOTIFY ME AT LAUNCH</a>{% else %}<a class="inchy-button" href="{{ hero_shop_url | strip | escape }}">{% render 'inchy-brand-text', text: section.settings.button_label %}</a>{% endif %}
-      <p class="inchy-hero__format">UNFLAVOURED POWDER · MIX INTO FOOD OR DRINKS</p>
+      <p class="inchy-hero__format">FORM1 · UNFLAVOURED POWDER · MIX INTO FOOD OR DRINKS</p>
     </div>
   </div>
   <div class="inchy-hero__packaging">
     <div class="inchy-hero__visual">{% render 'inchy-packaging', image_class: 'inchy-hero__product', loading: 'eager' %}</div>
-    <a class="inchy-button" href="{{ hero_shop_url | strip | escape }}">{% if settings.inchy_prelaunch %}EXPLORE INCHY{% else %}{% render 'inchy-brand-text', text: section.settings.button_label %}{% endif %}</a>
+    <a class="inchy-button" href="{{ hero_shop_url | strip | escape }}">{% if settings.inchy_prelaunch %}EXPLORE INCHY FORM1{% else %}{% render 'inchy-brand-text', text: section.settings.button_label %}{% endif %}</a>
   </div>
 </section>
 

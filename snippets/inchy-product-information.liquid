@@ -1,4 +1,5 @@
 <div class="inchy-product-information">
+  <p class="inchy-form-name">FORM1</p>
   {% if product.metafields.custom.pack_size != blank or product.metafields.custom.servings_per_pack != blank %}
     <dl class="inchy-facts">
       {% if product.metafields.custom.pack_size != blank %}<div><dt>PACK SIZE</dt><dd>{{ product.metafields.custom.pack_size | metafield_text }}</dd></div>{% endif %}

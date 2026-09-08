@@ -1,28 +1,24 @@
-<section class="inchy-shell inchy-section inchy-chapter" id="origin">
+<section class="inchy-shell inchy-section inchy-chapter inchy-origin-feature" id="origin">
   <span class="inchy-chapter__number" aria-hidden="true">04</span>
-  <div class="inchy-chapter__body">
-    <header class="inchy-chapter-heading">
-      <p class="inchy-kicker">A SMALL SEED. A WORLD OF POSSIBILITY.</p>
-      <h2 class="inchy-section-title">ROOTED IN BIODIVERSITY</h2>
-    </header>
-  <div class="inchy-origin-panel">
-    <div class="inchy-origin-panel__copy">
-      <p>INCHY begins with <em>Plukenetia volubilis</em>, known as sacha inchi, grown in Colombia. Within this seed, protein and fiber occur together. Our work begins with that relationship—and the possibilities it holds.</p>
-      <p>Premium, high-quality sacha inchi was difficult to source. That’s why we helped establish a growers association. We work directly with its members, with quality as our shared priority.</p>
-      <p>Our work connects the people who cultivate this plant with the processing knowledge that opens new possibilities for it. Through our proprietary process, we transform sacha inchi into a functional nutraceutical ingredient, keeping protein and fiber together.</p>
-      <a class="inchy-text-link" href="#our-process">EXPLORE OUR PROCESS →</a>
-      {% if section.settings.origin_link != blank %}<a class="inchy-text-link" href="{{ section.settings.origin_link }}">OUR ORIGIN →</a>{% endif %}
-    </div>
-    <div class="inchy-origin-panel__image">
-      {% if section.settings.image != blank %}
-        {% assign origin_alt = section.settings.image.alt | default: 'Sacha inchi grown in Colombia' %}
-        {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '500, 800, 1200', alt: origin_alt }}
-      {% else %}
-        <img src="{{ 'inchy-botanical.jpg' | asset_url }}" width="1254" height="1254" loading="lazy" alt="Botanical illustration of Plukenetia volubilis">
-      {% endif %}
-      <span class="inchy-citation">SACHA INCHI / COLOMBIA</span>
-    </div>
+  <header class="inchy-chapter-heading">
+    <p class="inchy-kicker">A SMALL SEED. A WORLD OF POSSIBILITY.</p>
+    <h2 class="inchy-section-title">ROOTED IN BIODIVERSITY</h2>
+  </header>
+  <div class="inchy-origin-feature__visual">
+    {% if section.settings.image != blank %}
+      {{ section.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy', widths: '600, 1000, 1500, 2000', alt: section.settings.image.alt }}
+    {% else %}
+      <img src="{{ 'inchy-origin-green.jpg' | asset_url }}" width="1400" height="788" loading="lazy" alt="Botanical visualization of sacha inchi fruit among lush green leaves">
+    {% endif %}
   </div>
+  <div class="inchy-origin-feature__story">
+    <h3>ONE<br>REMARKABLE<br>SEED.</h3>
+    <div>
+      <p>INCHY begins with <em>Plukenetia volubilis</em>, known as sacha inchi, grown in Colombia. Protein and fiber, together in one seed.</p>
+      <p>We helped establish a growers association, united by a shared commitment to quality.</p>
+      <a class="inchy-text-link" href="#our-process">EXPLORE OUR PROCESS →</a>
+      <details class="inchy-disclosure"><summary>OUR GROWERS &amp; PROCESS</summary><div><p>Premium, high-quality sacha inchi was difficult to source. That’s why we helped establish a growers association. We work directly with its members, with quality as our shared priority.</p><p>Through our proprietary process, we transform sacha inchi into a functional nutraceutical ingredient, keeping protein and fiber together.</p></div></details>
+    </div>
   </div>
 </section>
 
@@ -30,7 +26,7 @@
 {
   "name": "INCHY origin",
   "settings": [
-    { "type": "image_picker", "id": "image", "label": "Grower, crop or origin image", "info": "Use your own crop or grower photograph when available. The botanical illustration appears until an image is selected." },
+    { "type": "image_picker", "id": "image", "label": "Grower, crop or origin image", "info": "Use your own crop or grower photograph when available. The green botanical visualization appears until an image is selected." },
     { "type": "url", "id": "origin_link", "label": "Origin page link" }
   ],
   "presets": [{ "name": "INCHY origin" }]
