@@ -3,7 +3,10 @@
   <div class="inchy-hero__opening">
     <div class="inchy-hero__identity">
       <h1 class="inchy-wordmark" id="inchy-hero-title">{% render 'inchy-logo' %}</h1>
-      <p class="inchy-eyebrow">{% render 'inchy-brand-text', text: section.settings.eyebrow %}</p>
+      <p class="inchy-eyebrow" aria-label="Nonpharmaceutical satiety">
+        <span>NONPHARMACEUTICAL</span>
+        <span>SATIETY</span>
+      </p>
     </div>
     <div class="inchy-hero__copy">
       {% if settings.inchy_prelaunch %}<a class="inchy-button" href="{{ routes.root_url }}?view=launch">NOTIFY ME AT LAUNCH</a>{% else %}<a class="inchy-button" href="{{ hero_shop_url | strip | escape }}">{% render 'inchy-brand-text', text: section.settings.button_label %}</a>{% endif %}
@@ -21,7 +24,6 @@
   "name": "INCHY hero",
   "settings": [
     { "type": "paragraph", "content": "The reference pouch image is shared across all INCHY sections to keep the packaging consistent." },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "NON-PHARMACEUTICAL SATIETY." },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "SHOP INCHY" },
     { "type": "url", "id": "button_link", "label": "Button link" }
   ],
