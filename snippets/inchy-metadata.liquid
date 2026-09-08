@@ -8,6 +8,14 @@
   assign page_url = canonical_url
   if request.page_type == 'index'
     case template.suffix
+      when 'launch'
+        assign title = 'U.S. launch coming soon | inchy'
+        assign description = 'Register for INCHY U.S. launch emails and hear when our sacha inchi nutraceutical is available to order.'
+        assign page_url = request.origin | append: routes.root_url | append: '?view=launch'
+        unless settings.inchy_prelaunch
+          assign title = 'Explore INCHY | inchy'
+          assign description = 'Explore INCHY sacha inchi nutraceutical and find current product availability.'
+        endunless
       when 'research'
         assign title = 'Satiety, GLP-1 and the research | inchy'
         assign description = 'Explore the laboratory research into sacha inchi peptides, read the original study and understand what the findings do and do not establish.'

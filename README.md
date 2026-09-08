@@ -12,11 +12,18 @@ The product page uses the store product description for confirmed ingredients, l
 
 ## Homepage and guides
 
+The U.S. prelaunch journey is controlled by **Theme settings → INCHY launch → U.S. coming-soon mode** (enabled by default). In this mode the hero invites launch registration, the homepage and product page show the same signup form, catalog cards say coming soon, and storefront purchase controls and public price offers are suppressed. This is theme presentation, not an inventory or checkout access control; Shopify product records, prices and stock are unchanged. Turn the setting off when online sales are ready to open. No Colombia ordering or delivery-quote route is offered.
+
+Launch signup uses Shopify's native customer form with explicit email-marketing wording and the `inchy-us-launch` tag. Subscribers are stored in Shopify Customers. The theme does not send a launch campaign automatically; use the tagged subscribers for the announcement when the launch date is confirmed. Native Shopify subscription validation and any configured confirmation flow apply.
+
 The homepage opens with a screen-height brand introduction: an oversized centred wordmark, a light-weight satiety headline, a Shop button and a short powder-format line. Scrolling reveals a larger, tightly framed pouch with a second Shop button underneath, followed by “What is INCHY?”. The longer introduction is kept in the explanatory sections. A sticky header keeps shopping accessible on desktop and mobile. The four aligned product/research/routine/origin sections retain their spacious explanations; the routine images are labelled as three uses rather than a preparation sequence. The purchase block and product page display the part of the product title before a `|`, while the complete catalog title remains available to metadata. Longer explanations are served through Shopify alternate index templates, so no separate admin Page records are required:
 
 - `/?view=research`: original study, plain-language explanation and limitations.
 - `/?view=how-to-use`: label-led directions, mixing ideas, storage and suitability information.
 - `/?view=support`: policy links and a native Shopify contact form.
+- `/?view=launch`: U.S. coming-soon information and launch email registration.
+
+After the pouch, a short 10–11 p.m. cupboard scene introduces the visitor's experience. It does not claim that INCHY prevents snacking or changes appetite. The four numbered information sections use a shared large left-hand numeral, vertical rule, aligned headings and readable body copy. The research summary retains the laboratory source and distinguishes ingredient findings from finished-product effects. Colombian sourcing remains part of the origin story, separate from the U.S. launch market.
 
 Each guide has its own title, description and canonical URL. Homepage metadata has INCHY defaults while preserving a store-provided custom title/description. The contact form uses Shopify's native submission handling and sends enquiries to the store's configured email; it does not use an external form service.
 

@@ -91,6 +91,12 @@
             {%- assign product_form_id = 'product-form-' | append: section.id -%}
 
             {%- for block in section.blocks -%}
+              {% if settings.inchy_prelaunch %}
+                {% case block.type %}
+                  {% when 'price', 'inventory', 'quantity_selector', 'variant_picker' %}
+                    {% continue %}
+                {% endcase %}
+              {% endif %}
               {%- case block.type -%}
                 {%- when '@app' -%}
                   {% render block %}
@@ -499,6 +505,9 @@
                     product_form_id: product_form_id
                   %}
                 {%- when 'buy_buttons' -%}
+                  {% if settings.inchy_prelaunch %}
+                    <div {{ block.shopify_attributes }}>{% render 'inchy-launch-notice', instance_id: section.id %}</div>
+                  {% else %}
                   {%- render 'buy-buttons',
                     block: block,
                     product: product,
@@ -506,6 +515,7 @@
                     section_id: section.id,
                     show_pickup_availability: true
                   -%}
+                  {% endif %}
                 {%- when 'rating' -%}
                   {%- if product.metafields.reviews.rating.value != blank -%}
                     <div class="rating-wrapper">
@@ -753,9 +763,9 @@
         endif
       -%}
 
-      <script type="application/ld+json">
+      {% unless settings.inchy_prelaunch %}<script type="application/ld+json">
         {{ product | structured_data }}
-      </script>
+      </script>{% endunless %}
     </div>
   </product-component>
 </product-info>

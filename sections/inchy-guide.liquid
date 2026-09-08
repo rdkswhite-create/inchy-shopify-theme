@@ -55,7 +55,10 @@
       </div></section>
     {% when 'support' %}
       <section class="inchy-guide__row" id="delivery"><h2>DELIVERY</h2><div>
-        {% if shop.shipping_policy != blank %}
+        {% if settings.inchy_prelaunch %}
+          <p>INCHY is preparing to launch in the United States. Online ordering has not opened yet. Delivery options and charges will be available before launch.</p>
+          <a class="inchy-text-link" href="{{ routes.root_url }}?view=launch">GET U.S. LAUNCH UPDATES →</a>
+        {% elsif shop.shipping_policy != blank %}
           <div class="inchy-policy-copy">{{ shop.shipping_policy.body }}</div>
           <a class="inchy-text-link" href="{{ shop.shipping_policy.url }}">SHIPPING POLICY →</a>
         {% else %}
@@ -64,7 +67,9 @@
         <a class="inchy-quiet-link" href="#contact">ASK ABOUT DELIVERY →</a>
       </div></section>
       <section class="inchy-guide__row" id="returns"><h2>RETURNS</h2><div>
-        {% if shop.refund_policy != blank %}
+        {% if settings.inchy_prelaunch %}
+          <p>Return conditions will be available before online ordering opens. Contact us if you have a product question in the meantime.</p>
+        {% elsif shop.refund_policy != blank %}
           <div class="inchy-policy-copy">{{ shop.refund_policy.body }}</div>
           <a class="inchy-text-link" href="{{ shop.refund_policy.url }}">RETURNS POLICY →</a>
         {% else %}

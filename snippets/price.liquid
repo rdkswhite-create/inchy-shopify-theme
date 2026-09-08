@@ -12,6 +12,9 @@
   Usage:
   {% render 'price', product: product %}
 {% endcomment %}
+{% if settings.inchy_prelaunch %}
+  <span class="inchy-prelaunch-price">U.S. LAUNCH COMING SOON</span>
+{% else %}
 {%- liquid
   if use_variant
     assign target = product.selected_or_first_available_variant
@@ -123,3 +126,4 @@
     {%- endif -%}
   </div>
 {% endunless %}
+{% endif %}

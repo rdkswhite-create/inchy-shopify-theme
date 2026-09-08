@@ -1,0 +1,13 @@
+{%- assign signup_id = 'InchyLaunch-' | append: instance_id -%}
+{%- assign signup_return_url = routes.root_url | append: '?view=launch#launch-signup' -%}
+{% form 'customer', id: signup_id, class: 'inchy-launch-form', return_to: signup_return_url %}
+  <input type="hidden" name="contact[tags]" value="newsletter,inchy-us-launch">
+  {% if form.errors %}<div class="inchy-form-status" id="{{ signup_id }}-error" role="alert">{{ form.errors | default_errors }}</div>{% endif %}
+  {% if form.posted_successfully? %}<p class="inchy-form-status" role="status">Thanks for signing up. If you receive a confirmation email, follow its link to finish subscribing.</p>{% endif %}
+  <label for="{{ signup_id }}-email">Email address</label>
+  <div class="inchy-launch-form__fields">
+    <input id="{{ signup_id }}-email" type="email" name="contact[email]" value="{{ form.email | escape }}" autocomplete="email" autocapitalize="off" autocorrect="off" required aria-describedby="{{ signup_id }}-consent{% if form.errors %} {{ signup_id }}-error{% endif %}" {% if form.errors %}aria-invalid="true"{% endif %}>
+    <button class="inchy-button" type="submit" name="commit">NOTIFY ME AT LAUNCH</button>
+  </div>
+  <p class="inchy-launch-consent" id="{{ signup_id }}-consent">Sign up for INCHY U.S. launch emails. Unsubscribe at any time.{% if shop.privacy_policy != blank %} <a href="{{ shop.privacy_policy.url }}">Privacy policy</a>.{% endif %}</p>
+{% endform %}

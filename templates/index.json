@@ -1,6 +1,7 @@
 {
   "sections": {
     "inchy_hero": { "type": "inchy-hero", "settings": {} },
+    "inchy_night": { "type": "inchy-night-moment", "settings": {} },
     "inchy_research": { "type": "inchy-research-summary", "settings": {} },
     "inchy_nutraceutical": { "type": "inchy-nutraceutical", "settings": {} },
     "inchy_routine": { "type": "inchy-routine", "settings": {} },
@@ -21,5 +22,5 @@
       "settings": {}
     }
   },
-  "order": ["inchy_hero", "inchy_nutraceutical", "inchy_research", "inchy_routine", "inchy_experiences", "inchy_origin", "inchy_product", "inchy_faq"]
+  "order": ["inchy_hero", "inchy_night", "inchy_nutraceutical", "inchy_research", "inchy_routine", "inchy_experiences", "inchy_origin", "inchy_product", "inchy_faq"]
 }

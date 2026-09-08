@@ -1,0 +1,23 @@
+<article class="inchy-shell inchy-guide inchy-launch-page">
+  <header>
+    <a class="inchy-quiet-link" href="{{ routes.root_url }}">← BACK TO INCHY</a>
+    <p class="inchy-kicker">INCHY / UNITED STATES</p>
+    <h1>{% if settings.inchy_prelaunch %}U.S. LAUNCH<br>COMING SOON.{% else %}EXPLORE INCHY.{% endif %}</h1>
+    <p>A sacha inchi nutraceutical focused on satiety. Made for everyday use.</p>
+  </header>
+  {% if settings.inchy_prelaunch %}
+    <div id="launch-signup">
+      <h2>BE THERE WHEN WE LAUNCH.</h2>
+      <p>Leave your email to hear when INCHY is available to order in the United States.</p>
+      {% render 'inchy-launch-signup', instance_id: section.id %}
+      <p class="inchy-small">Online ordering opens at launch. Signing up does not place an order or reserve stock.</p>
+    </div>
+  {% else %}
+    <p>Explore the product for current availability.</p>
+    <a class="inchy-button" href="{% render 'inchy-shop-url' %}">SHOP INCHY</a>
+  {% endif %}
+  <div class="inchy-guide__links"><a href="{% render 'inchy-shop-url' %}">Explore the product</a><a href="{{ routes.root_url }}?view=research">Explore the evidence</a><a href="{{ routes.root_url }}?view=support">Contact INCHY</a></div>
+</article>
+{% schema %}
+{"name":"INCHY U.S. launch","settings":[],"presets":[{"name":"INCHY U.S. launch"}]}
+{% endschema %}

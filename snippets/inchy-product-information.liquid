@@ -7,5 +7,5 @@
   {% endif %}
   <details class="inchy-disclosure"><summary>HOW TO USE</summary><div>{% render 'inchy-directions' %}<a href="{{ routes.root_url }}?view=how-to-use">Read the usage guide →</a></div></details>
   <details class="inchy-disclosure"><summary>THE RESEARCH</summary><div><p>The research concerns sacha inchi-derived peptides studied in laboratory conditions. It was not a human trial of finished {% render 'inchy-logo', inline: true %}.</p><a href="{{ routes.root_url }}?view=research">Explore the evidence →</a></div></details>
-  <details class="inchy-disclosure"><summary>DELIVERY & RETURNS</summary><div>{% if shop.shipping_policy == blank and shop.refund_policy == blank %}<p>Contact us with your delivery destination or returns question.</p>{% endif %}{% render 'inchy-policy-links' %}</div></details>
+  <details class="inchy-disclosure"><summary>DELIVERY & RETURNS</summary><div>{% if settings.inchy_prelaunch %}<p>Our U.S. launch is coming soon. Delivery options and return conditions will be available before online ordering opens.</p><a href="{{ routes.root_url }}?view=launch">Get launch updates →</a>{% else %}{% if shop.shipping_policy == blank and shop.refund_policy == blank %}<p>Contact us with your delivery destination or returns question.</p>{% endif %}{% render 'inchy-policy-links' %}{% endif %}</div></details>
 </div>

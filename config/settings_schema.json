@@ -8,6 +8,12 @@
     "theme_support_url": "https://support.shopify.com/"
   },
   {
+    "name": "INCHY launch",
+    "settings": [
+      { "type": "checkbox", "id": "inchy_prelaunch", "label": "U.S. coming-soon mode", "default": true, "info": "Shows launch sign-up instead of prices and purchase controls in the storefront. Turn off when ready to sell. Product and inventory records are unchanged." }
+    ]
+  },
+  {
     "name": "INCHY product & directions",
     "settings": [
       { "type": "product", "id": "inchy_product", "label": "Main INCHY product", "info": "Used by Shop links and the homepage. If left blank and your store has one published product, it is selected automatically." },

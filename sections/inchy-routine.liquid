@@ -1,7 +1,8 @@
-<section class="inchy-shell inchy-section" id="how-to-use">
-  <header class="inchy-section-heading">
-    <div><p class="inchy-kicker">03 / THE ROUTINE</p><h2 class="inchy-section-title">MADE FOR YOUR EVERYDAY.</h2></div>
-    <a class="inchy-text-link" href="{{ routes.root_url }}?view=how-to-use">HOW TO USE →</a>
+<section class="inchy-shell inchy-section inchy-chapter" id="how-to-use">
+  <span class="inchy-chapter__number" aria-hidden="true">03</span>
+  <div class="inchy-chapter__body">
+  <header class="inchy-chapter-heading">
+    <p class="inchy-kicker">THE ROUTINE</p><h2 class="inchy-section-title">MAKE IT PART OF YOUR DAY.</h2>
   </header>
   {% if section.settings.demonstration != blank %}
     <figure class="inchy-routine-demo">
@@ -29,6 +30,8 @@
   </div>
   {% endif %}
   <p class="inchy-routine-note">One nutraceutical. Different ways to use it.<br>Measure the serving stated on your pouch, add it to food or a drink, and mix thoroughly.</p>
+  <a class="inchy-text-link" href="{{ routes.root_url }}?view=how-to-use">FIND YOUR ROUTINE →</a>
+  </div>
 </section>
 
 {% schema %}

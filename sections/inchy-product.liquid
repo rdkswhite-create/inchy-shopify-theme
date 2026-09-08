@@ -17,7 +17,10 @@
         </dl>
       {% endif %}
 
-      {% if featured_product != blank %}
+      {% if settings.inchy_prelaunch %}
+        {% render 'inchy-launch-notice', instance_id: section.id %}
+        {% if featured_product != blank %}<a class="inchy-quiet-link" href="{{ featured_product.url }}">FULL PRODUCT DETAILS →</a>{% endif %}
+      {% elsif featured_product != blank %}
         <p class="inchy-price">{% if featured_product.price_varies %}From {% endif %}{{ featured_product.price_min | money }}</p>
         {% if featured_product.has_only_default_variant and featured_product.selling_plan_groups.size == 0 %}
         {% form 'product', featured_product, class: 'inchy-product-form' %}

@@ -1,4 +1,10 @@
 <section class="inchy-shell inchy-faq" id="faq">
+  {% if settings.inchy_prelaunch %}
+    <details>
+      <summary><span class="inchy-faq__question">WHEN CAN I ORDER IN THE UNITED STATES?</span><span class="inchy-faq__toggle" aria-hidden="true">+</span></summary>
+      <div class="inchy-faq__answer"><p>Our U.S. launch is coming soon. Online ordering has not opened yet. Sign up to hear when INCHY becomes available.</p><a class="inchy-text-link" href="{{ routes.root_url }}?view=launch">NOTIFY ME AT LAUNCH →</a></div>
+    </details>
+  {% endif %}
   {% for block in section.blocks %}
     <details {{ block.shopify_attributes }}>
       <summary><span class="inchy-faq__question">{% render 'inchy-brand-text', text: block.settings.question %}</span> <span class="inchy-faq__toggle" aria-hidden="true">+</span></summary>
@@ -8,7 +14,7 @@
   <details>
     <summary><span class="inchy-faq__question">DELIVERY & RETURNS</span><span class="inchy-faq__toggle" aria-hidden="true">+</span></summary>
     <div class="inchy-faq__answer">
-      {% if shop.shipping_policy != blank %}<p><a href="{{ shop.shipping_policy.url }}">Read the shipping policy</a> for delivery information.</p>{% else %}<p>For delivery availability, costs and timing, contact us with your country and postal code before ordering.</p>{% endif %}
+      {% if settings.inchy_prelaunch %}<p>Delivery and returns details will be available before online ordering opens for our U.S. launch.</p>{% elsif shop.shipping_policy != blank %}<p><a href="{{ shop.shipping_policy.url }}">Read the shipping policy</a> for delivery information.</p>{% else %}<p>For delivery availability, costs and timing, contact us with your country and postal code before ordering.</p>{% endif %}
       {% if shop.refund_policy != blank %}<p><a href="{{ shop.refund_policy.url }}">Read the returns policy</a> before placing your order.</p>{% endif %}
       <a class="inchy-text-link" href="{{ routes.root_url }}?view=support">DELIVERY, RETURNS & CONTACT →</a>
     </div>
