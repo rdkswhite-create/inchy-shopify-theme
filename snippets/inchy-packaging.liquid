@@ -1,0 +1,10 @@
+{% comment %}Canonical, unmodified pouch photograph from the original INCHY landing page.{% endcomment %}
+<img
+  class="{{ image_class }}"
+  src="{{ 'inchy-pouch.jpg' | asset_url }}"
+  width="928"
+  height="1152"
+  loading="{{ loading | default: 'lazy' }}"
+  {% if loading == 'eager' %}fetchpriority="high"{% endif %}
+  alt="INCHY sacha inchi pouch — white resealable packaging with black inchy wordmark"
+>

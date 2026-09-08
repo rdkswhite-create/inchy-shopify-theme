@@ -35,7 +35,10 @@ body:has(.inchy-shell) .footer {
 }
 
 .inchy-nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 20px; }
-.inchy-brand { color: inherit; font: 900 34px/.9 Arial, sans-serif; letter-spacing: -.07em; text-decoration: none; }
+.inchy-brand { display: block; flex-shrink: 0; width: 94px; color: inherit; text-decoration: none; }
+.inchy-logo { display: block; color: inherit; }
+.inchy-logo svg { display: block; width: 100%; height: auto; }
+.inchy-logo--inline { display: inline-block; width: 2.4em; vertical-align: -.18em; }
 .inchy-nav nav, .inchy-footer nav { display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; }
 .inchy-nav nav { justify-content: flex-end; }
 .inchy-nav nav a, .inchy-footer nav a { color: inherit; font: 14px/1.3 'Courier New', monospace; text-decoration: none; padding-block: 12px; }
@@ -50,11 +53,9 @@ body:has(.inchy-shell) .footer {
 }
 
 .inchy-wordmark {
-  font-size: clamp(92px, 16vw, 250px);
-  font-weight: 900;
-  line-height: .72;
-  letter-spacing: -.095em;
-  transform: translateX(-.04em);
+  width: min(76vw, 900px);
+  max-width: 100%;
+  margin-inline: auto;
 }
 
 .inchy-hero__product {
@@ -96,6 +97,7 @@ body:has(.inchy-shell) .footer {
   padding: 0 38px;
   align-items: center;
   justify-content: center;
+  gap: .5em;
   border: 1px solid var(--inchy-black);
   color: white;
   background: var(--inchy-black);
@@ -311,12 +313,13 @@ body:has(.inchy-shell) .footer {
 .inchy-faq details:last-child { border-bottom: 1px solid var(--inchy-line); }
 .inchy-faq summary { display: flex; padding: 18px 6px; align-items: center; justify-content: space-between; list-style: none; cursor: pointer; font-family: 'Courier New', monospace; font-size: 14px; font-weight: 700; letter-spacing: .03em; }
 .inchy-faq summary::-webkit-details-marker { display: none; }
-.inchy-faq details[open] summary span { transform: rotate(45deg); }
+.inchy-faq details[open] .inchy-faq__toggle { transform: rotate(45deg); }
+.inchy-faq__question { padding-right: 18px; }
 .inchy-faq__answer { max-width: 760px; padding: 0 6px 24px; font-size: 17px; line-height: 1.5; color: var(--inchy-muted); }
 
 @media screen and (max-width: 749px) {
   .inchy-shell { width: min(100% - 24px, 1440px); }
-  .inchy-wordmark { font-size: 28vw; }
+  .inchy-wordmark { width: 100%; }
   .inchy-hero__product { width: min(78vw, 440px); }
   .inchy-stats { grid-template-columns: repeat(2, 1fr); font-size: 12px; }
   .inchy-stats li:nth-child(3), .inchy-stats li:nth-child(4) { border-top: 1px solid var(--inchy-line); }

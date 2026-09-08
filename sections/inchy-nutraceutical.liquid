@@ -3,21 +3,17 @@
     <span class="inchy-number">02</span>
     <div>
       <h2>THE NUTRACEUTICAL</h2>
-      <p>What INCHY is. What goes into it.</p>
+      <p>What {% render 'inchy-logo', inline: true %} is. What goes into it.</p>
     </div>
   </header>
 
   <div class="inchy-info-panel">
     <div class="inchy-info-panel__image">
-      {% if section.settings.image != blank %}
-        {{ section.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '420, 700, 1000', alt: 'INCHY pouch' }}
-      {% else %}
-        <img src="{{ 'inchy-pouch.jpg' | asset_url }}" width="1254" height="1254" loading="lazy" alt="INCHY pouch">
-      {% endif %}
+      {% render 'inchy-packaging' %}
     </div>
     <div class="inchy-info-panel__copy">
-      <h2>WHAT IS INCHY?</h2>
-      <p>INCHY begins with sacha inchi. Our process turns its protein and fibre into an unflavoured nutraceutical powder, designed to mix into food or drinks.</p>
+      <h2>WHAT IS {% render 'inchy-logo', inline: true %}?</h2>
+      <p>{% render 'inchy-logo', inline: true %} begins with sacha inchi. Our process turns its protein and fibre into an unflavoured nutraceutical powder, designed to mix into food or drinks.</p>
       <dl class="inchy-facts">
         <div><dt>PLANT</dt><dd>SACHA INCHI</dd></div>
         <div><dt>FOCUS</dt><dd>SATIETY</dd></div>
@@ -32,7 +28,7 @@
 {% schema %}
 {
   "name": "INCHY nutraceutical",
-  "settings": [{ "type": "image_picker", "id": "image", "label": "Product image" }],
+  "settings": [{ "type": "paragraph", "content": "The reference pouch image is shared across all INCHY sections." }],
   "presets": [{ "name": "INCHY nutraceutical" }]
 }
 {% endschema %}

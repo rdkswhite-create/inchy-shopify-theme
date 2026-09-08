@@ -1,0 +1,7 @@
+{% comment %}Use for visible brand copy only, never URLs, metadata or botanical names.{% endcomment %}
+{%- capture wordmark -%}{%- render 'inchy-logo', inline: true -%}{%- endcapture -%}
+{%- if rich_text -%}
+  {{- text | replace: 'INCHY', '[BRAND_WORDMARK]' | replace: 'Inchy', '[BRAND_WORDMARK]' | replace: '[BRAND_WORDMARK]', wordmark -}}
+{%- else -%}
+  {{- text | escape | replace: 'INCHY', '[BRAND_WORDMARK]' | replace: 'Inchy', '[BRAND_WORDMARK]' | replace: 'inchy', '[BRAND_WORDMARK]' | replace: '[BRAND_WORDMARK]', wordmark -}}
+{%- endif -%}

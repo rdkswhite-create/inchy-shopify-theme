@@ -1,8 +1,8 @@
 <section class="inchy-shell inchy-faq" id="faq">
   {% for block in section.blocks %}
     <details {{ block.shopify_attributes }}>
-      <summary>{{ block.settings.question }} <span aria-hidden="true">+</span></summary>
-      <div class="inchy-faq__answer">{{ block.settings.answer }}</div>
+      <summary><span class="inchy-faq__question">{% render 'inchy-brand-text', text: block.settings.question %}</span> <span class="inchy-faq__toggle" aria-hidden="true">+</span></summary>
+      <div class="inchy-faq__answer">{% render 'inchy-brand-text', text: block.settings.answer, rich_text: true %}</div>
     </details>
   {% endfor %}
 </section>

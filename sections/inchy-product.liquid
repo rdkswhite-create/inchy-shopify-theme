@@ -2,14 +2,10 @@
 <section class="inchy-shell" id="shop-inchy">
   <div class="inchy-product-panel">
     <div class="inchy-product-panel__image">
-      {% if featured_product != blank and featured_product.featured_image != blank %}
-        {{ featured_product.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '420, 700, 1000', alt: featured_product.title }}
-      {% else %}
-        <img src="{{ 'inchy-pouch.jpg' | asset_url }}" width="1254" height="1254" loading="lazy" alt="INCHY pouch">
-      {% endif %}
+      {% render 'inchy-packaging' %}
     </div>
     <div class="inchy-product-panel__content">
-      <h2>{% if featured_product != blank %}{{ featured_product.title | escape }}{% else %}INCHY{% endif %}</h2>
+      <h2>{% if featured_product != blank %}{% render 'inchy-brand-text', text: featured_product.title %}{% else %}{% render 'inchy-logo', inline: true %}{% endif %}</h2>
       <p>A sacha inchi nutraceutical focused on satiety.<br>Made for everyday use.</p>
       <p class="inchy-product-spec">PROTEIN + FIBRE<br>NO SWEETENERS. NO FLAVOURS. NO ADDITIVES.</p>
 
