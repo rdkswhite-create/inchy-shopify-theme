@@ -1,4 +1,4 @@
-<article class="inchy-shell inchy-guide">
+<article class="inchy-shell inchy-guide{% if section.settings.kind == 'process' %} inchy-guide--process{% endif %}">
   <header>
     <a class="inchy-quiet-link" href="{{ routes.root_url }}">← BACK TO {% render 'inchy-logo', inline: true %}</a>
     {% case section.settings.kind %}
@@ -9,9 +9,12 @@
         <h1>A SIMPLE ADDITION.<br>AN EVERYDAY ROUTINE.</h1>
         <p>{% render 'inchy-logo', inline: true %} is an unflavoured sacha inchi nutraceutical designed to mix into food or drinks.</p>
       {% when 'process' %}
-        <p class="inchy-kicker">OUR PROPRIETARY PROCESS</p>
-        <h1>NATURE GIVES US THE SEED.<br>CARE GIVES IT FORM.</h1>
-        <p>Working with the character of sacha inchi. Shaping its possibilities for everyday life.</p>
+        <p class="inchy-kicker">FROM SACHA INCHI TO FORM1</p>
+        <h1>THE SEED IS ANCIENT.<br>THE PROCESS IS OURS.</h1>
+        <p class="inchy-guide__lede">A seed with a 3,000-year history is our starting point. FORM1 is a new expression of it—shaped around composition, taste, texture and everyday use.</p>
+        <div class="inchy-process-principles" aria-label="Process principles">
+          <span>DIRECT SOURCE</span><span>CONSIDERED TRANSFORMATION</span><span>BUILT FOR EVERYDAY USE</span>
+        </div>
       {% when 'support' %}
         <h1>HELP & CONTACT.</h1>
         <p>Questions about the product, your order or delivery? Get in touch below.</p>
