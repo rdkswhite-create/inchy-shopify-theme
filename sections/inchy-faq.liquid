@@ -1,16 +1,36 @@
 <section class="inchy-shell inchy-faq" id="faq">
+  <header class="inchy-faq__heading"><h2 class="inchy-section-title">FAQ</h2><p>Your questions, by subject.</p></header>
+  {% assign faq_categories = 'product,routine,research,origin' | split: ',' %}
+  {% for category in faq_categories %}
+    {% assign category_count = 0 %}
+    {% for block in section.blocks %}
+      {% assign block_category = block.settings.category | default: 'product' %}
+      {% if block_category == category %}{% assign category_count = category_count | plus: 1 %}{% endif %}
+    {% endfor %}
+    {% if category_count > 0 %}
+      <div class="inchy-faq__group">
+        <h3 class="inchy-faq__category">{% case category %}{% when 'product' %}THE PRODUCT{% when 'routine' %}TASTE &amp; ROUTINE{% when 'research' %}SATIETY &amp; RESEARCH{% when 'origin' %}ORIGIN &amp; PROCESS{% endcase %}</h3>
+        {% for block in section.blocks %}
+          {% assign block_category = block.settings.category | default: 'product' %}
+          {% if block_category == category %}
+    <details {{ block.shopify_attributes }}>
+      <summary><span class="inchy-faq__question">{% render 'inchy-brand-text', text: block.settings.question %}</span> <span class="inchy-faq__toggle" aria-hidden="true">+</span></summary>
+      <div class="inchy-faq__answer">{% render 'inchy-brand-text', text: block.settings.answer, rich_text: true %}</div>
+    </details>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endfor %}
+  <div class="inchy-faq__group">
+    <h3 class="inchy-faq__category">U.S. LAUNCH &amp; ORDERS</h3>
   {% if settings.inchy_prelaunch %}
     <details>
       <summary><span class="inchy-faq__question">WHEN CAN I ORDER IN THE UNITED STATES?</span><span class="inchy-faq__toggle" aria-hidden="true">+</span></summary>
       <div class="inchy-faq__answer"><p>Our U.S. launch is coming soon. Online ordering has not opened yet. Sign up to hear when INCHY becomes available.</p><a class="inchy-text-link" href="{{ routes.root_url }}?view=launch">NOTIFY ME AT LAUNCH →</a></div>
     </details>
   {% endif %}
-  {% for block in section.blocks %}
-    <details {{ block.shopify_attributes }}>
-      <summary><span class="inchy-faq__question">{% render 'inchy-brand-text', text: block.settings.question %}</span> <span class="inchy-faq__toggle" aria-hidden="true">+</span></summary>
-      <div class="inchy-faq__answer">{% render 'inchy-brand-text', text: block.settings.answer, rich_text: true %}</div>
-    </details>
-  {% endfor %}
+
   <details>
     <summary><span class="inchy-faq__question">DELIVERY & RETURNS</span><span class="inchy-faq__toggle" aria-hidden="true">+</span></summary>
     <div class="inchy-faq__answer">
@@ -19,19 +39,54 @@
       <a class="inchy-text-link" href="{{ routes.root_url }}?view=support">DELIVERY, RETURNS & CONTACT →</a>
     </div>
   </details>
+  </div>
 </section>
 
 {% schema %}
 {
   "name": "INCHY FAQ",
-  "max_blocks": 12,
+  "max_blocks": 50,
   "blocks": [
     {
       "type": "question",
       "name": "Question",
       "settings": [
-        { "type": "text", "id": "question", "label": "Question", "default": "WHAT IS INCHY?" },
-        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>INCHY is an unflavoured sacha inchi nutraceutical designed to mix into food or drinks.</p>" }
+        {
+          "type": "select",
+          "id": "category",
+          "label": "FAQ category",
+          "default": "product",
+          "options": [
+            {
+              "value": "product",
+              "label": "The product"
+            },
+            {
+              "value": "routine",
+              "label": "Taste & routine"
+            },
+            {
+              "value": "research",
+              "label": "Satiety & research"
+            },
+            {
+              "value": "origin",
+              "label": "Origin & process"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "WHAT IS INCHY?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>INCHY is an unflavoured sacha inchi nutraceutical designed to mix into food or drinks.</p>"
+        }
       ]
     }
   ],
@@ -39,10 +94,34 @@
     {
       "name": "INCHY FAQ",
       "blocks": [
-        { "type": "question", "settings": { "question": "WHAT DOES INCHY TASTE LIKE?", "answer": "<p>Unflavoured means no added flavour. Sacha inchi still has its own taste and texture, which can come through depending on what you mix it with.</p>" } },
-        { "type": "question", "settings": { "question": "HOW DO I USE IT?", "answer": "<p>Measure the amount stated on your pouch, add it to food or a drink and mix thoroughly. Follow the product label for serving size and frequency.</p>" } },
-        { "type": "question", "settings": { "question": "WHAT DOES THE RESEARCH SHOW?", "answer": "<p>Laboratory research has investigated how sacha inchi-derived peptides interact with DPP-IV. It was not a human trial of finished INCHY.</p>" } },
-        { "type": "question", "settings": { "question": "WHERE IS INCHY MADE?", "answer": "<p>INCHY begins with sacha inchi grown in Colombia and sourced through growers with whom we work directly.</p>" } }
+        {
+          "type": "question",
+          "settings": {
+            "question": "WHAT DOES INCHY TASTE LIKE?",
+            "answer": "<p>Unflavoured means no added flavour. Sacha inchi still has its own taste and texture, which can come through depending on what you mix it with.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "HOW DO I USE IT?",
+            "answer": "<p>Measure the amount stated on your pouch, add it to food or a drink and mix thoroughly. Follow the product label for serving size and frequency.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "WHAT DOES THE RESEARCH SHOW?",
+            "answer": "<p>Laboratory research has investigated how sacha inchi-derived peptides interact with DPP-IV. It was not a human trial of finished INCHY.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "WHERE IS INCHY MADE?",
+            "answer": "<p>INCHY begins with sacha inchi grown in Colombia and sourced through growers with whom we work directly.</p>"
+          }
+        }
       ]
     }
   ]
