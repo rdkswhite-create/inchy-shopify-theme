@@ -268,7 +268,7 @@
   display: block;
   margin: 22px 0 28px;
   font-family: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 300;
   line-height: 1;
   letter-spacing: .3em;
@@ -288,7 +288,7 @@
   .inchy-origin-feature__story { grid-template-columns: 1fr; gap: 28px; }
   .inchy-origin-feature__story > div { border-left: 0; padding-left: 0; }
   .inchy-origin-feature__story p { font-size: 18px; }
-  .inchy-form-name { margin-top: 18px; font-size: 19px; letter-spacing: .28em; }
+  .inchy-form-name { margin-top: 18px; font-size: 18px; letter-spacing: .28em; }
 }
 
 .inchy-product-panel__content .inchy-form-identity { width: 100%; max-width: 460px; }
