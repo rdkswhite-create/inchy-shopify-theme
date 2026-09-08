@@ -148,7 +148,11 @@
   line-height: .94;
   letter-spacing: -.055em;
 }
-.inchy-guide--process .inchy-guide__lede { max-width: 790px; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.45; }
+.inchy-guide--process .inchy-process-title { font-family: Arial, Helvetica, sans-serif; }
+.inchy-process-title span { display: block; }
+.inchy-process-title span:first-child { font-weight: 650; }
+.inchy-process-title span:last-child { font-weight: 300; }
+.inchy-guide--process .inchy-guide__lede { max-width: 1040px; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.45; }
 .inchy-process-principles { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 42px; border-block: 1px solid var(--inchy-line); }
 .inchy-process-principles span { padding: 18px 20px; font: 13px/1.4 'Courier New', monospace; letter-spacing: .08em; text-align: center; }
 .inchy-process-principles span + span { border-left: 1px solid var(--inchy-line); }
