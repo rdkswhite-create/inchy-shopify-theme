@@ -264,7 +264,15 @@
 }
 
 /* FORM1 product identity and immersive biodiversity chapter. */
-.inchy-form-name { display: block; margin: 14px 0 24px; font: 300 20px/1.4 Arial, sans-serif; letter-spacing: .28em; }
+.inchy-form-name {
+  display: block;
+  margin: 22px 0 28px;
+  font-family: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: .3em;
+}
 .inchy-form-identity { max-width: 360px; text-align: center; }
 .inchy-form-identity .inchy-logo { display: block; width: 100%; }
 .inchy-form-identity img, .inchy-form-identity svg { width: 100%; height: auto; }
@@ -280,9 +288,15 @@
   .inchy-origin-feature__story { grid-template-columns: 1fr; gap: 28px; }
   .inchy-origin-feature__story > div { border-left: 0; padding-left: 0; }
   .inchy-origin-feature__story p { font-size: 18px; }
-  .inchy-form-name { font-size: 17px; }
+  .inchy-form-name { margin-top: 18px; font-size: 19px; letter-spacing: .28em; }
 }
 
 .inchy-product-panel__content .inchy-form-identity { width: 100%; max-width: 460px; }
 
-.inchy-intro__copy > .inchy-form-intro { margin-top: 30px; margin-bottom: 18px; }
+.inchy-intro__copy > .inchy-form-intro {
+  margin-top: 36px;
+  margin-bottom: 20px;
+  font-family: 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: .16em;
+}
