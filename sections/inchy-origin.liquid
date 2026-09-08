@@ -1,0 +1,38 @@
+<section class="inchy-shell inchy-numbered" id="origin">
+  <header class="inchy-numbered__header inchy-numbered__header--compact">
+    <span class="inchy-number">04</span>
+    <div>
+      <h2>THE ORIGIN</h2>
+      <p>The plant. The people. The process.</p>
+    </div>
+  </header>
+
+  <div class="inchy-origin-panel">
+    <div class="inchy-origin-panel__image">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '500, 800, 1200', alt: 'Botanical illustration of Plukenetia volubilis' }}
+      {% else %}
+        <img src="{{ 'inchy-botanical.jpg' | asset_url }}" width="1254" height="1254" loading="lazy" alt="Botanical illustration of Plukenetia volubilis">
+      {% endif %}
+      <span class="inchy-citation">SACHA INCHI / COLOMBIA</span>
+    </div>
+    <div class="inchy-origin-panel__copy">
+      <h2>ROOTED IN<br>BIODIVERSITY</h2>
+      <p><em>Plukenetia volubilis</em>, known as sacha inchi, is grown in Colombia.</p>
+      <p>Premium, high-quality sacha inchi was difficult to source. That’s why we helped establish a growers association. We work directly with its members, with quality as our shared priority.</p>
+      <p>Through our proprietary process, we transform it into a high-quality functional ingredient designed to mix into a wide range of food and drinks.</p>
+      {% if section.settings.origin_link != blank %}<a class="inchy-text-link" href="{{ section.settings.origin_link }}">OUR ORIGIN →</a>{% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "INCHY origin",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Botanical image" },
+    { "type": "url", "id": "origin_link", "label": "Origin page link" }
+  ],
+  "presets": [{ "name": "INCHY origin" }]
+}
+{% endschema %}

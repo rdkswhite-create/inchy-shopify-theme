@@ -1,0 +1,13 @@
+{
+  "name": "INCHY header",
+  "type": "header",
+  "sections": {
+    "header": {
+      "type": "inchy-header",
+      "settings": {}
+    }
+  },
+  "order": [
+    "header"
+  ]
+}

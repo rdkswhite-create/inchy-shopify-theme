@@ -1,0 +1,13 @@
+{
+  "name": "INCHY footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "inchy-footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,36 @@
+<section class="inchy-shell inchy-faq" id="faq">
+  {% for block in section.blocks %}
+    <details {{ block.shopify_attributes }}>
+      <summary>{{ block.settings.question }} <span aria-hidden="true">+</span></summary>
+      <div class="inchy-faq__answer">{{ block.settings.answer }}</div>
+    </details>
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "INCHY FAQ",
+  "max_blocks": 8,
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "question", "label": "Question", "default": "WHAT IS INCHY?" },
+        { "type": "richtext", "id": "answer", "label": "Answer", "default": "<p>INCHY is an unflavoured sacha inchi nutraceutical designed to mix into food or drinks.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "INCHY FAQ",
+      "blocks": [
+        { "type": "question", "settings": { "question": "WHAT DOES INCHY TASTE LIKE?", "answer": "<p>INCHY is unflavoured and designed to sit quietly inside what you already eat or drink.</p>" } },
+        { "type": "question", "settings": { "question": "HOW DO I USE IT?", "answer": "<p>Add one measured serving to food or a drink and mix thoroughly.</p>" } },
+        { "type": "question", "settings": { "question": "WHAT DOES THE RESEARCH SHOW?", "answer": "<p>Laboratory research has investigated how sacha inchi-derived peptides interact with DPP-IV. It was not a human trial of finished INCHY.</p>" } },
+        { "type": "question", "settings": { "question": "WHERE IS INCHY MADE?", "answer": "<p>INCHY begins with sacha inchi grown in Colombia and sourced through growers with whom we work directly.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

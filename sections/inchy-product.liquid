@@ -1,0 +1,42 @@
+{% assign featured_product = section.settings.product %}
+<section class="inchy-shell" id="shop-inchy">
+  <div class="inchy-product-panel">
+    <div class="inchy-product-panel__image">
+      {% if featured_product != blank and featured_product.featured_image != blank %}
+        {{ featured_product.featured_image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '420, 700, 1000', alt: featured_product.title }}
+      {% else %}
+        <img src="{{ 'inchy-pouch.jpg' | asset_url }}" width="1254" height="1254" loading="lazy" alt="INCHY pouch">
+      {% endif %}
+    </div>
+    <div class="inchy-product-panel__content">
+      <h2>{% if featured_product != blank %}{{ featured_product.title | escape }}{% else %}INCHY{% endif %}</h2>
+      <p>A sacha inchi nutraceutical focused on satiety.<br>Made for everyday use.</p>
+      <p class="inchy-product-spec">PROTEIN + FIBRE<br>NO SWEETENERS. NO FLAVOURS. NO ADDITIVES.</p>
+
+      {% if featured_product != blank %}
+        <p class="inchy-price">{% if featured_product.price_varies %}From {% endif %}{{ featured_product.price_min | money }}</p>
+        {% if featured_product.has_only_default_variant and featured_product.selling_plan_groups.size == 0 %}
+        {% form 'product', featured_product, class: 'inchy-product-form' %}
+          <input type="hidden" name="id" value="{{ featured_product.selected_or_first_available_variant.id }}">
+          <button class="inchy-button inchy-button--wide" type="submit" {% unless featured_product.available %}disabled{% endunless %}>
+            {% if featured_product.available %}ADD TO BAG{% else %}SOLD OUT{% endif %}
+          </button>
+        {% endform %}
+        {% else %}
+          <a class="inchy-button inchy-button--wide" href="{{ featured_product.url }}">CHOOSE OPTIONS</a>
+        {% endif %}
+      {% else %}
+        {% if request.design_mode %}<p>Select the INCHY product in this section’s settings to enable purchasing.</p>{% endif %}
+        <button class="inchy-button inchy-button--wide" type="button" disabled>COMING SOON</button>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "INCHY product",
+  "settings": [{ "type": "product", "id": "product", "label": "Featured product" }],
+  "presets": [{ "name": "INCHY product" }]
+}
+{% endschema %}

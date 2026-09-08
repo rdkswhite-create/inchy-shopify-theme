@@ -1,0 +1,36 @@
+<section class="inchy-shell inchy-numbered" id="how-to-use">
+  <header class="inchy-numbered__header inchy-numbered__header--compact">
+    <span class="inchy-number">03</span>
+    <div>
+      <h2>THE ROUTINE</h2>
+      <p>Made for everyday use.</p>
+    </div>
+  </header>
+
+  <h2 class="inchy-section-statement">ADD IT TO WHAT YOU ALREADY EAT.</h2>
+  <div class="inchy-routine-grid">
+    {% assign routine_image = section.settings.image %}
+    {% for step in (1..3) %}
+      <figure class="inchy-routine-step inchy-routine-step--{{ step }}">
+        {% if routine_image != blank %}
+          {{ routine_image | image_url: width: 1800 | image_tag: loading: 'lazy', widths: '700, 1100, 1800', alt: 'Ways to add INCHY to an everyday routine' }}
+        {% else %}
+          <img src="{{ 'inchy-routine.jpg' | asset_url }}" width="1942" height="809" loading="lazy" alt="Ways to add INCHY to an everyday routine">
+        {% endif %}
+        <figcaption>
+          <span>0{{ step }}</span>
+          {% case step %}{% when 1 %}ADD{% when 2 %}MIX{% when 3 %}CONTINUE{% endcase %}
+        </figcaption>
+      </figure>
+    {% endfor %}
+  </div>
+  <p class="inchy-routine-note">One measured serving. Once daily, as part of your routine.</p>
+</section>
+
+{% schema %}
+{
+  "name": "INCHY routine",
+  "settings": [{ "type": "image_picker", "id": "image", "label": "Routine image" }],
+  "presets": [{ "name": "INCHY routine" }]
+}
+{% endschema %}

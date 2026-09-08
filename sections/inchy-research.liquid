@@ -1,0 +1,48 @@
+<section class="inchy-shell inchy-numbered" id="research">
+  <header class="inchy-numbered__header">
+    <span class="inchy-number">01</span>
+    <div>
+      <h2>THE RESEARCH</h2>
+      <p>Sacha inchi peptides have been investigated in laboratory research.</p>
+    </div>
+    <div class="inchy-limit">
+      <span>STUDY LIMITATIONS</span>
+      <p>Laboratory findings do not establish effects in people taking INCHY.</p>
+    </div>
+  </header>
+
+  <div class="inchy-research-card">
+    <div class="inchy-research-card__finding">
+      <span class="inchy-mono-label">RESEARCH SHOWS</span>
+      <p class="inchy-research-finding">Sacha inchi meal-derived peptides demonstrated DPP-IV inhibitory activity in laboratory studies.</p>
+      <p class="inchy-citation">LABORATORY RESEARCH / IN VITRO</p>
+      {% if section.settings.evidence_link != blank %}
+        <a class="inchy-text-link" href="{{ section.settings.evidence_link }}">EXPLORE THE EVIDENCE →</a>
+      {% endif %}
+    </div>
+    <div class="inchy-research-card__meaning">
+      <div>
+        <h3>WHY IT MATTERS</h3>
+        <p>GLP-1 is a hormone that helps signal fullness. An enzyme called DPP-IV breaks it down.</p>
+      </div>
+      <div>
+        <h3>WHAT DOES THIS MEAN?</h3>
+        <p>In laboratory tests, small fragments of sacha inchi protein, called peptides, slowed this enzyme’s activity. In principle, slowing that breakdown could allow GLP-1 to stay active for longer. This study did not establish that effect in people.</p>
+      </div>
+      <div>
+        <h3>WHAT THIS DOES NOT PROVE</h3>
+        <p>This was not a human trial of finished INCHY.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "INCHY research",
+  "settings": [
+    { "type": "url", "id": "evidence_link", "label": "Evidence page link" }
+  ],
+  "presets": [{ "name": "INCHY research" }]
+}
+{% endschema %}

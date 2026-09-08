@@ -1,0 +1,38 @@
+<section class="inchy-shell inchy-numbered" id="what-is-inchy">
+  <header class="inchy-numbered__header inchy-numbered__header--compact">
+    <span class="inchy-number">02</span>
+    <div>
+      <h2>THE NUTRACEUTICAL</h2>
+      <p>What INCHY is. What goes into it.</p>
+    </div>
+  </header>
+
+  <div class="inchy-info-panel">
+    <div class="inchy-info-panel__image">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '420, 700, 1000', alt: 'INCHY pouch' }}
+      {% else %}
+        <img src="{{ 'inchy-pouch.jpg' | asset_url }}" width="1254" height="1254" loading="lazy" alt="INCHY pouch">
+      {% endif %}
+    </div>
+    <div class="inchy-info-panel__copy">
+      <h2>WHAT IS INCHY?</h2>
+      <p>INCHY begins with sacha inchi. Our process turns its protein and fibre into an unflavoured nutraceutical powder, designed to mix into food or drinks.</p>
+      <dl class="inchy-facts">
+        <div><dt>PLANT</dt><dd>SACHA INCHI</dd></div>
+        <div><dt>FOCUS</dt><dd>SATIETY</dd></div>
+        <div><dt>FORMAT</dt><dd>UNFLAVOURED POWDER</dd></div>
+        <div><dt>CONTAINS</dt><dd>NO SWEETENERS. NO FLAVOURS. NO ADDITIVES.</dd></div>
+      </dl>
+      <p class="inchy-mono-label">NUTRACEUTICAL / NOT A DRUG</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "INCHY nutraceutical",
+  "settings": [{ "type": "image_picker", "id": "image", "label": "Product image" }],
+  "presets": [{ "name": "INCHY nutraceutical" }]
+}
+{% endschema %}
