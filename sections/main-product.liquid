@@ -103,10 +103,11 @@
                   </p>
                 {%- when 'title' -%}
                   <div class="product__title" {{ block.shopify_attributes }}>
-                    <h1>{% render 'inchy-brand-text', text: product.title %}</h1>
+                    {% assign inchy_display_title = product.title | split: '|' | first | strip %}
+                    <h1>{% render 'inchy-brand-text', text: inchy_display_title %}</h1>
                     <a href="{{ product.url }}" class="product__title">
                       <h2 class="h1">
-                        {% render 'inchy-brand-text', text: product.title %}
+                        {% render 'inchy-brand-text', text: inchy_display_title %}
                       </h2>
                     </a>
                   </div>

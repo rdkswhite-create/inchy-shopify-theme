@@ -2,6 +2,7 @@
   <a class="inchy-brand" href="{{ routes.root_url }}" aria-label="INCHY home">{% render 'inchy-logo' %}</a>
   <nav class="inchy-desktop-nav" aria-label="Main navigation">{% render 'inchy-navigation' %}</nav>
   <div class="inchy-nav__actions">
+    <a class="inchy-mobile-shop" href="{% render 'inchy-shop-url' %}">SHOP</a>
     <details class="inchy-mobile-menu">
       <summary>MENU</summary>
       <nav aria-label="Mobile navigation">{% render 'inchy-navigation' %}</nav>
@@ -10,5 +11,5 @@
   </div>
 </header>
 {% schema %}
-{"name":"INCHY header","settings":[],"enabled_on":{"groups":["header"]}}
+{"name":"INCHY header","class":"inchy-header-section","settings":[],"enabled_on":{"groups":["header"]}}
 {% endschema %}

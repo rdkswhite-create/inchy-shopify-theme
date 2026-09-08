@@ -12,7 +12,7 @@ The product page uses the store product description for confirmed ingredients, l
 
 ## Homepage and guides
 
-The homepage has a compact hero, short product/research/routine/origin introductions, a purchase section and FAQs. Longer explanations are served through Shopify alternate index templates, so no separate admin Page records are required:
+The homepage opens with an oversized centred wordmark and a tightly framed, larger pouch on white. A sticky header keeps shopping accessible on desktop and mobile. The four aligned product/research/routine/origin sections retain their spacious explanations; the routine images are labelled as three uses rather than a preparation sequence. The purchase block and product page display the part of the product title before a `|`, while the complete catalog title remains available to metadata. Longer explanations are served through Shopify alternate index templates, so no separate admin Page records are required:
 
 - `/?view=research`: original study, plain-language explanation and limitations.
 - `/?view=how-to-use`: label-led directions, mixing ideas, storage and suitability information.

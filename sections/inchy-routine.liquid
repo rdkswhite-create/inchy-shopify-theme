@@ -6,20 +6,21 @@
   <div class="inchy-routine-grid">
     {% assign routine_image = section.settings.image %}
     {% for step in (1..3) %}
+      {% capture routine_alt %}{% case step %}{% when 1 %}INCHY powder added to yogurt{% when 2 %}INCHY powder added to oats{% when 3 %}INCHY powder stirred into a drink{% endcase %}{% endcapture %}
       <figure class="inchy-routine-step inchy-routine-step--{{ step }}">
         {% if routine_image != blank %}
-          {{ routine_image | image_url: width: 1800 | image_tag: loading: 'lazy', widths: '700, 1100, 1800', alt: 'Ways to add INCHY to an everyday routine' }}
+          {{ routine_image | image_url: width: 1800 | image_tag: loading: 'lazy', widths: '700, 1100, 1800', alt: routine_alt }}
         {% else %}
-          <img src="{{ 'inchy-routine.jpg' | asset_url }}" width="1942" height="809" loading="lazy" alt="Ways to add INCHY to an everyday routine">
+          <img src="{{ 'inchy-routine.jpg' | asset_url }}" width="1942" height="809" loading="lazy" alt="{{ routine_alt | escape }}">
         {% endif %}
         <figcaption>
           <span>0{{ step }}</span>
-          {% case step %}{% when 1 %}MEASURE{% when 2 %}MIX{% when 3 %}MAKE IT A ROUTINE{% endcase %}
+          {% case step %}{% when 1 %}IN YOGURT{% when 2 %}IN OATS{% when 3 %}IN A DRINK{% endcase %}
         </figcaption>
       </figure>
     {% endfor %}
   </div>
-  <p class="inchy-routine-note">Add to food or a drink. Follow the serving directions on your pouch.</p>
+  <p class="inchy-routine-note">One nutraceutical. Different ways to use it.<br>Measure the serving stated on your pouch, add it to food or a drink, and mix thoroughly.</p>
 </section>
 
 {% schema %}
