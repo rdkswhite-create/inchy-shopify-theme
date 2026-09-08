@@ -169,6 +169,7 @@
 .inchy-process-details p { font-size: 16px; line-height: 1.55; }
 .inchy-process-step--result { margin-top: 18px; padding: 58px 44px; border: 0; background: var(--inchy-black); color: var(--inchy-paper); }
 .inchy-process-step--result .inchy-process-step__number { color: #9a9a9a; }
+.inchy-guide--process .inchy-process-step--result h2 { color: var(--inchy-paper); }
 .inchy-process-conclusion { margin-block: 34px 28px !important; padding-top: 28px; border-top: 1px solid #555; font: 18px/1.5 'Courier New', monospace !important; letter-spacing: .06em; }
 .inchy-process-step--result .inchy-text-link { color: white; }
 .inchy-policy-copy { overflow-wrap: anywhere; }
