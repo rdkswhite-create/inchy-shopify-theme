@@ -143,7 +143,7 @@
 .inchy-guide--process > header h1 {
   max-width: 980px;
   margin-block: 24px 28px;
-  font-size: clamp(52px, 7vw, 94px);
+  font-size: clamp(52px, 6vw, 84px);
   font-weight: 500;
   line-height: .94;
   letter-spacing: -.055em;
@@ -152,6 +152,9 @@
 .inchy-process-title span { display: block; }
 .inchy-process-title span:first-child { font-weight: 650; }
 .inchy-process-title span:last-child { font-weight: 300; }
+@media (min-width: 750px) {
+  .inchy-process-title span { white-space: nowrap; }
+}
 .inchy-guide--process .inchy-guide__lede { max-width: 1040px; font-size: clamp(20px, 2.2vw, 27px); line-height: 1.45; }
 .inchy-process-principles { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 42px; border-block: 1px solid var(--inchy-line); }
 .inchy-process-principles span { padding: 18px 20px; font: 13px/1.4 'Courier New', monospace; letter-spacing: .08em; text-align: center; }
