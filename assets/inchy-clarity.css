@@ -274,3 +274,5 @@
 }
 
 .inchy-product-panel__content .inchy-form-identity { width: 100%; max-width: 460px; }
+
+.inchy-intro__copy > .inchy-form-intro { margin-top: 30px; margin-bottom: 18px; }
