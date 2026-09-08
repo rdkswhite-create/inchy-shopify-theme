@@ -26,7 +26,7 @@ The pouch image is the unmodified original landing-page asset supplied as the pa
 
 ## Shared brand assets and direct updates
 
-`assets/inchy-wordmark.svg` preserves the outline of the large wordmark in the supplied September 8 reference screenshot, without depending on a substitute system font. `snippets/inchy-logo.liquid` renders it in the header, hero, footer and visible homepage brand copy. The botanical name “sacha inchi” remains ordinary text.
+`assets/inchy-wordmark.svg` preserves the outline of the large wordmark in the supplied September 8 reference screenshot, without depending on a substitute system font. `snippets/inchy-logo.liquid` renders the standalone wordmark in the header, hero and footer. Inline brand mentions use plain uppercase INCHY in the surrounding font, including headings and Shop buttons. The botanical name “sacha inchi” remains ordinary text. GLP-1 stays uppercase. The four numbered homepage headings share `.inchy-section-title`; the origin heading comes first on both desktop and mobile.
 
 `assets/inchy-pouch.jpg` is the original 928 × 1152 landing-page pouch image, used unchanged by `snippets/inchy-packaging.liquid` in the hero and purchase section. The product page also uses it as a fallback until catalog media is supplied. Shopify catalog media is managed separately in Shopify; upload the approved pouch photograph there for consistency.
 

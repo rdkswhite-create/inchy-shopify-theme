@@ -2,7 +2,12 @@
   <div class="inchy-hero__copy">
     <h1 class="inchy-wordmark">{% render 'inchy-logo' %}</h1>
     <p class="inchy-eyebrow">{% render 'inchy-brand-text', text: section.settings.eyebrow %}</p>
-    <p class="inchy-hero__description">{% render 'inchy-brand-text', text: section.settings.body %}</p>
+    <p class="inchy-hero__description">
+      {% assign description_lines = section.settings.body | split: '. ' %}
+      {% for description_line in description_lines %}
+        <span class="inchy-hero__description-line">{% render 'inchy-brand-text', text: description_line %}{% unless forloop.last %}.{% endunless %}</span>
+      {% endfor %}
+    </p>
     <a class="inchy-button" href="{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}{% render 'inchy-shop-url' %}{% endif %}">{% render 'inchy-brand-text', text: section.settings.button_label %}</a>
     <a class="inchy-quiet-link" href="#what-is-inchy">GET TO KNOW {% render 'inchy-logo', inline: true %}</a>
   </div>
@@ -14,7 +19,7 @@
   "name": "INCHY hero",
   "settings": [
     { "type": "paragraph", "content": "The reference pouch image is shared across all INCHY sections to keep the packaging consistent." },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "NONPHARMACEUTICAL SATIETY." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "NON-PHARMACEUTICAL SATIETY." },
     { "type": "textarea", "id": "body", "label": "Description", "default": "A sacha inchi nutraceutical focused on satiety. Made for everyday use." },
     { "type": "text", "id": "button_label", "label": "Button label", "default": "SHOP INCHY" },
     { "type": "url", "id": "button_link", "label": "Button link" }

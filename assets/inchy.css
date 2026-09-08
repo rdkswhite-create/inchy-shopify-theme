@@ -146,7 +146,7 @@ body:has(.inchy-shell) .footer {
   font-size: clamp(22px, 3.2vw, 48px);
   line-height: 1.05;
   letter-spacing: -.035em;
-  text-transform: lowercase;
+  text-transform: none;
 }
 
 .inchy-numbered {

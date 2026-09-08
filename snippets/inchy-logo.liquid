@@ -1,2 +1,6 @@
-{% comment %}One font-independent wordmark matched to the supplied landing-page reference.{% endcomment %}
-<span class="inchy-logo{% if inline %} inchy-logo--inline{% endif %}" role="img" aria-label="inchy">{{ 'inchy-wordmark.svg' | inline_asset_content }}</span>
+{%- comment -%}Keep the reference wordmark for standalone logos; inline brand names use the surrounding typography.{%- endcomment -%}
+{%- if inline -%}
+  INCHY
+{%- else -%}
+  <span class="inchy-logo" role="img" aria-label="inchy">{{ 'inchy-wordmark.svg' | inline_asset_content }}</span>
+{%- endif -%}

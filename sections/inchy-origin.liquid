@@ -1,5 +1,15 @@
 <section class="inchy-shell inchy-section" id="origin">
   <div class="inchy-origin-panel">
+    <header class="inchy-origin-panel__heading">
+      <p class="inchy-kicker">04 / THE ORIGIN</p>
+      <h2 class="inchy-section-title">ROOTED IN<br>BIODIVERSITY</h2>
+    </header>
+    <div class="inchy-origin-panel__copy">
+      <p><em>Plukenetia volubilis</em>, known as sacha inchi, is grown in Colombia.</p>
+      <p>We helped establish a growers association to source premium, high-quality sacha inchi, working directly with its members through a shared commitment to quality.</p>
+      <details class="inchy-disclosure"><summary>THE PEOPLE. THE PROCESS.</summary><p>Premium, high-quality sacha inchi was difficult to source. That’s why we helped establish the association. Through our proprietary process, we transform the sacha inchi into a high-quality functional ingredient designed to mix into a wide range of food and drinks.</p></details>
+      {% if section.settings.origin_link != blank %}<a class="inchy-text-link" href="{{ section.settings.origin_link }}">OUR ORIGIN →</a>{% endif %}
+    </div>
     <div class="inchy-origin-panel__image">
       {% if section.settings.image != blank %}
         {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '500, 800, 1200', alt: 'Botanical illustration of Plukenetia volubilis' }}
@@ -7,14 +17,6 @@
         <img src="{{ 'inchy-botanical.jpg' | asset_url }}" width="1254" height="1254" loading="lazy" alt="Botanical illustration of Plukenetia volubilis">
       {% endif %}
       <span class="inchy-citation">SACHA INCHI / COLOMBIA</span>
-    </div>
-    <div class="inchy-origin-panel__copy">
-      <p class="inchy-kicker">04 / THE ORIGIN</p>
-      <h2>ROOTED IN<br>BIODIVERSITY</h2>
-      <p><em>Plukenetia volubilis</em>, known as sacha inchi, is grown in Colombia.</p>
-      <p>We helped establish a growers association to source premium, high-quality sacha inchi, working directly with its members through a shared commitment to quality.</p>
-      <details class="inchy-disclosure"><summary>THE PEOPLE. THE PROCESS.</summary><p>Premium, high-quality sacha inchi was difficult to source. That’s why we helped establish the association. Through our proprietary process, we transform the sacha inchi into a high-quality functional ingredient designed to mix into a wide range of food and drinks.</p></details>
-      {% if section.settings.origin_link != blank %}<a class="inchy-text-link" href="{{ section.settings.origin_link }}">OUR ORIGIN →</a>{% endif %}
     </div>
   </div>
 </section>
