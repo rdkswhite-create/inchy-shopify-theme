@@ -176,7 +176,7 @@
 .inchy-process-details > div + div { padding-left: 20px; border-left: 1px solid var(--inchy-line); }
 .inchy-guide--process .inchy-process-details h3 { margin-bottom: 12px; font-size: 13px; letter-spacing: .1em; }
 .inchy-process-details p { font-size: 16px; line-height: 1.55; }
-.inchy-process-step--result { margin-top: 18px; padding: 58px 44px; border: 0; background: var(--inchy-black); color: var(--inchy-paper); }
+.inchy-process-step--result { margin: 18px -44px 0; padding: 58px 44px; border: 0; background: var(--inchy-black); color: var(--inchy-paper); }
 .inchy-process-step--result .inchy-process-step__number { color: #9a9a9a; }
 .inchy-guide--process .inchy-process-step--result h2 { color: var(--inchy-paper); }
 .inchy-process-conclusion { margin-block: 34px 28px !important; padding-top: 28px; border-top: 1px solid #555; font: 18px/1.5 'Courier New', monospace !important; letter-spacing: .06em; }
