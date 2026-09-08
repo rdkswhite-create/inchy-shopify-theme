@@ -157,13 +157,14 @@
 .inchy-process-principles span { padding: 18px 20px; font: 13px/1.4 'Courier New', monospace; letter-spacing: .08em; text-align: center; }
 .inchy-process-principles span + span { border-left: 1px solid var(--inchy-line); }
 .inchy-guide--process > .inchy-guide__image { margin: 0 0 36px; aspect-ratio: 16 / 8.4; object-fit: cover; }
-.inchy-process-step { display: grid; grid-template-columns: 92px minmax(240px, .85fr) minmax(0, 1.25fr); gap: 34px; align-items: start; padding-block: 54px; border-top: 1px solid var(--inchy-line); }
+.inchy-process-step { display: grid; grid-template-columns: 92px minmax(390px, .95fr) minmax(0, 1.05fr); gap: 34px; align-items: start; padding-block: 54px; border-top: 1px solid var(--inchy-line); }
 .inchy-process-step__number { font: 300 clamp(54px, 6vw, 76px)/.85 'Arial Narrow', 'Helvetica Neue', Arial, sans-serif; letter-spacing: -.06em; }
-.inchy-process-step header { max-width: 330px; }
-.inchy-process-step__label { margin-bottom: 16px !important; font: 13px/1.4 'Courier New', monospace !important; letter-spacing: .12em; }
-.inchy-guide--process .inchy-process-step h2 { font-size: clamp(29px, 3.2vw, 43px); font-weight: 500; line-height: 1.03; letter-spacing: -.045em; }
-.inchy-process-step__copy > p { font-size: 19px; line-height: 1.58; }
-.inchy-process-step__copy > p:first-child { font-size: 22px; line-height: 1.5; }
+.inchy-process-step header { max-width: 430px; }
+.inchy-process-step__label { margin-bottom: 18px !important; font: 600 17px/1.35 'Courier New', monospace !important; letter-spacing: .1em; }
+.inchy-guide--process .inchy-process-step h2 { font-size: clamp(28px, 3vw, 40px); font-weight: 500; line-height: 1.03; letter-spacing: -.045em; }
+.inchy-process-step h2 span { display: block; white-space: nowrap; }
+.inchy-process-step__copy > p,
+.inchy-process-step__copy > p:first-child { font-size: 19px; line-height: 1.58; }
 .inchy-process-field { margin: 8px 0 54px; }
 .inchy-process-field img { display: block; width: 100%; aspect-ratio: 16 / 8.7; object-fit: cover; }
 .inchy-process-field figcaption { padding-top: 14px; font: 12px/1.5 'Courier New', monospace; letter-spacing: .08em; }
@@ -275,6 +276,7 @@
   .inchy-process-step header, .inchy-process-step__copy { grid-column: 2; }
   .inchy-process-step header { max-width: none; }
   .inchy-guide--process .inchy-process-step h2 { font-size: clamp(28px, 8vw, 38px); }
+  .inchy-process-step h2 span { white-space: normal; }
   .inchy-process-step__copy > p, .inchy-process-step__copy > p:first-child { font-size: 17px; line-height: 1.58; }
   .inchy-process-field { margin: 0 0 34px; }
   .inchy-process-field img { aspect-ratio: 4 / 3; }
