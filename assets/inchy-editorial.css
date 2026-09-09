@@ -84,3 +84,21 @@
   .inchy-shell .inchy-process-principles { grid-template-columns: 1fr; }
   .inchy-shell .inchy-process-principles span + span { border-left: 0; border-top: 1px solid var(--inchy-line); }
 }
+
+/* Keep section labels close to their headings. */
+.inchy-shell .inchy-chapter-heading > .inchy-kicker,
+#what-is-inchy .inchy-chapter-heading > .inchy-kicker {
+  margin-bottom: 8px !important;
+}
+.inchy-shell .inchy-chapter-heading > .inchy-section-title { margin-top: 0; }
+section.inchy-night--editorial .inchy-night__label,
+section.inchy-night--editorial .inchy-night__approach > .inchy-night__label {
+  margin-bottom: 10px !important;
+}
+.inchy-shell .inchy-origin-feature__story {
+  grid-template-columns: minmax(0, 1fr); gap: 28px;
+}
+.inchy-shell .inchy-origin-feature__story > h3 {
+  white-space: nowrap; font-size: clamp(18px, 5vw, 40px);
+}
+.inchy-shell .inchy-origin-feature__story > div { border-left: 0; padding-left: 0; }
