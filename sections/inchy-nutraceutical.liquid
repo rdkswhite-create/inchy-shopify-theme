@@ -22,6 +22,62 @@
   </div>
 </section>
 
+{% style %}
+  #what-is-inchy {
+    width: 100%;
+    max-width: 1024px;
+    padding: 64px 24px 80px;
+    box-sizing: border-box;
+    grid-template-columns: 66px minmax(0, 1fr);
+    gap: 48px 24px;
+    font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  }
+  #what-is-inchy .inchy-chapter__body { display: contents; }
+  #what-is-inchy .inchy-chapter__number {
+    min-height: 0;
+    align-self: stretch;
+    padding-right: 16px;
+    font: 400 44px/1.1 Inter, 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -.04em;
+  }
+  #what-is-inchy .inchy-chapter-heading { grid-column: 2; margin: 0; align-self: start; }
+  #what-is-inchy .inchy-kicker {
+    margin: 0 0 18px !important;
+    font: 300 clamp(17px, 2vw, 22px)/1.8 Inter, 'Helvetica Neue', Arial, sans-serif !important;
+    letter-spacing: .32em;
+    color: #686868;
+  }
+  #what-is-inchy .inchy-section-title,
+  #what-is-inchy .inchy-feature-heading {
+    margin: 0;
+    font: 700 clamp(25px, 3.5vw, 40px)/1.15 Inter, 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: -.035em;
+  }
+  #what-is-inchy .inchy-intro__copy { grid-column: 1 / -1; max-width: none; }
+  #what-is-inchy .inchy-seed-line { display: block; margin-top: 0; font-weight: inherit; }
+  #what-is-inchy .inchy-intro__copy p {
+    margin: 28px 0;
+    font: 300 clamp(16px, 1.8vw, 20px)/1.8 Inter, 'Helvetica Neue', Arial, sans-serif;
+    color: #585858;
+  }
+  #what-is-inchy .inchy-form-intro { margin-top: 36px; }
+  #what-is-inchy .inchy-disclosure summary,
+  #what-is-inchy .inchy-intro__copy a {
+    font: 500 13px/1.5 Inter, 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: .22em;
+  }
+  #what-is-inchy .inchy-intro__copy a { text-decoration: underline; text-underline-offset: 7px; text-decoration-thickness: 1px; }
+  #what-is-inchy .inchy-facts { margin: 48px 0 32px; }
+  #what-is-inchy .inchy-facts > div { display: block; padding: 24px 0; border-top: 1px solid #ddd; }
+  #what-is-inchy .inchy-facts > div:last-child { border-bottom: 1px solid #ddd; }
+  #what-is-inchy .inchy-facts dt { margin: 0 0 12px; font: 300 12px/1.5 Inter, 'Helvetica Neue', Arial, sans-serif; letter-spacing: .35em; color: #686868; }
+  #what-is-inchy .inchy-facts dd { margin: 0; font: 400 14px/1.8 Inter, 'Helvetica Neue', Arial, sans-serif; letter-spacing: .18em; }
+  @media (min-width: 768px) {
+    #what-is-inchy { padding-block: 88px; grid-template-columns: 96px minmax(0, 1fr); gap: 56px 32px; }
+    #what-is-inchy .inchy-chapter__number { font-size: 64px; }
+  }
+{% endstyle %}
+
 {% schema %}
 {
   "name": "INCHY nutraceutical",
