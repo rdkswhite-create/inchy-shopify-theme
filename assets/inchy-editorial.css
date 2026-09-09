@@ -102,3 +102,11 @@ section.inchy-night--editorial .inchy-night__approach > .inchy-night__label {
   white-space: nowrap; font-size: clamp(18px, 5vw, 40px);
 }
 .inchy-shell .inchy-origin-feature__story > div { border-left: 0; padding-left: 0; }
+
+/* Research labels use the same 8px heading gap as the chapter heading. */
+.inchy-shell .inchy-evidence-column { grid-row: span 4; }
+.inchy-shell .inchy-evidence-heading > .inchy-kicker { margin: 0 0 8px !important; }
+.inchy-shell .inchy-evidence-heading > .inchy-feature-heading { margin: 0; }
+@media (max-width: 989px) {
+  .inchy-shell .inchy-evidence-column { grid-row: auto; }
+}
