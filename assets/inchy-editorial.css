@@ -1,0 +1,86 @@
+/* Shared editorial typography, following the approved opener and chapter 01. */
+:root { --inchy-editorial-font: Inter, 'Helvetica Neue', Arial, sans-serif; }
+.inchy-shell, .inchy-shell *, .inchy-product-page, .inchy-product-page * {
+  font-family: var(--inchy-editorial-font) !important;
+}
+.inchy-shell.inchy-chapter {
+  width: 100%; max-width: 1024px; padding: 64px 24px 80px;
+  box-sizing: border-box; grid-template-columns: 66px minmax(0, 1fr); gap: 48px 24px;
+}
+.inchy-chapter .inchy-chapter__body { display: contents; }
+.inchy-chapter .inchy-chapter__number {
+  min-height: 0; align-self: stretch; padding-right: 16px;
+  font-size: 44px; font-weight: 400; line-height: 1.1; letter-spacing: -.04em;
+}
+.inchy-chapter .inchy-chapter-heading { grid-column: 2; margin: 0; align-self: start; }
+.inchy-chapter .inchy-chapter__body > :not(.inchy-chapter-heading) { grid-column: 1 / -1; }
+.inchy-shell .inchy-kicker, .inchy-shell .inchy-faq__category,
+.inchy-shell .inchy-process-step__label {
+  font-size: clamp(17px, 2vw, 22px) !important;
+  font-weight: 300 !important; line-height: 1.8 !important;
+  letter-spacing: .25em; margin-bottom: 18px !important;
+}
+.inchy-shell .inchy-kicker { color: #686868; }
+.inchy-shell.inchy-chapter .inchy-section-title,
+.inchy-shell .inchy-feature-heading, .inchy-shell .inchy-faq__heading h2,
+.inchy-shell .inchy-origin-feature__story > h3 {
+  font-size: clamp(25px, 3.5vw, 40px); font-weight: 700;
+  line-height: 1.15; letter-spacing: -.035em;
+}
+.inchy-chapter .inchy-era-line, .inchy-chapter .inchy-origin-feature__story p,
+.inchy-chapter .inchy-routine-note, .inchy-guide p, .inchy-guide li,
+.inchy-faq__answer, .inchy-faq__answer p, .inchy-product-panel__content > p,
+.inchy-product-information p, .inchy-product-page .product__description,
+.inchy-process-step__copy > p, .inchy-process-step__copy > p:first-child {
+  font-size: clamp(16px, 1.8vw, 20px); font-weight: 300; line-height: 1.8;
+}
+.inchy-shell .inchy-small, .inchy-shell .inchy-launch-consent,
+.inchy-shell figcaption { font-weight: 300; line-height: 1.7; }
+.inchy-shell .inchy-text-link, .inchy-shell .inchy-quiet-link,
+.inchy-shell .inchy-button, .inchy-shell button,
+.inchy-product-page .button, .inchy-product-page button {
+  font-size: 13px; font-weight: 500; line-height: 1.5; letter-spacing: .22em;
+}
+.inchy-shell .inchy-text-link, .inchy-shell .inchy-quiet-link {
+  text-decoration: underline; text-decoration-thickness: 1px;
+  text-underline-offset: 7px; border-bottom: 0; color: inherit;
+}
+.inchy-shell .inchy-disclosure summary, .inchy-shell .inchy-faq summary {
+  font-size: 14px; font-weight: 500; line-height: 1.7; letter-spacing: .12em;
+}
+.inchy-shell .inchy-facts dt { font-size: 12px; font-weight: 300; letter-spacing: .3em; }
+.inchy-shell .inchy-facts dd { font-size: 14px; font-weight: 400; letter-spacing: .16em; line-height: 1.8; }
+.inchy-shell .inchy-routine-step figcaption { font-size: 16px; font-weight: 400; letter-spacing: .18em; }
+.inchy-shell.inchy-guide { width: calc(100% - 48px); max-width: 976px; }
+.inchy-shell.inchy-guide > header { max-width: 100%; }
+.inchy-shell.inchy-guide h1 { font-size: clamp(30px, 4.6vw, 56px); line-height: 1.15; font-weight: 700; letter-spacing: -.035em; }
+.inchy-shell.inchy-guide h2 { font-size: clamp(24px, 3vw, 36px); line-height: 1.2; font-weight: 700; letter-spacing: -.03em; }
+.inchy-shell.inchy-guide h3 { font-size: 17px; font-weight: 500; line-height: 1.6; letter-spacing: .16em; }
+.inchy-shell.inchy-guide .inchy-guide__lede { font-size: clamp(16px, 1.8vw, 20px); line-height: 1.8; }
+.inchy-shell .inchy-process-step { grid-template-columns: 64px minmax(0, 1fr); gap: 28px; }
+.inchy-shell .inchy-process-step__number { font-size: 44px; font-weight: 400; line-height: 1.1; letter-spacing: -.04em; }
+.inchy-shell .inchy-process-step__copy { grid-column: 2; }
+.inchy-shell .inchy-process-step h2 span { white-space: normal; }
+.inchy-shell .inchy-process-conclusion { font-size: 18px !important; font-weight: 400; line-height: 1.7 !important; }
+.inchy-shell .inchy-process-step--result .inchy-process-step__label { color: #ccc; }
+.inchy-shell .inchy-process-principles span { font-weight: 400; letter-spacing: .14em; }
+.inchy-shell .inchy-process-details h3 { font-size: 16px; }
+.inchy-shell .inchy-process-details p { font-size: 16px; }
+.inchy-nav .inchy-desktop-nav, .inchy-footer nav { gap: 20px; }
+.inchy-nav a, .inchy-nav summary, .inchy-footer nav a {
+  font-size: 12px; font-weight: 400; letter-spacing: .12em;
+}
+.inchy-shell input, .inchy-shell textarea { font-size: 16px; }
+@media (min-width: 768px) {
+  .inchy-shell.inchy-chapter { padding-block: 88px; grid-template-columns: 96px minmax(0, 1fr); gap: 56px 32px; }
+  .inchy-chapter .inchy-chapter__number, .inchy-shell .inchy-process-step__number { font-size: 64px; }
+  .inchy-shell .inchy-process-step { grid-template-columns: 80px minmax(0, 1fr) minmax(0, 1fr); }
+  .inchy-shell .inchy-process-step__copy { grid-column: 3; }
+}
+@media (max-width: 749px) {
+  .inchy-shell .inchy-process-step { grid-template-columns: 50px minmax(0, 1fr); gap: 24px 18px; }
+  .inchy-shell .inchy-process-step__copy { grid-column: 1 / -1; }
+  .inchy-shell .inchy-process-title span { white-space: normal; }
+  .inchy-shell .inchy-process-principles { grid-template-columns: 1fr; }
+  .inchy-shell .inchy-process-principles span + span { border-left: 0; border-top: 1px solid var(--inchy-line); }
+}
