@@ -15,7 +15,7 @@
     <div class="inchy-hero__copy">
       <p class="inchy-hero__pouch-label">THE POUCH · 160 G</p>
       <p class="inchy-hero__description">Unflavoured sacha inchi powder. Protein and fibre from one seed, made for everyday use.</p>
-      {% if settings.inchy_prelaunch %}<a class="inchy-button inchy-hero__notify" href="{{ routes.root_url }}?view=launch">NOTIFY ME AT LAUNCH</a>{% endif %}
+      {% if settings.inchy_prelaunch %}<a class="inchy-quiet-link inchy-hero__notify" href="{{ routes.root_url }}?view=launch">NOTIFY ME AT LAUNCH</a>{% endif %}
     </div>
     <div class="inchy-hero__ritual" aria-label="Mix it. Drink it. Feel it."><span>MIX IT</span><span>DRINK IT</span><span>FEEL IT</span></div>
     <dl class="inchy-hero__nutrition" aria-label="Product nutrition and composition">
@@ -79,7 +79,26 @@
   section.inchy-hero--editorial .inchy-hero__copy { max-width: 780px; margin: 48px auto 0; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
   section.inchy-hero--editorial .inchy-hero__pouch-label { margin: 0; font: 300 12px/1.5 Inter, 'Helvetica Neue', Arial, sans-serif; letter-spacing: .38em; color: #686868; }
   section.inchy-hero--editorial .inchy-hero__description { margin: 22px 0 0; font: 300 clamp(17px, 2vw, 22px)/1.8 Inter, 'Helvetica Neue', Arial, sans-serif; color: #585858; text-wrap: pretty; }
-  section.inchy-hero--editorial .inchy-hero__notify { margin-top: 32px; }
+  section.inchy-hero--editorial .inchy-hero__packaging > .inchy-button,
+  section.inchy-hero--editorial .inchy-hero__notify {
+    font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: .22em;
+  }
+  section.inchy-hero--editorial .inchy-hero__notify {
+    display: block;
+    width: fit-content;
+    margin: 32px auto 0;
+    padding: 10px 0;
+    color: #111;
+    background: transparent;
+    border: 0;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 7px;
+  }
   section.inchy-hero--editorial .inchy-hero__ritual { display: flex; justify-content: center; gap: clamp(16px, 5vw, 48px); width: 100%; margin-top: 64px; font: 400 clamp(14px, 3.9vw, 23px)/1.5 Inter, 'Helvetica Neue', Arial, sans-serif; letter-spacing: .18em; }
   section.inchy-hero--editorial .inchy-hero__ritual span { white-space: nowrap; }
   section.inchy-hero--editorial .inchy-hero__nutrition { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px 24px; width: 100%; max-width: 850px; margin: 80px auto 48px; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
