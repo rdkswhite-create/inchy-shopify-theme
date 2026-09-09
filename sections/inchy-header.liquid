@@ -1,15 +1,32 @@
-<header class="inchy-shell inchy-nav">
-  <a class="inchy-brand" href="{{ routes.root_url }}" aria-label="INCHY home">{% render 'inchy-logo' %}</a>
+<header class="inchy-shell inchy-nav{% if template.name == 'index' and template.suffix == blank %} inchy-nav--reference{% endif %}">
+  <a class="inchy-brand" href="{{ routes.root_url }}" aria-label="INCHY home">{% if template.name == 'index' and template.suffix == blank %}<img src="{{ 'inchy-reference-wordmark.svg' | asset_url }}" width="1811" height="651" alt="inchy">{% else %}{% render 'inchy-logo' %}{% endif %}</a>
   <nav class="inchy-desktop-nav" aria-label="Main navigation">{% render 'inchy-navigation' %}</nav>
   <div class="inchy-nav__actions">
     <a class="inchy-mobile-shop" href="{% render 'inchy-shop-url' %}">SHOP</a>
     <details class="inchy-mobile-menu">
-      <summary>MENU</summary>
+      <summary aria-label="Open menu"><span class="inchy-menu-label">MENU</span><svg class="inchy-menu-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h16"/></svg></summary>
       <nav aria-label="Mobile navigation">{% render 'inchy-navigation' %}</nav>
     </details>
-    <a href="{{ routes.cart_url }}">BAG ({{ cart.item_count }})</a>
+    <a class="inchy-cart-link" href="{{ routes.cart_url }}">{% if template.name == 'index' and template.suffix == blank %}CART{% else %}BAG ({{ cart.item_count }}){% endif %}</a>
   </div>
 </header>
+{% style %}
+  .inchy-menu-icon { display: none; }
+  header.inchy-nav--reference { width: 100%; max-width: 1024px; padding: 20px 24px; box-sizing: border-box; min-height: 64px; border-bottom: 0; }
+  .inchy-header-section:has(.inchy-nav--reference) { border-bottom: 1px solid #e5e5e5; }
+  header.inchy-nav--reference .inchy-brand { width: 54.72px; }
+  header.inchy-nav--reference .inchy-brand img { display: block; width: 100%; height: auto; }
+  @media (max-width: 767px) {
+    header.inchy-nav--reference .inchy-desktop-nav, header.inchy-nav--reference .inchy-mobile-shop { display: none; }
+    header.inchy-nav--reference .inchy-nav__actions { gap: 20px; }
+    header.inchy-nav--reference .inchy-cart-link { order: -1; font: 300 8.8px/1.5 Inter, Arial, sans-serif; letter-spacing: .32em; padding: 0; }
+    header.inchy-nav--reference .inchy-mobile-menu { display: block; }
+    header.inchy-nav--reference .inchy-mobile-menu summary { padding: 0; list-style: none; display: flex; }
+    header.inchy-nav--reference .inchy-mobile-menu summary::-webkit-details-marker { display: none; }
+    header.inchy-nav--reference .inchy-menu-label { display: none; }
+    header.inchy-nav--reference .inchy-menu-icon { display: block; }
+  }
+{% endstyle %}
 {% schema %}
 {"name":"INCHY header","class":"inchy-header-section","settings":[],"enabled_on":{"groups":["header"]}}
 {% endschema %}

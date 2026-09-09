@@ -2,7 +2,7 @@
   {% capture hero_shop_url %}{% if section.settings.button_link != blank %}{{ section.settings.button_link }}{% else %}{% render 'inchy-shop-url' %}{% endif %}{% endcapture %}
   <div class="inchy-hero__opening">
     <div class="inchy-hero__identity">
-      <h1 class="inchy-wordmark" id="inchy-hero-title">{% render 'inchy-logo' %}</h1>
+      <h1 class="inchy-wordmark" id="inchy-hero-title"><img src="{{ 'inchy-reference-wordmark.svg' | asset_url }}" width="1811" height="651" alt="inchy"></h1>
       <p class="inchy-eyebrow" aria-label="Nonpharmaceutical satiety">
         <span>NONPHARMACEUTICAL</span>
         <span>SATIETY</span>
@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="inchy-hero__packaging">
-    <div class="inchy-hero__visual">{% render 'inchy-packaging', image_class: 'inchy-hero__product', loading: 'eager' %}</div>
+    <div class="inchy-hero__visual"><img class="inchy-hero__product" src="{{ 'inchy-reference-pouch.jpg' | asset_url }}" width="1024" height="1280" fetchpriority="high" loading="eager" alt="INCHY sacha inchi pouch"></div>
     <a class="inchy-button" href="{{ hero_shop_url | strip | escape }}">{% if settings.inchy_prelaunch %}EXPLORE INCHY FORM1{% else %}{% render 'inchy-brand-text', text: section.settings.button_label %}{% endif %}</a>
     <div class="inchy-hero__copy">
       <p class="inchy-hero__format">FORM1 · UNFLAVOURED POWDER · MIX INTO FOOD OR DRINKS</p>
@@ -20,37 +20,62 @@
 </section>
 
 {% style %}
-  .inchy-hero--editorial .inchy-hero__opening {
+  section.inchy-shell.inchy-hero--editorial {
+    width: 100%;
+    max-width: 1024px;
+    padding: 0 24px;
+    box-sizing: border-box;
+  }
+  section.inchy-hero--editorial .inchy-hero__opening {
     min-height: 0;
     align-items: flex-start;
-    padding-block: clamp(30px, 5vw, 72px) 0;
+    padding: 32px 0 64px;
   }
-  .inchy-hero--editorial .inchy-hero__identity { text-align: left; }
-  .inchy-hero--editorial .inchy-wordmark {
-    width: 74%;
-    max-width: 1060px;
+  section.inchy-hero--editorial .inchy-hero__identity { text-align: left; }
+  section.inchy-hero--editorial .inchy-wordmark {
+    width: 64.98vw;
+    max-width: none;
     margin: 0;
+    line-height: 0;
   }
-  .inchy-hero--editorial .inchy-hero__identity > .inchy-eyebrow {
-    margin: clamp(24px, 5.8vw, 68px) 0 0;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    font-size: clamp(8px, 2.1vw, 25px);
+  section.inchy-hero--editorial .inchy-wordmark img { display: block; width: 100%; height: auto; }
+  section.inchy-hero--editorial .inchy-hero__identity > .inchy-eyebrow {
+    margin: 24px 0 0;
+    font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 8.8px;
     font-weight: 300;
-    letter-spacing: .42em;
-    line-height: 1.3;
+    letter-spacing: .5em;
+    line-height: 1.5;
     color: #686868;
     white-space: nowrap;
   }
-  .inchy-hero--editorial .inchy-hero__packaging {
-    padding-block: clamp(105px, 25vw, 180px) 64px;
+  section.inchy-hero--editorial .inchy-hero__packaging {
+    padding: 0 0 64px;
   }
-  .inchy-hero--editorial .inchy-hero__visual {
-    width: min(100%, 660px);
+  section.inchy-hero--editorial .inchy-hero__visual {
+    width: min(100%, 576px);
+    aspect-ratio: auto;
+    overflow: visible;
+    margin: 0 auto;
+  }
+  section.inchy-hero--editorial .inchy-hero__product {
+    position: static;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0;
+    mix-blend-mode: normal;
   }
   .inchy-hero--editorial .inchy-quiet-link { margin-inline: auto; }
-  @media (max-width: 749px) {
-    .inchy-shell.inchy-hero--editorial { width: calc(100% - 44px); }
-    .inchy-hero--editorial .inchy-hero__visual { width: 100%; }
+  @media (min-width: 768px) {
+    section.inchy-hero--editorial .inchy-hero__opening { padding-top: 64px; }
+    section.inchy-hero--editorial .inchy-wordmark { width: min(46.17vw, 976px); }
+    section.inchy-hero--editorial .inchy-hero__identity > .inchy-eyebrow {
+      margin-top: 32px;
+      font-size: 10.88px;
+      letter-spacing: .62em;
+    }
   }
 {% endstyle %}
 
