@@ -13,9 +13,17 @@
     <div class="inchy-hero__visual"><img class="inchy-hero__product" src="{{ 'inchy-reference-pouch.jpg' | asset_url }}" width="1024" height="1280" fetchpriority="high" loading="eager" alt="INCHY sacha inchi pouch"></div>
     <a class="inchy-button" href="{{ hero_shop_url | strip | escape }}">{% if settings.inchy_prelaunch %}EXPLORE INCHY FORM1{% else %}{% render 'inchy-brand-text', text: section.settings.button_label %}{% endif %}</a>
     <div class="inchy-hero__copy">
-      <p class="inchy-hero__format">FORM1 · UNFLAVOURED POWDER · MIX INTO FOOD OR DRINKS</p>
-      {% if settings.inchy_prelaunch %}<a class="inchy-quiet-link" href="{{ routes.root_url }}?view=launch">NOTIFY ME AT LAUNCH</a>{% endif %}
+      <p class="inchy-hero__pouch-label">THE POUCH · 160 G</p>
+      <p class="inchy-hero__description">Unflavoured sacha inchi powder. Protein and fibre from one seed, made for everyday use.</p>
+      {% if settings.inchy_prelaunch %}<a class="inchy-button inchy-hero__notify" href="{{ routes.root_url }}?view=launch">NOTIFY ME AT LAUNCH</a>{% endif %}
     </div>
+    <div class="inchy-hero__ritual" aria-label="Mix it. Drink it. Feel it."><span>MIX IT</span><span>DRINK IT</span><span>FEEL IT</span></div>
+    <dl class="inchy-hero__nutrition" aria-label="Product nutrition and composition">
+      <div><dt>kcal / 30 g</dt><dd>120</dd></div>
+      <div><dt>protein</dt><dd>66%</dd></div>
+      <div><dt>fibre</dt><dd>14%</dd></div>
+      <div><dt>additives</dt><dd>0%</dd></div>
+    </dl>
   </div>
 </section>
 
@@ -68,7 +76,18 @@
     mix-blend-mode: normal;
   }
   .inchy-hero--editorial .inchy-quiet-link { margin-inline: auto; }
+  section.inchy-hero--editorial .inchy-hero__copy { max-width: 780px; margin: 48px auto 0; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+  section.inchy-hero--editorial .inchy-hero__pouch-label { margin: 0; font: 300 12px/1.5 Inter, 'Helvetica Neue', Arial, sans-serif; letter-spacing: .38em; color: #686868; }
+  section.inchy-hero--editorial .inchy-hero__description { margin: 22px 0 0; font: 300 clamp(17px, 2vw, 22px)/1.8 Inter, 'Helvetica Neue', Arial, sans-serif; color: #585858; text-wrap: pretty; }
+  section.inchy-hero--editorial .inchy-hero__notify { margin-top: 32px; }
+  section.inchy-hero--editorial .inchy-hero__ritual { display: flex; justify-content: center; gap: clamp(16px, 5vw, 48px); width: 100%; margin-top: 64px; font: 400 clamp(14px, 3.9vw, 23px)/1.5 Inter, 'Helvetica Neue', Arial, sans-serif; letter-spacing: .18em; }
+  section.inchy-hero--editorial .inchy-hero__ritual span { white-space: nowrap; }
+  section.inchy-hero--editorial .inchy-hero__nutrition { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px 24px; width: 100%; max-width: 850px; margin: 80px auto 48px; font-family: Inter, 'Helvetica Neue', Arial, sans-serif; }
+  section.inchy-hero--editorial .inchy-hero__nutrition > div { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  section.inchy-hero--editorial .inchy-hero__nutrition dt { order: 1; font-size: 10px; font-weight: 300; line-height: 1.5; letter-spacing: .35em; color: #686868; }
+  section.inchy-hero--editorial .inchy-hero__nutrition dd { margin: 0; font-size: clamp(30px, 6vw, 42px); font-weight: 400; line-height: 1.2; }
   @media (min-width: 768px) {
+    section.inchy-hero--editorial .inchy-hero__nutrition { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     section.inchy-hero--editorial .inchy-hero__opening { padding-top: 64px; }
     section.inchy-hero--editorial .inchy-wordmark { width: min(46.17vw, 976px); }
     section.inchy-hero--editorial .inchy-hero__identity > .inchy-eyebrow {
