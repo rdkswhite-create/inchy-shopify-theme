@@ -39,14 +39,16 @@
     align-items: flex-start;
     padding: 32px 0 64px;
   }
-  section.inchy-hero--editorial .inchy-hero__identity { text-align: left; }
-  section.inchy-hero--editorial .inchy-wordmark {
-    width: 64.98vw;
-    max-width: none;
-    margin: 0;
-    line-height: 0;
+  section.inchy-hero--editorial .inchy-hero__identity {
+    display: inline-grid; width: max-content; max-width: 100%; text-align: left;
   }
-  section.inchy-hero--editorial .inchy-wordmark img { display: block; width: 100%; height: auto; }
+  section.inchy-hero--editorial .inchy-wordmark {
+    position: relative; width: 100%; min-width: 0; max-width: none;
+    aspect-ratio: 1811 / 651; margin: 0; line-height: 0;
+  }
+  section.inchy-hero--editorial .inchy-wordmark img {
+    position: absolute; inset: 0; display: block; width: 100%; height: 100%;
+  }
   section.inchy-hero--editorial .inchy-hero__identity > .inchy-eyebrow {
     margin: 24px 0 0;
     font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
@@ -108,7 +110,6 @@
   @media (min-width: 768px) {
     section.inchy-hero--editorial .inchy-hero__nutrition { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     section.inchy-hero--editorial .inchy-hero__opening { padding-top: 64px; }
-    section.inchy-hero--editorial .inchy-wordmark { width: min(46.17vw, 976px); }
     section.inchy-hero--editorial .inchy-hero__identity > .inchy-eyebrow {
       margin-top: 32px;
       font-size: 18px;
