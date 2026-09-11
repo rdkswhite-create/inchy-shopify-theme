@@ -8,9 +8,9 @@
         "hero": {
           "type": "hero",
           "settings": {
-            "headline": "The seed under this company had no industry.",
-            "close": "So we're building both.",
-            "intro": "<p>INCHY FORM1 is a sacha inchi nutraceutical designed around satiety — protein and fibre from one Amazonian seed, grown in Colombia by farmers we know by name.</p>",
+            "headline": "Most companies build a product.",
+            "close": "We had to build the industry first.",
+            "intro": "<p>INCHY FORM1 is a sacha inchi nutraceutical — a non-pharmaceutical approach to satiety. Protein and fibre from one seed, native to the Amazon rainforest, grown in Colombia by farmers we know by name.</p>",
             "note": "U.S. launch soon. The first run is small — the list gets it first."
           }
         },
