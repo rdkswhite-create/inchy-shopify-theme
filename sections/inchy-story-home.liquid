@@ -118,10 +118,7 @@
 <div class="story-container story-faq-grid">
 <h2 class="story-heading" id="faq-title"><span>Questions, answered</span><span>straight.</span></h2>
 <div class="story-faq">
-<details><summary>How is INCHY different from a protein isolate?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>A protein isolate is processed to concentrate protein, usually removing much of the other seed material. INCHY keeps protein and fibre from the same seed together in one preparation. Its focus is satiety and everyday use, rather than protein content alone.</p></div></details>
-<details><summary>What does it taste like?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>Unflavoured means no added flavour. Sacha inchi still has its own taste and texture, which can come through depending on what you mix it with.</p></div></details>
-<details><summary>Is INCHY a GLP-1 medicine?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>INCHY is a sacha inchi nutraceutical powder, not a GLP-1 medicine. Our <a href="{{ routes.root_url }}?view=research">research guide</a> explains the ingredient research and what it does and does not establish about finished INCHY.</p></div></details>
-<details><summary>Why a growers association?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer">{{ block.settings.association_answer }}</div></details>
+{% render 'inchy-story-faq', association_answer: block.settings.association_answer %}
 </div>
 </div>
 </section>

@@ -1,0 +1,42 @@
+<div class="story-faq__group">
+<h3 class="story-kicker">The product</h3>
+<details><summary>HOW IS INCHY DIFFERENT FROM A PROTEIN ISOLATE?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>A protein isolate is processed to concentrate protein, usually removing much of the other seed material. INCHY is a sacha inchi nutraceutical that keeps protein and fiber from the same seed together. Its focus is satiety and everyday use, rather than protein content alone.</p></div></details>
+<details><summary>HOW IS INCHY DIFFERENT FROM ORDINARY SACHA INCHI FLOUR?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>INCHY uses our proprietary process, developed over years, to turn sacha inchi into a functional ingredient designed for everyday foods and drinks. Taste, texture and mixing are central to development. Sacha inchi flours vary in composition and processing; we do not claim that every flour is identical or inferior.</p></div></details>
+<details><summary>WHY KEEP PROTEIN AND FIBER TOGETHER?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>INCHY brings both components of the same seed into one preparation. The food matrix describes how an ingredient’s components are held together. Our processing changes the seed’s structure while retaining protein and fiber together; this alone does not prove a stronger GLP-1 response than taking them separately.</p></div></details>
+</div>
+<div class="story-faq__group">
+<h3 class="story-kicker">Taste &amp; routine</h3>
+<details><summary>WHAT DOES INCHY TASTE LIKE?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>Unflavoured means no added flavour. Sacha inchi still has its own taste and texture, which can come through depending on what you mix it with.</p></div></details>
+<details><summary>HOW DO I USE IT?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>Measure the amount stated on your pouch, add it to food or a drink and mix thoroughly. Follow the product label for serving size and frequency.</p></div></details>
+</div>
+<div class="story-faq__group">
+<h3 class="story-kicker">Satiety &amp; research</h3>
+<details><summary>WHAT DOES SATIETY MEAN?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>Satiety is the feeling of fullness after eating. It is the focus of INCHY and the subject explored in our research guide.</p></div></details>
+<details><summary>WHAT DOES THE RESEARCH SHOW?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>Protein and certain dietary fibers can stimulate GLP-1 release. Separate laboratory research has investigated sacha inchi-derived peptides and DPP-IV. These findings do not establish effects on GLP-1 or appetite in people taking INCHY. Our research page explains each subject and links to the papers.</p></div></details>
+<details><summary>HAS FINISHED INCHY BEEN TESTED IN PEOPLE?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>The studies presented on this site are not human trials of finished INCHY. They investigate particular meals, fibers or laboratory peptide preparations. They do not establish how a serving of INCHY affects GLP-1, fullness or weight.</p></div></details>
+<details><summary>IS INCHY A GLP-1 MEDICINE?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>INCHY is a sacha inchi nutraceutical powder, not a GLP-1 medicine. Our research guide explains the ingredient research and what it does and does not establish about finished INCHY.</p></div></details>
+</div>
+<div class="story-faq__group">
+<h3 class="story-kicker">Origin &amp; process</h3>
+<details><summary>WHAT DOES YOUR PROPRIETARY PROCESS CHANGE?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>Our proprietary process transforms sacha inchi into an ingredient shaped around taste, texture and everyday preparation, while keeping its protein and fiber together. It is the result of years of working with the seed.</p><p><a href="/?view=process">Explore our process</a></p></div></details>
+<details><summary>WHERE DOES YOUR SACHA INCHI COME FROM?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer"><p>INCHY begins with sacha inchi grown in Colombia and sourced through growers with whom we work directly.</p></div></details>
+<details><summary>Why a growers association?<span class="story-faq__icon" aria-hidden="true">+</span></summary><div class="story-faq__answer">{{ association_answer }}</div></details>
+</div>
+  <div class="story-faq__group">
+    <h3 class="story-kicker">U.S. LAUNCH &amp; ORDERS</h3>
+  {% if settings.inchy_prelaunch %}
+    <details>
+      <summary><span class="story-faq__question">WHEN CAN I ORDER IN THE UNITED STATES?</span><span class="story-faq__icon" aria-hidden="true">+</span></summary>
+      <div class="story-faq__answer"><p>Our U.S. launch is coming soon. Online ordering has not opened yet. Sign up to hear when INCHY becomes available.</p><a class="story-text-link" href="{{ routes.root_url }}?view=launch">NOTIFY ME AT LAUNCH →</a></div>
+    </details>
+  {% endif %}
+
+  <details>
+    <summary><span class="story-faq__question">DELIVERY & RETURNS</span><span class="story-faq__icon" aria-hidden="true">+</span></summary>
+    <div class="story-faq__answer">
+      {% if settings.inchy_prelaunch %}<p>Delivery and returns details will be available before online ordering opens for our U.S. launch.</p>{% elsif shop.shipping_policy != blank %}<p><a href="{{ shop.shipping_policy.url }}">Read the shipping policy</a> for delivery information.</p>{% else %}<p>For delivery availability, costs and timing, contact us with your country and postal code before ordering.</p>{% endif %}
+      {% if shop.refund_policy != blank %}<p><a href="{{ shop.refund_policy.url }}">Read the returns policy</a> before placing your order.</p>{% endif %}
+      <a class="story-text-link" href="{{ routes.root_url }}?view=support">DELIVERY, RETURNS & CONTACT →</a>
+    </div>
+  </details>
+  </div>
