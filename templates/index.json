@@ -1,163 +1,78 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
+  "layout": "inchy-story",
   "sections": {
-    "inchy_hero": {
-      "type": "inchy-hero",
-      "settings": {}
-    },
-    "inchy_night": {
-      "type": "inchy-night-moment",
-      "settings": {}
-    },
-    "inchy_research": {
-      "type": "inchy-research-summary",
-      "settings": {}
-    },
-    "inchy_nutraceutical": {
-      "type": "inchy-nutraceutical",
-      "settings": {}
-    },
-    "inchy_routine": {
-      "type": "inchy-routine",
-      "settings": {}
-    },
-    "inchy_experiences": {
-      "type": "inchy-experiences",
-      "settings": {}
-    },
-    "inchy_origin": {
-      "type": "inchy-origin",
-      "settings": {}
-    },
-    "inchy_product": {
-      "type": "inchy-product",
-      "settings": {}
-    },
-    "inchy_faq": {
-      "type": "inchy-faq",
+    "industry_story": {
+      "type": "inchy-story-home",
+      "settings": {},
       "blocks": {
-        "satiety": {
-          "type": "question",
+        "hero": {
+          "type": "hero",
           "settings": {
-            "category": "research",
-            "question": "WHAT DOES SATIETY MEAN?",
-            "answer": "<p>Satiety is the feeling of fullness after eating. It is the focus of INCHY and the subject explored in our research guide.</p>"
+            "headline": "Nobody built an industry for this seed.",
+            "close": "So we are.",
+            "intro": "<p>INCHY FORM1 is a sacha inchi nutraceutical designed around satiety — protein and fibre from one Amazonian seed, grown in Colombia by farmers we know by name.</p>",
+            "note": "U.S. launch soon. The first run is small — the list gets it first."
           }
         },
-        "taste": {
-          "type": "question",
+        "pouch": {
+          "type": "pouch",
           "settings": {
-            "category": "routine",
-            "question": "WHAT DOES INCHY TASTE LIKE?",
-            "answer": "<p>Unflavoured means no added flavour. Sacha inchi still has its own taste and texture, which can come through depending on what you mix it with.</p>"
+            "heading": "FORM1 · The pouch · 160 g",
+            "copy": "<p>Unflavoured sacha inchi powder. One seed's protein and fibre, kept together in one preparation. Stir it into yoghurt, oats, or a drink you already have.</p>",
+            "calories": "120",
+            "protein": "66%",
+            "fibre": "14%",
+            "additives": "0"
           }
         },
-        "use": {
-          "type": "question",
+        "problem": {
+          "type": "problem",
+          "settings": {}
+        },
+        "refusal": {
+          "type": "refusal",
+          "settings": {}
+        },
+        "industry": {
+          "type": "industry",
           "settings": {
-            "category": "routine",
-            "question": "HOW DO I USE IT?",
-            "answer": "<p>Measure the amount stated on your pouch, add it to food or a drink and mix thoroughly. Follow the product label for serving size and frequency.</p>"
+            "copy": "<p>Sacha inchi has 3,000 years of use behind it and no industry around it. No national body. No organised market. A crop can't reward the people who grow it if the market was never built.</p><p>So we're building it. A growers association in northeast Colombia. Seed bought direct, from farmers we know by name. A crop formalised — and a reason to plant again next year.</p>",
+            "founder_url": "https://www.instagram.com/reluctantruss/"
           }
         },
         "research": {
-          "type": "question",
+          "type": "research",
+          "settings": {}
+        },
+        "routine": {
+          "type": "routine",
+          "settings": {}
+        },
+        "faq": {
+          "type": "faq",
           "settings": {
-            "category": "research",
-            "question": "WHAT DOES THE RESEARCH SHOW?",
-            "answer": "<p>Protein and certain dietary fibers can stimulate GLP-1 release. Separate laboratory research has investigated sacha inchi-derived peptides and DPP-IV. These findings do not establish effects on GLP-1 or appetite in people taking INCHY. Our research page explains each subject and links to the papers.</p>"
+            "association_answer": "<p>Premium sacha inchi doesn't come from a spec sheet. It comes from the right altitude, the right soil and the right farmers. There was no organised market for this crop, so together with growers in northeast Colombia we helped establish an association to formalise it: direct purchasing, consistent quality, a reason to plant.</p>"
           }
         },
-        "medicine": {
-          "type": "question",
-          "settings": {
-            "category": "research",
-            "question": "IS INCHY A GLP-1 MEDICINE?",
-            "answer": "<p>INCHY is a sacha inchi nutraceutical powder, not a GLP-1 medicine. Our research guide explains the ingredient research and what it does and does not establish about finished INCHY.</p>"
-          }
-        },
-        "made": {
-          "type": "question",
-          "settings": {
-            "category": "origin",
-            "question": "WHERE DOES YOUR SACHA INCHI COME FROM?",
-            "answer": "<p>INCHY begins with sacha inchi grown in Colombia and sourced through growers with whom we work directly.</p>"
-          }
-        },
-        "isolate": {
-          "type": "question",
-          "settings": {
-            "category": "product",
-            "question": "HOW IS INCHY DIFFERENT FROM A PROTEIN ISOLATE?",
-            "answer": "<p>A protein isolate is processed to concentrate protein, usually removing much of the other seed material. INCHY is a sacha inchi nutraceutical that keeps protein and fiber from the same seed together. Its focus is satiety and everyday use, rather than protein content alone.</p>"
-          }
-        },
-        "flour": {
-          "type": "question",
-          "settings": {
-            "category": "product",
-            "question": "HOW IS INCHY DIFFERENT FROM ORDINARY SACHA INCHI FLOUR?",
-            "answer": "<p>INCHY uses our proprietary process, developed over years, to turn sacha inchi into a functional ingredient designed for everyday foods and drinks. Taste, texture and mixing are central to development. Sacha inchi flours vary in composition and processing; we do not claim that every flour is identical or inferior.</p>"
-          }
-        },
-        "matrix": {
-          "type": "question",
-          "settings": {
-            "category": "product",
-            "question": "WHY KEEP PROTEIN AND FIBER TOGETHER?",
-            "answer": "<p>INCHY brings both components of the same seed into one preparation. The food matrix describes how an ingredient’s components are held together. Our processing changes the seed’s structure while retaining protein and fiber together; this alone does not prove a stronger GLP-1 response than taking them separately.</p>"
-          }
-        },
-        "ip": {
-          "type": "question",
-          "settings": {
-            "category": "origin",
-            "question": "WHAT DOES YOUR PROPRIETARY PROCESS CHANGE?",
-            "answer": "<p>Our proprietary process transforms sacha inchi into an ingredient shaped around taste, texture and everyday preparation, while keeping its protein and fiber together. It is the result of years of working with the seed.</p><p><a href=\"/?view=process\">Explore our process</a></p>"
-          }
-        },
-        "human": {
-          "type": "question",
-          "settings": {
-            "category": "research",
-            "question": "HAS FINISHED INCHY BEEN TESTED IN PEOPLE?",
-            "answer": "<p>The studies presented on this site are not human trials of finished INCHY. They investigate particular meals, fibers or laboratory peptide preparations. They do not establish how a serving of INCHY affects GLP-1, fullness or weight.</p>"
-          }
+        "launch": {
+          "type": "launch",
+          "settings": {}
         }
       },
       "block_order": [
-        "satiety",
-        "isolate",
-        "flour",
-        "matrix",
-        "ip",
-        "taste",
-        "use",
+        "hero",
+        "pouch",
+        "problem",
+        "refusal",
+        "industry",
         "research",
-        "human",
-        "medicine",
-        "made"
-      ],
-      "settings": {}
+        "routine",
+        "faq",
+        "launch"
+      ]
     }
   },
   "order": [
-    "inchy_hero",
-    "inchy_night",
-    "inchy_nutraceutical",
-    "inchy_research",
-    "inchy_routine",
-    "inchy_experiences",
-    "inchy_origin",
-    "inchy_product",
-    "inchy_faq"
+    "industry_story"
   ]
 }

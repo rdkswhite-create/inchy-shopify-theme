@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f9f9f7">
+  {% render 'inchy-metadata' %}
+  {% if settings.favicon != blank %}<link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">{% endif %}
+  {{ content_for_header }}
+  {{ 'inchy-story.css' | asset_url | stylesheet_tag }}
+  {% style %}
+    @font-face { font-family:'Inchy Story Serif';src:url('{{ 'inchy-story-serif.ttf' | asset_url }}') format('truetype');font-weight:400;font-style:normal;font-display:swap; }
+    @font-face { font-family:'Inchy Story Serif';src:url('{{ 'inchy-story-serif-italic.ttf' | asset_url }}') format('truetype');font-weight:400;font-style:italic;font-display:swap; }
+  {% endstyle %}
+</head>
+<body class="story-page">
+  <a class="story-skip" href="#MainContent">Skip to content</a>
+  <header class="story-header"><div class="story-container story-header__inner">
+    <a class="story-brand" href="{{ routes.root_url }}" aria-label="INCHY home">inchy</a>
+    <a class="story-button story-header__cta" href="#first-access">Get first access</a>
+  </div></header>
+  <main id="MainContent" tabindex="-1">{{ content_for_layout }}</main>
+  <footer class="story-footer"><div class="story-container story-footer__inner">
+    <span>inchy © {{ 'now' | date: '%Y' }}</span>
+    <nav aria-label="Footer">
+      <a href="#research">Research</a><span aria-hidden="true">·</span>
+      <a href="{{ routes.root_url }}?view=process">Process</a><span aria-hidden="true">·</span>
+      <a href="#origin">Origin</a>
+      {% if shop.privacy_policy != blank %}<span aria-hidden="true">·</span><a href="{{ shop.privacy_policy.url }}">Privacy</a>{% endif %}
+    </nav>
+  </div></footer>
+</body>
+</html>
