@@ -16,18 +16,20 @@
 <body class="story-page">
   <a class="story-skip" href="#MainContent">Skip to content</a>
   <header class="story-header"><div class="story-container story-header__inner">
-    <a class="story-brand" href="{{ routes.root_url }}" aria-label="INCHY home">inchy</a>
+    <a class="story-brand" href="{{ routes.root_url }}" aria-label="INCHY home"><img src="{{ 'inchy-reference-wordmark.svg' | asset_url }}" width="1811" height="651" alt="inchy"></a>
+    <nav class="story-header__nav" aria-label="Main navigation"><a href="#product">FORM1</a><a href="#research">Research</a><a href="{{ routes.root_url }}?view=process">Our process</a></nav>
     <a class="story-button story-header__cta" href="#first-access">Get first access</a>
   </div></header>
   <main id="MainContent" tabindex="-1">{{ content_for_layout }}</main>
   <footer class="story-footer"><div class="story-container story-footer__inner">
-    <span>inchy © {{ 'now' | date: '%Y' }}</span>
+    <a class="story-brand" href="{{ routes.root_url }}" aria-label="INCHY home"><img src="{{ 'inchy-reference-wordmark.svg' | asset_url }}" width="1811" height="651" alt="inchy" loading="lazy"></a>
     <nav aria-label="Footer">
       <a href="#research">Research</a><span aria-hidden="true">·</span>
       <a href="{{ routes.root_url }}?view=process">Process</a><span aria-hidden="true">·</span>
       <a href="#origin">Origin</a>
       {% if shop.privacy_policy != blank %}<span aria-hidden="true">·</span><a href="{{ shop.privacy_policy.url }}">Privacy</a>{% endif %}
     </nav>
+    <span>© {{ 'now' | date: '%Y' }} INCHY</span>
   </div></footer>
 </body>
 </html>

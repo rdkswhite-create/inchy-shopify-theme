@@ -8,8 +8,8 @@
         "hero": {
           "type": "hero",
           "settings": {
-            "headline": "Nobody built an industry for this seed.",
-            "close": "So we are.",
+            "headline": "The seed under this company had no industry.",
+            "close": "So we're building both.",
             "intro": "<p>INCHY FORM1 is a sacha inchi nutraceutical designed around satiety — protein and fibre from one Amazonian seed, grown in Colombia by farmers we know by name.</p>",
             "note": "U.S. launch soon. The first run is small — the list gets it first."
           }
@@ -36,7 +36,7 @@
         "industry": {
           "type": "industry",
           "settings": {
-            "copy": "<p>Sacha inchi has 3,000 years of use behind it and no industry around it. No national body. No organised market. A crop can't reward the people who grow it if the market was never built.</p><p>So we're building it. A growers association in northeast Colombia. Seed bought direct, from farmers we know by name. A crop formalised — and a reason to plant again next year.</p>",
+            "copy": "<p>Sacha inchi has 3,000 years of use behind it. It was already grown, pressed, traded and sold. But the crop under this company had no organised industry to build on: no shared standard for what good looks like, no dependable purchasing a farmer could plan around.</p><p>So we're building it. A growers association in northeast Colombia. Seed bought direct, from farmers we know by name. A crop formalised — and a reason to plant again next year.</p>",
             "founder_url": "https://www.instagram.com/reluctantruss/"
           }
         },
@@ -57,11 +57,16 @@
         "launch": {
           "type": "launch",
           "settings": {}
+        },
+        "founder": {
+          "type": "founder",
+          "settings": {}
         }
       },
       "block_order": [
         "hero",
         "pouch",
+        "founder",
         "problem",
         "refusal",
         "industry",
