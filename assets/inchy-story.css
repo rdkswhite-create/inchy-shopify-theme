@@ -118,5 +118,5 @@ img{max-width:100%;height:auto;display:block}figure{margin:0}.story-container{wi
 .story-routine-photo img{height:auto;min-height:100%;top:50%;transform:translateY(-50%);object-fit:cover}
 
 .story-faq__group + .story-faq__group { margin-top: 36px; }
-.story-faq__group > .story-kicker { margin: 20px 0 8px; }
+.story-faq__group > .story-kicker { margin: 20px 0 8px; font-family: var(--story-serif); font-size: 24px; font-weight: 400; line-height: 1.3; letter-spacing: -.015em; text-transform: none; }
 .story-faq__answer p + p { margin-top: 16px; }
