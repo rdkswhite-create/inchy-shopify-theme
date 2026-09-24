@@ -7,7 +7,7 @@
   <label class="story-sr" for="{{ story_form_id }}-email">Email address</label>
   <div class="story-form__fields">
     <input type="email" id="{{ story_form_id }}-email" name="contact[email]" value="{{ form.email | escape }}" placeholder="Email address" autocomplete="email" autocapitalize="off" autocorrect="off" required aria-describedby="{{ story_form_id }}-consent{% if form.errors %} {{ story_form_id }}-error{% endif %}" {% if form.errors %}aria-invalid="true"{% endif %}>
-    <button class="story-button" type="submit" name="commit">GET FIRST ACCESS</button>
+    <button class="story-button" type="submit" name="commit">Get first access</button>
   </div>
   <p class="story-form__consent" id="{{ story_form_id }}-consent">INCHY launch emails. Unsubscribe at any time.{% if shop.privacy_policy != blank %} <a href="{{ shop.privacy_policy.url }}">Privacy policy</a>.{% endif %}</p>
 {% endform %}
