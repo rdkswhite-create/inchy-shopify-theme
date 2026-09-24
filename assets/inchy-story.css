@@ -127,6 +127,10 @@ img{max-width:100%;height:auto;display:block}figure{margin:0}.story-container{wi
 .story-section--hero .story-container { container-type:inline-size; }
 .story-heading--hero { max-width:none; width:100%; font-size:9.5cqw; line-height:.98; letter-spacing:-.035em; margin-bottom:36px; }
 .story-heading--hero .story-hero-line { display:block; white-space:nowrap; }
+@media(max-width:899px) {
+  .story-heading--hero { font-size:12.5cqw; line-height:.99; letter-spacing:-.045em; margin-bottom:42px; }
+  .story-heading--hero .story-hero-line { white-space:normal; }
+}
 @media(min-width:900px) {
   .story-section--hero { padding-block:64px 80px; min-height:calc(100svh - 100px); }
   .story-section--hero .story-container { width:calc(100% - 120px); max-width:1800px; }
