@@ -9,15 +9,15 @@
           "type": "hero",
           "settings": {
             "headline": "What happens after you eat matters.",
-            "intro": "<p>INCHY is whole-food nutrition organised around satiety — a non-pharmaceutical approach built from sacha inchi, a remarkable seed from the Amazon rainforest. Protein and fibre from the same seed, grown in Colombia by farmers we know by name.</p>",
-            "note": "U.S. launch soon. The first run is small — the list gets it first."
+            "intro": "<p>INCHY is whole-food nutrition organised around satiety. FORM1 is our unflavoured sacha inchi powder: stir it into food you already eat. Protein and fibre from the same seed, grown in Colombia by farmers we know by name.</p>",
+            "note": "U.S. launch coming soon. Join the list for launch news and an email when ordering opens."
           }
         },
         "pouch": {
           "type": "pouch",
           "settings": {
             "heading": "FORM1 · The pouch",
-            "copy": "<p>FORM1 is an unflavoured sacha inchi preparation developed around whole-food satiety. Our proprietary process transforms the seed into a powder while keeping its protein and fibre together.</p>"
+            "copy": "<p>An unflavoured sacha inchi preparation for yoghurt, oats and everyday food. Our proprietary process transforms the seed into a powder while keeping its protein and fibre together.</p>"
           }
         },
         "problem": {
@@ -26,10 +26,6 @@
         },
         "refusal": {
           "type": "refusal",
-          "settings": {}
-        },
-        "belief": {
-          "type": "belief",
           "settings": {}
         },
         "industry": {
@@ -56,22 +52,16 @@
         "launch": {
           "type": "launch",
           "settings": {}
-        },
-        "founder": {
-          "type": "founder",
-          "settings": {}
         }
       },
       "block_order": [
         "hero",
         "pouch",
-        "founder",
         "problem",
+        "routine",
         "refusal",
-        "belief",
         "industry",
         "research",
-        "routine",
         "faq",
         "launch"
       ]
