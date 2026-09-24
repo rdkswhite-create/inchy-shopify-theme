@@ -120,29 +120,3 @@ img{max-width:100%;height:auto;display:block}figure{margin:0}.story-container{wi
 .story-faq__group + .story-faq__group { margin-top: 36px; }
 .story-faq__group > .story-kicker { margin: 20px 0 8px; font-family: var(--story-serif); font-size: 24px; font-weight: 400; line-height: 1.3; letter-spacing: -.015em; text-transform: none; }
 .story-faq__answer p + p { margin-top: 16px; }
-
-/* Homepage hierarchy: whole-food satiety first, proof and origin after. */
-.story-section--hero .story-kicker { margin-bottom:22px; }
-.story-heading--hero .story-hero__first { max-width:18ch; }
-.story-heading--hero em:empty { display:none; }
-.story-stats dd { font-size:clamp(28px,3.2vw,44px); }
-.story-section--belief { background:#101510; color:#fff; }
-.story-section--belief .story-kicker { color:#aeb7af; }
-.story-belief__heading { max-width:1130px; margin-bottom:0; }
-.story-belief__heading span + span { margin-top:42px; font-style:italic; }
-.story-origin-facts { display:grid; gap:0; margin-top:48px; border-top:1px solid #617d66; }
-.story-origin-facts > div { padding:24px 0; border-bottom:1px solid #617d66; }
-.story-origin-facts h3 { margin:0 0 8px; font-size:13px; line-height:1.5; letter-spacing:.13em; text-transform:uppercase; }
-.story-origin-facts p { margin:0; color:#e1e9df; font-size:16px; line-height:1.6; }
-.story-research-close em { font:italic 400 clamp(31px,3.1vw,44px)/1.18 var(--story-serif); color:var(--story-ink); }
-.story-routine-use { display:grid; gap:0; margin:42px 0; border-top:1px solid var(--story-line); }
-.story-routine-use p { margin:0; padding:22px 0; border-bottom:1px solid var(--story-line); }
-.story-routine-use strong { font:400 27px/1.25 var(--story-serif); }
-.story-routine-close { font:italic 400 clamp(28px,3vw,42px)/1.2 var(--story-serif); max-width:900px; }
-.story-section--close { background:#101510; color:#fff; padding-block:72px 84px; }
-.story-section--close .story-kicker,.story-section--close .story-note,.story-section--close .story-form__consent { color:#aeb7af; }
-.story-section--close .story-form input[type=email] { border-color:#fff; }
-.story-section--close .story-button { background:#fff; border-color:#fff; color:#101510; }
-.story-section--close .story-button:hover { background:#e7e9e4; }
-@media(min-width:760px){.story-origin-facts,.story-routine-use{grid-template-columns:repeat(2,minmax(0,1fr))}.story-origin-facts>div:nth-child(odd),.story-routine-use>p:nth-child(odd){padding-right:32px}.story-origin-facts>div:nth-child(even),.story-routine-use>p:nth-child(even){padding-left:32px;border-left:1px solid #617d66}.story-routine-use>p:nth-child(even){border-left-color:var(--story-line)}}
-@media(min-width:900px){.story-origin-facts{grid-template-columns:repeat(4,minmax(0,1fr))}.story-origin-facts>div{padding:28px 25px;border-left:1px solid #617d66}.story-origin-facts>div:first-child{padding-left:0;border-left:0}.story-origin-facts>div:last-child{padding-right:0}.story-routine-use{grid-template-columns:repeat(3,minmax(0,1fr))}.story-routine-use>p{padding:26px}.story-routine-use>p:first-child{padding-left:0}.story-routine-use>p:nth-child(2),.story-routine-use>p:nth-child(3){border-left:1px solid var(--story-line)}.story-section--close{padding-block:88px 96px}}

@@ -8,17 +8,21 @@
         "hero": {
           "type": "hero",
           "settings": {
-            "headline": "What happens after you eat matters.",
-            "close": "",
-            "intro": "<p>INCHY is whole-food nutrition organised around satiety — a non-pharmaceutical approach built from sacha inchi, a remarkable seed native to the Amazon rainforest.</p><p>Protein and fibre from the same seed, grown in Colombia by farmers we know by name.</p>",
+            "headline": "Most companies build a product.",
+            "close": "We had to build the industry first.",
+            "intro": "<p>INCHY FORM1 is a sacha inchi nutraceutical — a non-pharmaceutical approach to satiety. Protein and fibre from one seed, native to the Amazon rainforest, grown in Colombia by farmers we know by name.</p>",
             "note": "U.S. launch soon. The first run is small — the list gets it first."
           }
         },
         "pouch": {
           "type": "pouch",
           "settings": {
-            "heading": "FORM1 · The pouch",
-            "copy": "<p>Unflavoured sacha inchi powder. Protein and fibre from the same seed, kept together in one whole-food preparation.</p>"
+            "heading": "FORM1 · The pouch · 160 g",
+            "copy": "<p>Unflavoured sacha inchi powder. One seed's protein and fibre, kept together in one preparation. Stir it into yoghurt, oats, or a drink you already have.</p>",
+            "calories": "120",
+            "protein": "66%",
+            "fibre": "14%",
+            "additives": "0"
           }
         },
         "problem": {
@@ -29,14 +33,10 @@
           "type": "refusal",
           "settings": {}
         },
-        "belief": {
-          "type": "belief",
-          "settings": {}
-        },
         "industry": {
           "type": "industry",
           "settings": {
-            "copy": "<p>Sacha inchi has been eaten for thousands of years. But the organised supply chain we needed did not exist.</p><p>So we're helping build it: a growers association in northeast Colombia, seed bought direct from farmers we know by name, and shared standards for what good looks like.</p>",
+            "copy": "<p>Sacha inchi has 3,000 years of use behind it. It was already grown, pressed, traded and sold. But the crop under this company had no organised industry to build on: no shared standard for what good looks like, no dependable purchasing a farmer could plan around.</p><p>So we're building it. A growers association in northeast Colombia. Seed bought direct, from farmers we know by name. A crop formalised — and a reason to plant again next year.</p>",
             "founder_url": "https://www.instagram.com/reluctantruss/"
           }
         },
@@ -69,7 +69,6 @@
         "founder",
         "problem",
         "refusal",
-        "belief",
         "industry",
         "research",
         "routine",
