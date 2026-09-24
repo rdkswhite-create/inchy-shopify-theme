@@ -122,6 +122,7 @@ img{max-width:100%;height:auto;display:block}figure{margin:0}.story-container{wi
 .story-faq__answer p + p { margin-top: 16px; }
 
 /* Whole-food satiety hierarchy. The established editorial identity is retained. */
+.story-formulation-pod { position:absolute; z-index:2; width:23%; height:auto; right:9%; bottom:9%; filter:drop-shadow(2px 4px 3px rgba(34,24,15,.12)); }
 .story-section--hero .story-kicker { margin-bottom:18px; }
 .story-section--hero .story-container { container-type:inline-size; }
 .story-heading--hero { max-width:none; width:100%; font-size:9.5cqw; line-height:.98; letter-spacing:-.035em; margin-bottom:36px; }
