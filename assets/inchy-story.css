@@ -138,9 +138,15 @@ img{max-width:100%;height:auto;display:block}figure{margin:0}.story-container{wi
   .story-hero__intro { max-width:none; width:100%; font-size:clamp(17px,1.3vw,20px); line-height:1.5; }
   .story-hero__intro p { text-wrap:balance; }
 }
-.story-stats div { justify-content:flex-end; }
-.story-stats dd { font-size:clamp(25px,3vw,45px); line-height:1.05; text-transform:uppercase; }
-.story-stats dt { margin-top:10px; }
+.story-stats { align-items:start; }
+.story-stats div { justify-content:flex-start; align-items:flex-start; gap:10px; }
+.story-stats div:nth-child(-n+2) { grid-column:1 / -1; }
+.story-stats dd { font-size:clamp(27px,2.3vw,36px); line-height:1.12; letter-spacing:-.02em; text-transform:uppercase; white-space:nowrap; }
+.story-stats dt { margin-top:0; color:#4c514c; font-size:clamp(15px,1.2vw,18px); line-height:1.4; }
+@media(min-width:900px) {
+  .story-stats { grid-template-columns:minmax(0,1.15fr) minmax(0,1.55fr) minmax(0,.7fr) minmax(0,.7fr); }
+  .story-stats div:nth-child(-n+2) { grid-column:auto; }
+}
 .story-section--founder { min-height:54vh; display:flex; align-items:center; background:#edf0e9; }
 .story-founder-bet blockquote { max-width:1100px; margin:0; font-size:clamp(45px,6vw,86px); line-height:1.08; }
 .story-section--belief { min-height:70vh; display:flex; align-items:center; color:#fff; background:#101510; }
