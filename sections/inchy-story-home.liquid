@@ -8,6 +8,7 @@
 <p class="story-kicker">Whole-food satiety</p>
 <h1 class="story-heading story-heading--hero" id="story-intro-title">{% if block.settings.headline == 'What happens after you eat matters.' %}<span class="story-hero-line">What happens after</span> <span class="story-hero-line">you eat matters.</span>{% else %}{{ block.settings.headline | escape }}{% endif %}</h1>
 <div class="story-copy story-hero__intro">{{ block.settings.intro }}</div>
+<a class="story-text-link story-hero-use" href="#routine">See how to use FORM1</a>
 {% render 'inchy-story-signup', instance_id: signup_instance %}
 <p class="story-note">{{ block.settings.note | escape }}</p>
 </div>
@@ -19,10 +20,12 @@
 <div class="story-product-visual">{% render 'inchy-packaging', image_class: 'story-packaging', loading: 'eager' %}</div>
 <div class="story-product-copy" id="shop-inchy">
 <p class="story-kicker">{{ block.settings.heading | escape }}</p>
-<h2 class="story-heading" id="product-title"><span>One seed.</span><span>Protein and fibre.</span></h2>
+<h2 class="story-heading" id="product-title"><span>One seed.</span><span>Made for your food.</span></h2>
 <p class="story-pouch-position">Whole-food satiety</p>
 <div class="story-copy">{{ block.settings.copy }}</div>
 {% capture story_product_url %}{% render 'inchy-shop-url' %}{% endcapture %}
+{% assign story_product_url = story_product_url | strip %}
+{% if story_product_url contains '#shop-inchy' %}{% assign story_product_url = '#process' %}{% endif %}
 <a class="story-text-link" href="{{ story_product_url | strip | escape }}">Explore FORM1</a>
 </div>
 </div>
@@ -49,7 +52,7 @@
 </div></div>
 <hr class="story-divider">
 <p class="story-kicker">Our approach</p>
-<div class="story-split"><div><h3 class="story-heading story-approach-heading">Put satiety first.</h3></div><div class="story-copy"><p>Satiety is what happens after eating — how satisfied you remain and how long the meal carries you.</p><p>Most nutrition products are organised around a nutrient. Protein. Fibre. Calories.</p><p>INCHY is organised around a human outcome.</p></div></div>
+<div class="story-split"><div><h3 class="story-heading story-approach-heading">Put satiety first.</h3></div><div class="story-copy"><p>Satiety is what happens after eating — how satisfied you remain and how long the meal carries you.</p><p>Protein and fibre explain our formulation. Satiety explains why we developed it.</p><p>A non-pharmaceutical approach, built from food.</p></div></div>
 </div>
 </section>
 {% when 'refusal' %}
@@ -64,13 +67,12 @@
 </figure>
 <div class="story-refusal story-copy">
 <p><strong>The invention is what the seed becomes.</strong></p>
-<p>Sacha inchi was already pressed for oil and sold as flour. But the seed's earthy taste and texture could dominate the food it was added to. Keeping its protein and fibre together was only half the challenge. Making that combination work in everyday food was the other half.</p>
-<p>Our process gives that combination a new expression: FORM1. Protein and fibre from the same seed, with a more neutral taste and a texture made to mix into food people already eat. Nothing added to mask it. The method stays ours; the difference belongs in your bowl.</p>
-<p><strong>The easy versions existed.</strong></p>
-<p>Isolate the protein.<br>Strip the fibre.<br>Cover the taste with vanilla and sweetener.</p>
+<p>Keeping the seed’s protein and fibre together was one challenge. Making that combination work in everyday food was the other.</p>
+<p>We developed FORM1 around taste, texture and mixing. Our process transforms sacha inchi into a powder made for food you already eat, with no added flavours to cover it up.</p>
+<p>The method stays ours; the difference belongs in your bowl.</p>
+<p><strong>The easy versions existed.</strong><br>Isolate the protein. Strip the fibre. Cover the taste with vanilla and sweetener.</p>
 <p><strong>We refused all of it.</strong></p>
-<p><strong>NO SWEETENERS · NO FLAVOURS · NO GUMS · NO EMULSIFIERS</strong></p>
-<p class="story-refusal-close">Not because we couldn't.<br>Because we wouldn't.</p>
+<p class="story-formulation-facts">NO SWEETENERS · NO FLAVOURS<br>NO GUMS · NO EMULSIFIERS</p>
 <a class="story-text-link" href="{{ routes.root_url }}?view=process">Explore our process</a>
 </div>
 </div>
@@ -92,12 +94,12 @@
 <div class="story-origin-facts">
 <div><h3>Direct relationships</h3><p>We know the farmers growing our seed.</p></div>
 <div><h3>Quality</h3><p>Shared standards for exceptional sacha inchi.</p></div>
-<div><h3>Forward contracts</h3><p>Greater certainty before farmers plant and harvest.</p></div>
+<div><h3>Our next commitment</h3><p>Working towards forward contracts, so growers can plan around dependable purchasing.</p></div>
 <div><h3>Community</h3><p>As INCHY grows, we want value created at the consumer end to travel back to where the crop begins.</p></div>
 </div>
 <p class="story-industry__statement">One company. One seed. Two things to build: the product and the system behind it.</p>
 {% comment %}Future verified metric: families under signed contract. Add only after contracts are signed; never show an estimated or placeholder count. Association's full legal name stays off the page until registration is confirmed.{% endcomment %}
-<p class="story-industry__follow">This is being built in public. Watch it happen: <a href="{{ block.settings.founder_url | default: 'https://www.instagram.com/reluctantruss/' }}" target="_blank" rel="noopener noreferrer">@reluctantruss<span class="story-sr"> (opens in a new tab)</span></a></p>
+<p class="story-industry__follow">Meet the growers. See the production decisions. Follow the work behind the first launch with <a href="{{ block.settings.founder_url | default: 'https://www.instagram.com/reluctantruss/' }}" target="_blank" rel="noopener noreferrer">@reluctantruss<span class="story-sr"> (opens in a new tab)</span></a></p>
 </div>
 </section>
 {% when 'research' %}
@@ -116,7 +118,8 @@
 <div class="story-research-item">
 <p class="story-kicker">Laboratory research</p>
 <h3>Sacha inchi peptides</h3>
-<p>Laboratory research on sacha inchi protein hydrolysates has identified peptides with DPP-IV (DPP-4) inhibitory activity. (Zhang et al., 2023.)</p>
+<details class="story-lab-detail"><summary>Read the laboratory findings</summary>
+<p>Laboratory research on sacha inchi protein hydrolysates has identified peptides with DPP-IV (DPP-4) inhibitory activity. (Zhang et al., 2023.)</p></details>
 <p class="story-evidence-limit">This was laboratory research. It was not a human trial of finished INCHY and does not establish effects on appetite, DPP-IV or GLP-1 in people.</p>
 <a class="story-text-link" href="{{ routes.root_url }}?view=research">Explore the evidence</a>
 </div>
@@ -129,16 +132,17 @@
 <div class="story-container">
 <p class="story-kicker">The routine</p>
 <h2 class="story-heading" id="routine-title"><span>Food first.</span><span>INCHY fits around it.</span></h2>
+{% if block.settings.preparation_video != blank %}
+<div class="story-preparation-video">{{ block.settings.preparation_video | video_tag: controls: true, preload: 'metadata', playsinline: true }}</div>
+{% else %}
 <div class="story-routine-grid">{% for step in (1..3) %}<figure class="story-routine-step story-routine-step--{{ step }}"><div class="story-routine-photo"><img src="{{ 'inchy-routine.jpg' | asset_url }}" width="1942" height="809" loading="lazy" alt="{% case step %}{% when 1 %}Powder added to yoghurt{% when 2 %}Powder added to oats{% when 3 %}Powder stirred into a drink{% endcase %}"></div><figcaption><span>0{{ step }}</span>{% case step %}{% when 1 %}In yoghurt{% when 2 %}In oats{% when 3 %}In a drink{% endcase %}</figcaption></figure>{% endfor %}</div>
-<div class="story-routine-stages">
-<div><h3>Before</h3><p>When light hunger begins.</p></div>
-<div><h3>During</h3><p>Add it to food.</p></div>
-<div><h3>After</h3><p>When the meal needs more staying power.</p></div>
-<div><h3>Between</h3><p>Create a pause before cravings get loud.</p></div>
+{% endif %}
+<div class="story-routine-instructions story-copy">
+<h3>Start with a bowl you already make.</h3>
+<p>Measure the serving stated on your pouch, stir thoroughly into yoghurt or oats, and make it part of your usual meal.</p>
+<p class="story-taste-note">Unflavoured means no added flavour. The seed still has its own taste and texture; what you mix it into makes a difference.</p>
 </div>
-<p class="story-copy">Stir it into yoghurt, oats, coffee or food. Or mix a small amount with water when light hunger begins.</p>
-<p class="story-routine-close">INCHY doesn’t replace the meal.<br>It helps the meal carry further.</p>
-<a class="story-text-link" href="{{ routes.root_url }}?view=how-to-use">Find your routine</a>
+<a class="story-text-link" href="{{ routes.root_url }}?view=how-to-use">Preparation &amp; serving guidance</a>
 </div>
 </section>
 {% when 'faq' %}
@@ -156,7 +160,7 @@
 <div><p class="story-kicker">Whole-food satiety</p><h2 class="story-heading" id="first-access-title">Put satiety first.</h2><p class="story-close__tagline">A non-pharmaceutical approach built from one remarkable seed.</p></div>
 <div>
 {% render 'inchy-story-signup', instance_id: signup_instance %}
-<p class="story-note">U.S. launch soon. The first run is small — the list gets it first.</p>
+<p class="story-note">U.S. launch coming soon. Join the list for launch news and an email when ordering opens.</p>
 </div>
 </div>
 </section>
@@ -170,7 +174,7 @@
   "blocks": [
     {
       "type": "hero",
-      "name": "01 · Essence",
+      "name": "The opening",
       "limit": 1,
       "settings": [
         {
@@ -183,19 +187,19 @@
           "type": "richtext",
           "id": "intro",
           "label": "Introduction",
-          "default": "<p>INCHY is whole-food nutrition organised around satiety — a non-pharmaceutical approach built from sacha inchi, a remarkable seed from the Amazon rainforest. Protein and fibre from the same seed, grown in Colombia by farmers we know by name.</p>"
+          "default": "<p>INCHY is whole-food nutrition organised around satiety. FORM1 is our unflavoured sacha inchi powder: stir it into food you already eat. Protein and fibre from the same seed, grown in Colombia by farmers we know by name.</p>"
         },
         {
           "type": "text",
           "id": "note",
           "label": "Launch note",
-          "default": "U.S. launch soon. The first run is small — the list gets it first."
+          "default": "U.S. launch coming soon. Join the list for launch news and an email when ordering opens."
         }
       ]
     },
     {
       "type": "pouch",
-      "name": "02 · The pouch",
+      "name": "FORM1 · The pouch",
       "limit": 1,
       "settings": [
         {
@@ -208,7 +212,7 @@
           "type": "richtext",
           "id": "copy",
           "label": "Description",
-          "default": "<p>FORM1 is an unflavoured sacha inchi preparation developed around whole-food satiety. Our proprietary process transforms the seed into a powder while keeping its protein and fibre together.</p>"
+          "default": "<p>An unflavoured sacha inchi preparation for yoghurt, oats and everyday food. Our proprietary process transforms the seed into a powder while keeping its protein and fibre together.</p>"
         }
       ]
     },
@@ -220,13 +224,13 @@
     },
     {
       "type": "problem",
-      "name": "04 · The pain",
+      "name": "The satiety problem",
       "limit": 1,
       "settings": []
     },
     {
       "type": "refusal",
-      "name": "05 · The formulation",
+      "name": "The formulation",
       "limit": 1,
       "settings": []
     },
@@ -238,7 +242,7 @@
     },
     {
       "type": "industry",
-      "name": "07 · Our origin",
+      "name": "The growers",
       "limit": 1,
       "settings": [
         {
@@ -256,15 +260,22 @@
     },
     {
       "type": "research",
-      "name": "08 · The research",
+      "name": "The research",
       "limit": 1,
       "settings": []
     },
     {
       "type": "routine",
-      "name": "09 · The routine",
+      "name": "How to use FORM1",
       "limit": 1,
-      "settings": []
+      "settings": [
+        {
+          "type": "video",
+          "id": "preparation_video",
+          "label": "Real FORM1 preparation video",
+          "info": "Show the product being measured and mixed. Existing food-use images appear until a video is selected."
+        }
+      ]
     },
     {
       "type": "faq",
@@ -281,7 +292,7 @@
     },
     {
       "type": "launch",
-      "name": "10 · First access",
+      "name": "First access",
       "limit": 1,
       "settings": []
     }
@@ -297,25 +308,19 @@
           "type": "pouch"
         },
         {
-          "type": "founder"
-        },
-        {
           "type": "problem"
         },
         {
-          "type": "refusal"
+          "type": "routine"
         },
         {
-          "type": "belief"
+          "type": "refusal"
         },
         {
           "type": "industry"
         },
         {
           "type": "research"
-        },
-        {
-          "type": "routine"
         },
         {
           "type": "faq"
