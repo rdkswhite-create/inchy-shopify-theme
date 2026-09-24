@@ -5,6 +5,7 @@
 {% when 'hero' %}
 <section class="story-section story-section--hero" id="story-intro" aria-labelledby="story-intro-title" {{ block.shopify_attributes }}>
 <div class="story-container">
+<p class="story-kicker">Whole-food satiety</p>
 <h1 class="story-heading story-heading--hero" id="story-intro-title"><span class="story-hero__first">{{ block.settings.headline | escape }}</span><em>{{ block.settings.close | escape }}</em></h1>
 <div class="story-copy story-hero__intro">{{ block.settings.intro }}</div>
 {% render 'inchy-story-signup', instance_id: signup_instance %}
@@ -19,18 +20,17 @@
 <div class="story-product-copy" id="shop-inchy">
 <p class="story-kicker">{{ block.settings.heading | escape }}</p>
 <h2 class="story-heading" id="product-title"><span>One seed.</span><span>Protein and fibre.</span></h2>
-<p class="story-pouch-position">Nonpharmaceutical satiety</p>
+<p class="story-pouch-position">Whole-food satiety</p>
 <div class="story-copy">{{ block.settings.copy }}</div>
 {% capture story_product_url %}{% render 'inchy-shop-url' %}{% endcapture %}
 <a class="story-text-link" href="{{ story_product_url | strip | escape }}">Explore FORM1</a>
-<a class="story-button story-product-access" href="#first-access">Get first access</a>
 </div>
 </div>
 <dl class="story-stats">
-<div><dt>kcal per 30 g</dt><dd>{{ block.settings.calories | escape }}</dd></div>
-<div><dt>protein</dt><dd>{{ block.settings.protein | escape }}</dd></div>
-<div><dt>fibre</dt><dd>{{ block.settings.fibre | escape }}</dd></div>
-<div><dt>additives</dt><dd>{{ block.settings.additives | escape }}</dd></div>
+<div><dt>Sacha inchi</dt><dd>One seed</dd></div>
+<div><dt>From the same food</dt><dd>Protein + fibre</dd></div>
+<div><dt>Sweeteners</dt><dd>0</dd></div>
+<div><dt>Flavours</dt><dd>0</dd></div>
 </dl>
 </div>
 </section>
@@ -44,11 +44,12 @@
 <p class="story-kicker">Common problem</p>
 <div class="story-split"><h2 class="story-heading" id="approach-title"><span>Dinner ends.</span><span>The wanting doesn't.</span></h2>
 <div class="story-copy">
-<p>10pm. The kitchen is closed and you're back in it. One biscuit becomes three. Then the morning-after audit. If that loop sounds familiar, you already understand why INCHY exists.</p>
+<p>10pm. Dinner was hours ago and you're back in the kitchen. You don't want another meal. You still want something. One biscuit becomes three. Food is back in the conversation.</p>
+<p>If that sounds familiar, you understand why INCHY exists.</p>
 </div></div>
 <hr class="story-divider">
 <p class="story-kicker">Our approach</p>
-<div class="story-split"><div><h3 class="story-heading story-approach-heading">Put satiety first.</h3><a class="story-text-link" href="{{ routes.root_url }}#process">Explore the approach</a></div><div class="story-copy"><p>Satiety is the fullness that lasts after eating. Most of this industry designs for taste, speed and shelf price, and lets fullness fall where it falls. We put satiety first and made everything else negotiate with it.</p></div></div>
+<div class="story-split"><div><h3 class="story-heading story-approach-heading">Put satiety first.</h3><a class="story-text-link" href="{{ routes.root_url }}#process">Explore the approach</a></div><div class="story-copy"><p>Satiety is what happens after eating — how satisfied you remain and how long the meal carries you.</p><p>Most nutrition products are organised around a nutrient. Protein. Fibre. Calories.</p><p>INCHY is organised around a human outcome.</p></div></div>
 </div>
 </section>
 {% when 'refusal' %}
@@ -62,19 +63,32 @@
 <p>Our process gives that combination a new expression: FORM1. Protein and fibre from the same seed, with a more neutral taste and a texture made to mix into food people already eat. Nothing added to mask it. The method stays ours; the difference belongs in your bowl.</p>
 <p><strong>The easy versions existed.</strong></p>
 <p>Isolate the protein. Strip the fibre. Cover the taste with vanilla and sweetener — we had a supplier ready to do it. We refused all of it.</p>
-<p><strong>No sweeteners. No flavours. No additives.</strong></p>
+<p><strong>No sweeteners · No flavours · No gums · No emulsifiers.</strong></p>
 <p class="story-refusal-close">Not because we couldn't.<br>Because we wouldn't.</p>
 <a class="story-text-link" href="{{ routes.root_url }}?view=process">Explore our process</a>
 </div>
+</div>
+</section>
+{% when 'belief' %}
+<section class="story-section story-section--belief" aria-labelledby="belief-title" {{ block.shopify_attributes }}>
+<div class="story-container">
+<p class="story-kicker">What we believe</p>
+<h2 class="story-heading story-belief__heading" id="belief-title"><span>We are not assembling isolated nutrients into another formula.</span><span>We begin with one seed — and work to preserve the relationships that made it food.</span></h2>
 </div>
 </section>
 {% when 'industry' %}
 <section class="story-section story-section--industry" id="origin" aria-labelledby="origin-title" {{ block.shopify_attributes }}>
 <div class="story-container">
 <p class="story-kicker">Our origin</p>
-<h2 class="story-heading" id="origin-title"><span>The industry that</span><span>didn't exist.</span></h2>
+<h2 class="story-heading" id="origin-title"><span>Most companies build a product.</span><span>We had to help build the industry around ours.</span></h2>
 <div class="story-industry-grid"><div class="story-copy">{{ block.settings.copy }}</div><figure class="story-grower"><img src="{{ 'inchy-growers-harvest.jpg' | asset_url }}" width="1280" height="854" alt="Emilio holding harvested sacha inchi fruit in the field" loading="lazy"><figcaption>Emilio, one of our growers in northeast Colombia.</figcaption></figure></div>
-<p class="story-industry__statement">One company, building two things: the nutraceutical, and the industry that grows it.</p>
+<div class="story-origin-facts">
+<div><h3>Direct relationships</h3><p>We know the farmers growing our seed.</p></div>
+<div><h3>Quality</h3><p>Shared standards for exceptional sacha inchi.</p></div>
+<div><h3>Dependable purchasing</h3><p>Building the kind of direct, consistent demand farmers can plan around.</p></div>
+<div><h3>Community</h3><p>As INCHY grows, we want value created at the consumer end to travel back to where the crop begins.</p></div>
+</div>
+<p class="story-industry__statement">One company. One seed. Two things to build: the product and the system behind it.</p>
 {% comment %}Future verified metric: families under signed contract. Add only after contracts are signed; never show an estimated or placeholder count. Association's full legal name stays off the page until registration is confirmed.{% endcomment %}
 <p class="story-industry__follow">This is being built in public. Watch it happen: <a href="{{ block.settings.founder_url | default: 'https://www.instagram.com/reluctantruss/' }}" target="_blank" rel="noopener noreferrer">@reluctantruss<span class="story-sr"> (opens in a new tab)</span></a></p>
 </div>
@@ -96,20 +110,25 @@
 <p class="story-kicker">Laboratory research</p>
 <h3>Sacha inchi peptides</h3>
 <p>In laboratory tests, peptides derived from sacha inchi inhibited DPP-IV, the enzyme that breaks down GLP-1. (Zhang et al., 2023.)</p>
-<p class="story-evidence-limit">A laboratory study — not a human trial of finished INCHY. It does not establish effects on appetite or GLP-1 in people.</p>
+<p class="story-evidence-limit">A laboratory study — not a human trial of finished INCHY. It does not establish effects on appetite, DPP-IV or GLP-1 in people.</p>
 <a class="story-text-link" href="{{ routes.root_url }}?view=research">Explore the evidence</a>
 </div>
 </div>
-<p class="story-copy story-research-close">We publish the boundaries of the evidence on purpose. A category built on satiety has to be more careful than one built on hype.</p>
+<p class="story-research-close"><em>We want the evidence badly.<br>Just not badly enough to invent it.</em></p>
 </div>
 </section>
 {% when 'routine' %}
 <section class="story-section story-section--routine" id="routine" aria-labelledby="routine-title" {{ block.shopify_attributes }}>
 <div class="story-container">
 <p class="story-kicker">The routine</p>
-<h2 class="story-heading" id="routine-title">Make it part of the day.</h2>
+<h2 class="story-heading" id="routine-title"><span>Food first.</span><span>INCHY fits around it.</span></h2>
 <div class="story-routine-grid">{% for step in (1..3) %}<figure class="story-routine-step story-routine-step--{{ step }}"><div class="story-routine-photo"><img src="{{ 'inchy-routine.jpg' | asset_url }}" width="1942" height="809" loading="lazy" alt="{% case step %}{% when 1 %}Powder added to yoghurt{% when 2 %}Powder added to oats{% when 3 %}Powder stirred into a drink{% endcase %}"></div><figcaption><span>0{{ step }}</span>{% case step %}{% when 1 %}In yoghurt{% when 2 %}In oats{% when 3 %}In a drink{% endcase %}</figcaption></figure>{% endfor %}</div>
-<p class="story-copy">Measure the serving stated on the pouch. Mix thoroughly. Get on with your day.</p>
+<div class="story-routine-use">
+<p><strong>In food</strong><br>Stir it into yoghurt, oats or meals.</p>
+<p><strong>In a drink</strong><br>Mix it into water, coffee or another drink.</p>
+<p><strong>In your routine</strong><br>Use the serving stated on the pouch.</p>
+</div>
+<p class="story-copy story-routine-close">INCHY was made to fit around real food, not replace it.</p>
 <a class="story-text-link" href="{{ routes.root_url }}?view=how-to-use">Find your routine</a>
 </div>
 </section>
@@ -125,10 +144,11 @@
 {% when 'launch' %}
 <section class="story-section story-section--close" id="first-access" aria-labelledby="first-access-title" {{ block.shopify_attributes }}>
 <div class="story-container story-close-grid">
-<h2 class="story-heading" id="first-access-title"><span>Eat. Feel enough.</span><span>Go live.</span></h2>
+<div><p class="story-kicker">Whole-food satiety</p><h2 class="story-heading" id="first-access-title">Put satiety first.</h2></div>
 <div>
-<p class="story-close__intro">Be first when FORM1 opens for U.S. orders.</p>
+<p class="story-close__intro">A non-pharmaceutical approach built from one remarkable seed.</p>
 {% render 'inchy-story-signup', instance_id: signup_instance %}
+<p class="story-note">U.S. launch soon. The first run is small — the list gets it first.</p>
 </div>
 </div>
 </section>
@@ -138,7 +158,7 @@
 {
   "name": "INCHY industry story",
   "settings": [],
-  "max_blocks": 10,
+  "max_blocks": 11,
   "blocks": [
     {
       "type": "hero",
@@ -149,19 +169,19 @@
           "type": "text",
           "id": "headline",
           "label": "Headline",
-          "default": "Most companies build a product."
+          "default": "What happens after you eat matters."
         },
         {
           "type": "text",
           "id": "close",
           "label": "Italic closing line",
-          "default": "We had to build the industry first."
+          "default": ""
         },
         {
           "type": "richtext",
           "id": "intro",
           "label": "Introduction",
-          "default": "<p>INCHY FORM1 is a sacha inchi nutraceutical — a non-pharmaceutical approach to satiety. Protein and fibre from one seed, native to the Amazon rainforest, grown in Colombia by farmers we know by name.</p>"
+          "default": "<p>INCHY is whole-food nutrition organised around satiety — a non-pharmaceutical approach built from sacha inchi, a remarkable seed native to the Amazon rainforest.</p><p>Protein and fibre from the same seed, grown in Colombia by farmers we know by name.</p>"
         },
         {
           "type": "text",
@@ -180,68 +200,50 @@
           "type": "text",
           "id": "heading",
           "label": "Heading",
-          "default": "FORM1 · The pouch · 160 g"
+          "default": "FORM1 · The pouch"
         },
         {
           "type": "richtext",
           "id": "copy",
           "label": "Description",
-          "default": "<p>Unflavoured sacha inchi powder. One seed's protein and fibre, kept together in one preparation. Stir it into yoghurt, oats, or a drink you already have.</p>"
-        },
-        {
-          "type": "text",
-          "id": "calories",
-          "label": "kcal per 30 g",
-          "default": "120"
-        },
-        {
-          "type": "text",
-          "id": "protein",
-          "label": "Protein",
-          "default": "66%"
-        },
-        {
-          "type": "text",
-          "id": "fibre",
-          "label": "Fibre",
-          "default": "14%"
-        },
-        {
-          "type": "text",
-          "id": "additives",
-          "label": "Additives",
-          "default": "0"
+          "default": "<p>Unflavoured sacha inchi powder. Protein and fibre from the same seed, kept together in one whole-food preparation.</p>"
         }
       ]
     },
     {
       "type": "founder",
-      "name": "Conviction",
+      "name": "03 · The big stance",
       "limit": 1,
       "settings": []
     },
     {
       "type": "problem",
-      "name": "03 · The hunger loop",
+      "name": "04 · The pain",
       "limit": 1,
       "settings": []
     },
     {
       "type": "refusal",
-      "name": "04 · The refusal",
+      "name": "05 · The formulation",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "belief",
+      "name": "06 · What we believe",
       "limit": 1,
       "settings": []
     },
     {
       "type": "industry",
-      "name": "05 · The industry",
+      "name": "07 · Our origin",
       "limit": 1,
       "settings": [
         {
           "type": "richtext",
           "id": "copy",
           "label": "Industry story",
-          "default": "<p>Sacha inchi has 3,000 years of use behind it. It was already grown, pressed, traded and sold. But the crop under this company had no organised industry to build on: no shared standard for what good looks like, no dependable purchasing a farmer could plan around.</p><p>So we're building it. A growers association in northeast Colombia. Seed bought direct, from farmers we know by name. A crop formalised — and a reason to plant again next year.</p>"
+          "default": "<p>Sacha inchi has been eaten for thousands of years. But the organised supply chain we needed did not exist.</p><p>So we're helping build it: a growers association in northeast Colombia, seed bought direct from farmers we know by name, and shared standards for what good looks like.</p>"
         },
         {
           "type": "url",
@@ -252,19 +254,19 @@
     },
     {
       "type": "research",
-      "name": "06 · The research",
+      "name": "08 · The research",
       "limit": 1,
       "settings": []
     },
     {
       "type": "routine",
-      "name": "07 · The routine",
+      "name": "09 · The routine",
       "limit": 1,
       "settings": []
     },
     {
       "type": "faq",
-      "name": "08 · Questions",
+      "name": "FAQ",
       "limit": 1,
       "settings": [
         {
@@ -277,7 +279,7 @@
     },
     {
       "type": "launch",
-      "name": "09 · First access",
+      "name": "10 · First access",
       "limit": 1,
       "settings": []
     }
@@ -300,6 +302,9 @@
         },
         {
           "type": "refusal"
+        },
+        {
+          "type": "belief"
         },
         {
           "type": "industry"
