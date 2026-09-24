@@ -141,14 +141,19 @@ img{max-width:100%;height:auto;display:block}figure{margin:0}.story-container{wi
 .story-stats { align-items:start; }
 .story-stats div { justify-content:flex-start; align-items:flex-start; gap:10px; }
 .story-stats div:nth-child(-n+2) { grid-column:1 / -1; }
-.story-stats dd { font-size:clamp(27px,2.3vw,36px); line-height:1.12; letter-spacing:-.02em; text-transform:uppercase; white-space:nowrap; }
+.story-stats dd { min-height:50px; font-size:clamp(27px,2.3vw,36px); line-height:1.12; letter-spacing:-.02em; text-transform:uppercase; white-space:nowrap; }
+.story-stats div:nth-child(n+3) dd { font-size:clamp(42px,3.5vw,56px); font-weight:500; line-height:1; }
 .story-stats dt { margin-top:0; color:#4c514c; font-size:clamp(15px,1.2vw,18px); line-height:1.4; }
 @media(min-width:900px) {
   .story-stats { grid-template-columns:minmax(0,1.15fr) minmax(0,1.55fr) minmax(0,.7fr) minmax(0,.7fr); }
   .story-stats div:nth-child(-n+2) { grid-column:auto; }
+  .story-stats dd { min-height:56px; }
 }
 .story-section--founder { min-height:54vh; display:flex; align-items:center; background:#edf0e9; }
-.story-founder-bet blockquote { max-width:1100px; margin:0; font-size:clamp(45px,6vw,86px); line-height:1.08; }
+.story-founder-bet blockquote { max-width:1224px; margin:0; font-family:Arial,Helvetica,sans-serif; font-style:normal; letter-spacing:-.04em; }
+.story-founder-bet__premise,.story-founder-bet__answer { display:block; }
+.story-founder-bet__premise { max-width:1100px; font-size:clamp(34px,4.5vw,62px); font-weight:400; line-height:1.1; }
+.story-founder-bet__answer { margin-top:clamp(32px,4vw,64px); font-size:clamp(44px,5.6vw,80px); font-weight:700; line-height:1.04; }
 .story-section--belief { min-height:70vh; display:flex; align-items:center; color:#fff; background:#101510; }
 .story-section--belief .story-kicker { color:#aeb7af; }
 .story-belief { margin:0; font-size:clamp(45px,5.7vw,82px); }
