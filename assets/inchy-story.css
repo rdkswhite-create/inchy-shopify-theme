@@ -135,7 +135,8 @@ img{max-width:100%;height:auto;display:block}figure{margin:0}.story-container{wi
   .story-section--hero { padding-block:64px 80px; min-height:calc(100svh - 100px); }
   .story-section--hero .story-container { width:calc(100% - 120px); max-width:1800px; }
   .story-heading--hero { margin-bottom:42px; }
-  .story-hero__intro { max-width:760px; font-size:20px; line-height:1.55; }
+  .story-hero__intro { max-width:none; width:100%; font-size:clamp(17px,1.3vw,20px); line-height:1.5; }
+  .story-hero__intro p { text-wrap:balance; }
 }
 .story-stats div { justify-content:flex-end; }
 .story-stats dd { font-size:clamp(25px,3vw,45px); line-height:1.05; text-transform:uppercase; }
