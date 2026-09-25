@@ -31,7 +31,7 @@
         "industry": {
           "type": "industry",
           "settings": {
-            "copy": "<p>Sacha inchi has been eaten for thousands of years. But the organised supply chain we needed didn’t exist.</p><p>So we’re helping build it.</p>",
+            "copy": "<p>In Santander, Colombia, we helped growers form ASIN—the Asociación de Sachaincheros del Nororiente Colombiano. We work with its members on quality, prices and purchasing commitments before the seed is planted.</p><p>We know who grows our sacha inchi and where it comes from. The product begins in that relationship, long before the seed reaches our process.</p>",
             "founder_url": "https://www.instagram.com/reluctantruss/"
           }
         },
@@ -46,7 +46,7 @@
         "faq": {
           "type": "faq",
           "settings": {
-            "association_answer": "<p>Premium sacha inchi doesn't come from a spec sheet. It comes from the right altitude, the right soil and the right farmers. There was no organised market for this crop, so together with growers in northeast Colombia we helped establish an association to formalise it: direct purchasing, consistent quality, a reason to plant.</p>"
+            "association_answer": "<p>We helped growers in Santander form ASIN, the Asociación de Sachaincheros del Nororiente Colombiano. Working together on quality, prices and purchasing commitments before planting gives growers a clearer basis for what they produce and gives us a direct relationship with the people behind the seed.</p>"
           }
         },
         "launch": {
