@@ -11,7 +11,7 @@
   </div>
   <div class="inchy-hero__packaging">
     <div class="inchy-hero__visual"><img class="inchy-hero__product" src="{{ 'inchy-reference-pouch.jpg' | asset_url }}" width="1024" height="1280" fetchpriority="high" loading="eager" alt="INCHY sacha inchi pouch"></div>
-    <a class="inchy-button" href="{{ hero_shop_url | strip | escape }}">{% if settings.inchy_prelaunch %}EXPLORE INCHY FORM1{% else %}{% render 'inchy-brand-text', text: section.settings.button_label %}{% endif %}</a>
+    <a class="inchy-button" href="{{ hero_shop_url | strip | escape }}">{% if settings.inchy_prelaunch %}EXPLORE INCHY{% else %}{% render 'inchy-brand-text', text: section.settings.button_label %}{% endif %}</a>
     <div class="inchy-hero__copy">
       <p class="inchy-hero__pouch-label">THE POUCH · 160 G</p>
       <p class="inchy-hero__description">Unflavoured sacha inchi powder. Protein and fibre from one seed, made for everyday use.</p>
