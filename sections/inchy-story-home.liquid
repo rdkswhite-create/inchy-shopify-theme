@@ -90,15 +90,9 @@
 <div class="story-container">
 <p class="story-kicker">Our origin</p>
 <h2 class="story-heading" id="origin-title"><span>Most companies build a product.</span><span>We had to build the industry first.</span></h2>
-<div class="story-industry-grid"><div class="story-copy">{{ block.settings.copy }}</div><figure class="story-grower"><img src="{{ 'inchy-growers-harvest.jpg' | asset_url }}" width="1280" height="854" alt="Emilio holding harvested sacha inchi fruit in the field" loading="lazy"><figcaption>Emilio, one of our growers in northeast Colombia.</figcaption></figure></div>
-<div class="story-origin-facts">
-<div><h3>Direct relationships</h3><p>We know the farmers growing our seed.</p></div>
-<div><h3>Quality</h3><p>Shared standards for exceptional sacha inchi.</p></div>
-<div><h3>Our next commitment</h3><p>Working towards forward contracts, so growers can plan around dependable purchasing.</p></div>
-<div><h3>Community</h3><p>As INCHY grows, we want value created at the consumer end to travel back to where the crop begins.</p></div>
-</div>
-<p class="story-industry__statement">One company. One seed. Two things to build: the product and the system behind it.</p>
-{% comment %}Future verified metric: families under signed contract. Add only after contracts are signed; never show an estimated or placeholder count. Association's full legal name stays off the page until registration is confirmed.{% endcomment %}
+<div class="story-industry-grid"><div class="story-copy">{{ block.settings.copy }}</div><figure class="story-grower"><img src="{{ 'inchy-growers-harvest.jpg' | asset_url }}" width="1280" height="854" alt="Emilio holding harvested sacha inchi fruit in the field" loading="lazy"><figcaption>Emilio · ASIN grower · Santander, Colombia.</figcaption></figure></div>
+<p class="story-industry__statement">If it doesn't work for the people who grow it, it doesn't work as a business.</p>
+{% comment %}Future verified metric: families under signed contract. Add only after contracts are signed; never show an estimated or placeholder count.{% endcomment %}
 <p class="story-industry__follow">Meet the growers. See the production decisions. Follow the work behind the first launch with <a href="{{ block.settings.founder_url | default: 'https://www.instagram.com/reluctantruss/' }}" target="_blank" rel="noopener noreferrer">@reluctantruss<span class="story-sr"> (opens in a new tab)</span></a></p>
 </div>
 </section>
@@ -249,7 +243,7 @@
           "type": "richtext",
           "id": "copy",
           "label": "Industry story",
-          "default": "<p>Sacha inchi has been eaten for thousands of years. But the organised supply chain we needed didn’t exist.</p><p>So we’re helping build it.</p>"
+          "default": "<p>In Santander, Colombia, we helped growers form ASIN—the Asociación de Sachaincheros del Nororiente Colombiano. We work with its members on quality, prices and purchasing commitments before the seed is planted.</p><p>We know who grows our sacha inchi and where it comes from. The product begins in that relationship, long before the seed reaches our process.</p>"
         },
         {
           "type": "url",
@@ -286,7 +280,7 @@
           "type": "richtext",
           "id": "association_answer",
           "label": "Why a growers association?",
-          "default": "<p>Premium sacha inchi doesn't come from a spec sheet. It comes from the right altitude, the right soil and the right farmers. There was no organised market for this crop, so together with growers in northeast Colombia we helped establish an association to formalise it: direct purchasing, consistent quality, a reason to plant.</p>"
+          "default": "<p>We helped growers in Santander form ASIN, the Asociación de Sachaincheros del Nororiente Colombiano. Working together on quality, prices and purchasing commitments before planting gives growers a clearer basis for what they produce and gives us a direct relationship with the people behind the seed.</p>"
         }
       ]
     },
