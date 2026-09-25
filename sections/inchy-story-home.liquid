@@ -6,7 +6,7 @@
 <section class="story-section story-section--hero" id="story-intro" aria-labelledby="story-intro-title" {{ block.shopify_attributes }}>
 <div class="story-container">
 <p class="story-kicker">Whole-food satiety</p>
-<h1 class="story-heading story-heading--hero" id="story-intro-title">{% if block.settings.headline == 'What happens after you eat matters.' %}<span class="story-hero-line">What happens after</span> <span class="story-hero-line">you eat matters.</span>{% else %}{{ block.settings.headline | escape }}{% endif %}</h1>
+<h1 class="story-heading story-heading--hero" id="story-intro-title">{% if block.settings.headline == 'Satiety is the starting point.' %}<span class="story-hero-line">Satiety is the</span> <span class="story-hero-line">starting point.</span>{% else %}{{ block.settings.headline | escape }}{% endif %}</h1>
 <div class="story-copy story-hero__intro">{{ block.settings.intro }}</div>
 <a class="story-text-link story-hero-use" href="#routine">See how to use FORM1</a>
 {% render 'inchy-story-signup', instance_id: signup_instance %}
@@ -181,7 +181,7 @@
           "type": "text",
           "id": "headline",
           "label": "Headline",
-          "default": "What happens after you eat matters."
+          "default": "Satiety is the starting point."
         },
         {
           "type": "richtext",
