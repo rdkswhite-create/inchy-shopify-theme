@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "layout": "inchy-story",
+  "sections": {
+    "industry_story": {
+      "type": "inchy-story-home",
+      "settings": {},
+      "blocks": {
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "headline": "Satiety is the starting point.",
+            "intro": "<p>Native to the Amazon rainforest, sacha inchi has been known for generations and overlooked by much of the world. INCHY transforms this remarkable seed, keeping its protein and fibre together in a non-pharmaceutical approach to satiety.</p>",
+            "note": "Launching in the United States. Join for launch updates and first access."
+          }
+        },
+        "pouch": {
+          "type": "pouch",
+          "settings": {
+            "heading": "The pouch",
+            "copy": "<p>We developed INCHY around satiety. Our proprietary process transforms sacha inchi into a powder with its own distinctive natural taste, keeping the seed’s protein and fibre together. Deliberately developed for daily use, with no added flavourings or sweeteners.</p>"
+          }
+        },
+        "problem": {
+          "type": "problem",
+          "settings": {}
+        },
+        "refusal": {
+          "type": "refusal",
+          "settings": {}
+        },
+        "industry": {
+          "type": "industry",
+          "settings": {
+            "copy": "<p>The quality of INCHY begins before our process. We helped form ASIN with growers in Santander, Colombia, so cultivation, quality and purchasing are part of the work from the start. The people growing our seed belong at the centre of it.</p>"
+          }
+        },
+        "research": {
+          "type": "research",
+          "settings": {}
+        },
+        "routine": {
+          "type": "routine",
+          "settings": {}
+        },
+        "faq": {
+          "type": "faq",
+          "settings": {
+            "association_answer": "<p>ASIN is the Asociación de Sachaincheros del Nororiente Colombiano—the Association of Sacha Inchi Farmers of Northeastern Colombia. We helped form it with growers in Santander because premium sacha inchi starts with cultivation. We work together on standards, prices and purchasing commitments before planting.</p>"
+          }
+        },
+        "launch": {
+          "type": "launch",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "hero",
+        "pouch",
+        "problem",
+        "routine",
+        "refusal",
+        "industry",
+        "research",
+        "faq",
+        "launch"
+      ]
+    }
+  },
+  "order": [
+    "industry_story"
+  ]
+}

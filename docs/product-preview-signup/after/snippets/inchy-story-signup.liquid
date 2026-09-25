@@ -1,0 +1,58 @@
+{% doc %}
+  Homepage launch signup with campaign attribution.
+  @param {string} instance_id - Unique section and block identifier
+{% enddoc %}
+{%- assign story_form_id = 'StoryAccess-' | append: instance_id -%}
+{%- assign story_form_return = routes.root_url | append: '#' | append: story_form_id -%}
+{% form 'customer', id: story_form_id, class: 'story-form story-form--tracked', return_to: story_form_return %}
+  <input type="hidden" name="contact[tags]" data-inchy-tags data-placement="{{ instance_id | escape }}" value="newsletter,inchy-us-launch,inchy-industry-story,inchy-source-unattributed">
+  {% if form.errors %}<div class="story-form__status story-form__status--error" id="{{ story_form_id }}-error" role="alert">{{ form.errors | default_errors }}</div>{% endif %}
+  {% if form.posted_successfully? %}<p class="story-form__status" role="status">{{ 'inchy_signup.success' | t }}</p>{% endif %}
+  <label class="story-sr" for="{{ story_form_id }}-email">{{ 'inchy_signup.email' | t }}</label>
+  <div class="story-form__fields">
+    <input type="email" id="{{ story_form_id }}-email" name="contact[email]" value="{{ form.email | escape }}" placeholder="{{ 'inchy_signup.email' | t }}" autocomplete="email" autocapitalize="off" autocorrect="off" required aria-describedby="{{ story_form_id }}-consent{% if form.errors %} {{ story_form_id }}-error{% endif %}" {% if form.errors %}aria-invalid="true"{% endif %}>
+    <button class="story-button" type="submit" name="commit">{{ 'inchy_signup.button' | t }}</button>
+  </div>
+  <p class="story-form__consent" id="{{ story_form_id }}-consent">{{ 'inchy_signup.consent' | t }}{% if shop.privacy_policy != blank %} <a href="{{ shop.privacy_policy.url }}">{{ 'inchy_signup.privacy' | t }}</a>.{% endif %}</p>
+{% endform %}
+
+{% javascript %}
+(() => {
+  const rules = {
+    utm_source: /^(meta|facebook|instagram|tiktok|google|email|founder|partner)$/,
+    utm_medium: /^(paid_social|organic_social|cpc|email|referral)$/,
+    utm_campaign: /^us_launch_[a-z0-9_-]{1,40}$/,
+    utm_content: /^[a-z][a-z0-9_-]{0,59}$/
+  };
+  const setup = () => {
+    const current = new URL(window.location.href);
+    const campaign = {};
+    Object.entries(rules).forEach(([key, rule]) => {
+      const value = current.searchParams.get(key);
+      if (value && rule.test(value)) campaign[key] = value;
+    });
+    document.querySelectorAll('[data-inchy-tags]').forEach(input => {
+      const tags = ['newsletter', 'inchy-us-launch', 'inchy-industry-story', 'inchy-signup-v2'];
+      const placement = input.dataset.placement.endsWith('-hero') ? 'hero' : 'footer';
+      tags.push('inchy-placement-' + placement);
+      tags.push('inchy-source-' + (campaign.utm_source || 'unattributed'));
+      ['medium', 'campaign', 'content'].forEach(key => {
+        if (campaign['utm_' + key]) tags.push('inchy-' + key + '-' + campaign['utm_' + key]);
+      });
+      input.value = tags.join(',');
+    });
+    if (!Object.keys(campaign).length) return;
+    document.querySelectorAll('a[href]').forEach(link => {
+      const url = new URL(link.href, current);
+      if (url.origin !== current.origin || !(url.pathname === '/' || url.pathname.startsWith('/products/'))) return;
+      Object.entries(campaign).forEach(([key, value]) => {
+        if (!url.searchParams.has(key)) url.searchParams.set(key, value);
+      });
+      link.href = url.href;
+    });
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', setup, { once: true });
+  else setup();
+  document.addEventListener('shopify:section:load', setup);
+})();
+{% endjavascript %}

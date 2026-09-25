@@ -1,0 +1,339 @@
+{% comment %}Approved industry-story homepage. Original homepage remains available through index.original.json.{% endcomment %}
+{% for block in section.blocks %}
+{% assign signup_instance = section.id | append: '-' | append: block.id %}
+{% case block.type %}
+{% when 'hero' %}
+<section class="story-section story-section--hero" id="story-intro" aria-labelledby="story-intro-title" {{ block.shopify_attributes }}>
+<div class="story-container story-hero-grid">
+<div class="story-hero-content">
+<p class="story-kicker">Whole-food satiety</p>
+<h1 class="story-heading story-heading--hero" id="story-intro-title">{% if block.settings.headline == 'Satiety is the starting point.' %}<span class="story-hero-line">Satiety is the</span> <span class="story-hero-line">starting point.</span>{% else %}{{ block.settings.headline | escape }}{% endif %}</h1>
+<div class="story-copy story-hero__intro">{{ block.settings.intro }}</div>
+<a class="story-text-link story-hero-use" href="#routine">See how to use INCHY</a>
+{% render 'inchy-story-signup', instance_id: signup_instance %}
+<p class="story-note">{{ block.settings.note | escape }}</p>
+</div>
+<figure class="story-hero-pack" id="product"><span id="shop-inchy"></span>{% render 'inchy-packaging', image_class: 'story-hero-pack__image', loading: 'eager' %}</figure>
+</div>
+<div class="story-container story-hero-details">
+<p class="story-use-sequence"><span>Mix it</span><span>Drink it</span><span>Feel it</span></p>
+<dl class="story-nutrition-strip" aria-label="INCHY at a glance">
+<div><dt>kcal / 30 g</dt><dd>120</dd></div>
+<div><dt>protein</dt><dd>62%</dd></div>
+<div><dt>fibre</dt><dd>20%</dd></div>
+<div><dt>additives</dt><dd>0%</dd></div>
+</dl>
+</div>
+</section>
+{% when 'pouch' %}
+<section class="story-section story-section--pouch" id="product" aria-labelledby="product-title" {{ block.shopify_attributes }}>
+<div class="story-container">
+<div class="story-product-grid">
+<figure class="story-product-visual story-product-visual--seed">
+{% render 'inchy-packaging', image_class: 'story-packaging', loading: 'eager' %}
+<img class="story-product-pod" src="{{ 'inchy-single-pod.webp' | asset_url }}" width="640" height="640" loading="lazy" alt="A star-shaped sacha inchi pod, the source of INCHY">
+</figure>
+<div class="story-product-copy" id="shop-inchy">
+<p class="story-kicker">{{ block.settings.heading | escape }}</p>
+<h2 class="story-heading" id="product-title"><span>The seed was</span><span>only the beginning.</span></h2>
+<p class="story-pouch-position">Whole-food satiety</p>
+<div class="story-copy">{{ block.settings.copy }}</div>
+<ul class="story-product-facts" aria-label="Ingredients at a glance"><li>One ingredient</li><li>No sweeteners</li><li>No added flavours</li></ul>
+{% capture story_product_url %}{% render 'inchy-shop-url' %}{% endcapture %}
+{% assign story_product_url = story_product_url | strip %}
+{% if story_product_url contains '#shop-inchy' %}{% assign story_product_url = '#process' %}{% endif %}
+<a class="story-text-link" href="{{ story_product_url | strip | escape }}">Explore INCHY</a>
+</div>
+</div>
+</div>
+</section>
+{% when 'founder' %}
+<section class="story-section story-section--founder" aria-label="A conviction" {{ block.shopify_attributes }}>
+<div class="story-container"><figure class="story-founder-bet"><blockquote><p><span class="story-founder-bet__premise">Everyone’s betting the answer to appetite is an injection.</span><span class="story-founder-bet__answer">We’re betting it’s a seed.</span></p></blockquote></figure></div>
+</section>
+{% when 'problem' %}
+<section class="story-section story-section--problem" id="approach" aria-labelledby="approach-title" {{ block.shopify_attributes }}>
+<div class="story-container">
+<p class="story-kicker">Common problem</p>
+<div class="story-split"><h2 class="story-heading" id="approach-title"><span>Dinner ends.</span><span>The wanting doesn't.</span></h2>
+<div class="story-copy">
+<p>10pm. Dinner was hours ago and you’re back in the kitchen. One biscuit becomes three. You’re not necessarily hungry enough for another meal. But food is back in the conversation.</p>
+<p>If that sounds familiar, you understand why INCHY exists.</p>
+</div></div>
+<hr class="story-divider">
+<p class="story-kicker">Our approach</p>
+<div class="story-split"><div><h3 class="story-heading story-approach-heading">Put satiety first.</h3></div><div class="story-copy"><p>Satiety is what happens after eating — how satisfied you remain and how long the meal carries you.</p><p>Protein and fibre explain our formulation. Satiety explains why we developed it.</p><p>A non-pharmaceutical approach, built from food.</p></div></div>
+</div>
+</section>
+{% when 'refusal' %}
+<section class="story-section story-section--refusal" id="process" aria-labelledby="process-title" {{ block.shopify_attributes }}>
+<div class="story-container">
+<p class="story-kicker">The formulation</p>
+<h2 class="story-heading" id="process-title"><span>What's in the pouch: sacha inchi.</span><span>What isn't: everything else.</span></h2>
+<div class="story-formulation-grid">
+<figure class="story-formulation-visual">
+<img class="story-formulation-pouch" src="{{ 'inchy-reference-pouch.jpg' | asset_url }}" width="928" height="1152" loading="lazy" alt="INCHY sacha inchi pouch">
+<img class="story-formulation-pod" src="{{ 'inchy-single-pod.webp' | asset_url }}" width="640" height="640" loading="lazy" alt="A single mature sacha inchi pod resting beside the pouch">
+</figure>
+<div class="story-refusal story-copy">
+<p><strong>The invention is what the seed becomes.</strong></p>
+<p>Keeping the seed’s protein and fibre together was one challenge. Making that combination work in everyday food was the other.</p>
+<p>We developed INCHY around taste, texture and mixing. Our process transforms sacha inchi into a powder made for food you already eat, with no added flavours to cover it up.</p>
+<p>The method stays ours; the difference belongs in your bowl.</p>
+<p><strong>The easy versions existed.</strong><br>Isolate the protein. Strip the fibre. Cover the taste with vanilla and sweetener.</p>
+<p><strong>We refused all of it.</strong></p>
+<p class="story-formulation-facts">NO SWEETENERS · NO FLAVOURS<br>NO GUMS · NO EMULSIFIERS</p>
+<a class="story-text-link" href="{{ routes.root_url }}?view=process">Explore our process</a>
+</div>
+</div>
+</div>
+</section>
+{% when 'belief' %}
+<section class="story-section story-section--belief" aria-labelledby="belief-title" {{ block.shopify_attributes }}>
+<div class="story-container">
+<p class="story-kicker">What we believe</p>
+<h2 class="story-heading story-belief" id="belief-title"><span>We are not trying to make a supplement behave more like food.</span><span>We are trying to prove how powerfully food can behave when you stop pulling it apart.</span></h2>
+</div>
+</section>
+{% when 'industry' %}
+<section class="story-section story-section--industry" id="origin" aria-labelledby="origin-title" {{ block.shopify_attributes }}>
+<div class="story-container">
+<p class="story-kicker">Our origin</p>
+<h2 class="story-heading" id="origin-title"><span>The growers aren't</span><span>a footnote.</span></h2>
+<div class="story-industry-grid"><div class="story-copy">{{ block.settings.copy }}</div><figure class="story-grower"><img src="{{ 'inchy-growers-harvest.jpg' | asset_url }}" width="1280" height="854" alt="Emilio holding harvested sacha inchi fruit in the field" loading="lazy"><figcaption>Emilio · ASIN grower · Santander, Colombia.</figcaption></figure></div>
+<div class="story-origin-facts">
+<div><h3>What is ASIN?</h3><p>The Asociación de Sachaincheros del Nororiente Colombiano: the Association of Sacha Inchi Farmers of Northeastern Colombia.</p></div>
+<div><h3>Why did we help form it?</h3><p>To put growers at the centre of sourcing premium sacha inchi, and work together on the quality our product needs.</p></div>
+<div><h3>What happens before planting?</h3><p>We discuss cultivation standards, prices and purchasing commitments before seed goes into the ground.</p></div>
+<div><h3>What does that mean for INCHY?</h3><p>A known source and a shared quality standard for the sacha inchi we use to make INCHY.</p></div>
+</div>
+<p class="story-industry__statement">If it doesn't work for the people who grow it, it doesn't work as a business.</p>
+{% comment %}Future verified metric: families under signed contract. Add only after contracts are signed; never show an estimated or placeholder count.{% endcomment %}
+</div>
+</section>
+{% when 'research' %}
+<section class="story-section story-section--research" id="research" aria-labelledby="research-title" {{ block.shopify_attributes }}>
+<div class="story-container">
+<p class="story-kicker">The research</p>
+<h2 class="story-heading" id="research-title"><span>What the research shows.</span></h2>
+<div class="story-research-grid">
+<div class="story-research-item">
+<p class="story-kicker">Nutrient research</p>
+<h3>Protein + fibre</h3>
+<p>Protein and certain dietary fibres can stimulate the body's own release of GLP-1 — a gut hormone involved in appetite regulation.</p>
+<p class="story-evidence-limit">These are findings about particular nutrients and study preparations. They do not establish the GLP-1 response to a serving of INCHY.</p>
+<a class="story-text-link" href="{{ routes.root_url }}?view=research#protein">Protein + fibre evidence</a>
+</div>
+<div class="story-research-item">
+<p class="story-kicker">Laboratory research</p>
+<h3>Sacha inchi peptides</h3>
+<details class="story-lab-detail"><summary>Read the laboratory findings</summary>
+<p>Laboratory research on sacha inchi protein hydrolysates has identified peptides with DPP-IV (DPP-4) inhibitory activity. (Zhang et al., 2023.)</p></details>
+<p class="story-evidence-limit">This was laboratory research. It was not a human trial of finished INCHY and does not establish effects on appetite, DPP-IV or GLP-1 in people.</p>
+<a class="story-text-link" href="{{ routes.root_url }}?view=research">Explore the evidence</a>
+</div>
+</div>
+<p class="story-copy story-research-close"><em>We want the evidence badly.<br>Just not badly enough to invent it.</em></p>
+</div>
+</section>
+{% when 'routine' %}
+<section class="story-section story-section--routine" id="routine" aria-labelledby="routine-title" {{ block.shopify_attributes }}>
+<div class="story-container">
+<p class="story-kicker">The routine</p>
+<h2 class="story-heading" id="routine-title"><span>Food first.</span><span>INCHY fits around it.</span></h2>
+{% if block.settings.preparation_video != blank %}
+<div class="story-preparation-video">{{ block.settings.preparation_video | video_tag: controls: true, preload: 'metadata', playsinline: true }}</div>
+{% else %}
+<div class="story-routine-grid">{% for step in (1..3) %}<figure class="story-routine-step story-routine-step--{{ step }}"><div class="story-routine-photo"><img src="{{ 'inchy-routine.jpg' | asset_url }}" width="1942" height="809" loading="lazy" alt="{% case step %}{% when 1 %}Powder added to yoghurt{% when 2 %}Powder added to oats{% when 3 %}Powder stirred into a drink{% endcase %}"></div><figcaption><span>0{{ step }}</span>{% case step %}{% when 1 %}In yoghurt{% when 2 %}In oats{% when 3 %}In a drink{% endcase %}</figcaption></figure>{% endfor %}</div>
+{% endif %}
+<div class="story-routine-instructions story-copy">
+<h3>Start with a bowl you already make.</h3>
+<p>Measure the serving stated on your pouch, stir thoroughly into yoghurt or oats, and make it part of your usual meal.</p>
+<p class="story-taste-note">Unflavoured means no added flavour. The seed still has its own taste and texture; what you mix it into makes a difference.</p>
+</div>
+<a class="story-text-link" href="{{ routes.root_url }}?view=how-to-use">Preparation &amp; serving guidance</a>
+</div>
+</section>
+{% when 'faq' %}
+<section class="story-section story-section--faq" id="faq" aria-labelledby="faq-title" {{ block.shopify_attributes }}>
+<div class="story-container story-faq-grid">
+<h2 class="story-heading" id="faq-title"><span>Questions, answered</span><span>straight.</span></h2>
+<div class="story-faq">
+{% render 'inchy-story-faq', association_answer: block.settings.association_answer %}
+</div>
+</div>
+</section>
+{% when 'launch' %}
+<section class="story-section story-section--close" id="first-access" aria-labelledby="first-access-title" {{ block.shopify_attributes }}>
+<div class="story-container story-close-grid">
+<div><p class="story-kicker">Whole-food satiety</p><h2 class="story-heading" id="first-access-title">Put satiety first.</h2><p class="story-close__tagline">A non-pharmaceutical approach built from one remarkable seed.</p></div>
+<div>
+{% render 'inchy-story-signup', instance_id: signup_instance %}
+<p class="story-note">U.S. launch coming soon. Join the list for launch news and an email when ordering opens.</p>
+</div>
+</div>
+</section>
+{% endcase %}
+{% endfor %}
+{% schema %}
+{
+  "name": "INCHY industry story",
+  "settings": [],
+  "max_blocks": 11,
+  "blocks": [
+    {
+      "type": "hero",
+      "name": "The opening",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "headline",
+          "label": "Headline",
+          "default": "Satiety is the starting point."
+        },
+        {
+          "type": "richtext",
+          "id": "intro",
+          "label": "Introduction",
+          "default": "<p>Native to the Amazon rainforest, sacha inchi has been known for generations and overlooked by much of the world. INCHY transforms this remarkable seed, keeping its protein and fibre together in a non-pharmaceutical approach to satiety.</p>"
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "label": "Launch note",
+          "default": "U.S. launch coming soon. Join the list for launch news and an email when ordering opens."
+        }
+      ]
+    },
+    {
+      "type": "pouch",
+      "name": "The pouch",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "The pouch"
+        },
+        {
+          "type": "richtext",
+          "id": "copy",
+          "label": "Description",
+          "default": "<p>An unflavoured sacha inchi preparation for yoghurt, oats and everyday food. Our proprietary process transforms the seed into a powder while keeping its protein and fibre together.</p>"
+        }
+      ]
+    },
+    {
+      "type": "founder",
+      "name": "03 · The big stance",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "problem",
+      "name": "The satiety problem",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "refusal",
+      "name": "The formulation",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "belief",
+      "name": "06 · Company belief",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "industry",
+      "name": "The growers",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "copy",
+          "label": "Industry story",
+          "default": "<p>The quality of INCHY begins before our process. We helped form ASIN with growers in Santander, Colombia, so cultivation, quality and purchasing are part of the work from the start. The people growing our seed belong at the centre of it.</p>"
+        }
+      ]
+    },
+    {
+      "type": "research",
+      "name": "The research",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "routine",
+      "name": "How to use INCHY",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "video",
+          "id": "preparation_video",
+          "label": "Real INCHY preparation video",
+          "info": "Show the product being measured and mixed. Existing food-use images appear until a video is selected."
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "Questions",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "association_answer",
+          "label": "Why a growers association?",
+          "default": "<p>ASIN is the Asociación de Sachaincheros del Nororiente Colombiano—the Association of Sacha Inchi Farmers of Northeastern Colombia. We helped form it with growers in Santander because premium sacha inchi starts with cultivation. We work together on standards, prices and purchasing commitments before planting.</p>"
+        }
+      ]
+    },
+    {
+      "type": "launch",
+      "name": "First access",
+      "limit": 1,
+      "settings": []
+    }
+  ],
+  "presets": [
+    {
+      "name": "INCHY industry story",
+      "blocks": [
+        {
+          "type": "hero"
+        },
+        {
+          "type": "pouch"
+        },
+        {
+          "type": "problem"
+        },
+        {
+          "type": "routine"
+        },
+        {
+          "type": "refusal"
+        },
+        {
+          "type": "industry"
+        },
+        {
+          "type": "research"
+        },
+        {
+          "type": "faq"
+        },
+        {
+          "type": "launch"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
