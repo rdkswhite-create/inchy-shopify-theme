@@ -4,13 +4,16 @@
 {% case block.type %}
 {% when 'hero' %}
 <section class="story-section story-section--hero" id="story-intro" aria-labelledby="story-intro-title" {{ block.shopify_attributes }}>
-<div class="story-container">
+<div class="story-container story-hero-grid">
+<div class="story-hero-content">
 <p class="story-kicker">Whole-food satiety</p>
 <h1 class="story-heading story-heading--hero" id="story-intro-title">{% if block.settings.headline == 'Satiety is the starting point.' %}<span class="story-hero-line">Satiety is the</span> <span class="story-hero-line">starting point.</span>{% else %}{{ block.settings.headline | escape }}{% endif %}</h1>
 <div class="story-copy story-hero__intro">{{ block.settings.intro }}</div>
 <a class="story-text-link story-hero-use" href="#routine">See how to use INCHY</a>
 {% render 'inchy-story-signup', instance_id: signup_instance %}
 <p class="story-note">{{ block.settings.note | escape }}</p>
+</div>
+<figure class="story-hero-pack" id="product"><span id="shop-inchy"></span>{% render 'inchy-packaging', image_class: 'story-hero-pack__image', loading: 'eager' %}</figure>
 </div>
 </section>
 {% when 'pouch' %}
