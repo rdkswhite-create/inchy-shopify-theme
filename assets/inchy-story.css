@@ -215,3 +215,21 @@ img{max-width:100%;height:auto;display:block}figure{margin:0}.story-container{wi
   .story-product-pod { width:30%; right:4%; }
   .story-product-copy .story-heading { margin-bottom:22px; }
 }
+
+.story-hero-grid { display:grid; gap:32px; align-items:center; }
+.story-hero-content { min-width:0; container-type:inline-size; }
+.story-hero-pack { margin:0; min-width:0; }
+.story-hero-pack__image { display:block; width:100%; height:auto; max-height:610px; object-fit:contain; mix-blend-mode:multiply; }
+@media(min-width:1100px) {
+  .story-section--hero .story-hero-grid { grid-template-columns:minmax(0,1.8fr) minmax(0,1fr); gap:40px; }
+  .story-section--hero { min-height:0; padding-block:64px; }
+  .story-hero-content .story-heading--hero { font-size:16cqw; width:max-content; max-width:100%; margin-bottom:30px; }
+  .story-hero-content .story-hero__intro { width:100%; font-size:2.35cqw; line-height:1.55; margin-bottom:24px; }
+  .story-hero__intro p { text-wrap:pretty; }
+  .story-hero-content .story-note { font-size:13px; }
+  .story-hero-content .story-form__consent { font-size:12px; }
+}
+@media(max-width:1099px) {
+  .story-hero-pack { max-width:380px; width:100%; margin-inline:auto; }
+  .story-hero-pack__image { max-height:440px; }
+}
