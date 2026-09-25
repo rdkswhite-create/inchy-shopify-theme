@@ -17,24 +17,22 @@
 <section class="story-section story-section--pouch" id="product" aria-labelledby="product-title" {{ block.shopify_attributes }}>
 <div class="story-container">
 <div class="story-product-grid">
-<div class="story-product-visual">{% render 'inchy-packaging', image_class: 'story-packaging', loading: 'eager' %}</div>
+<figure class="story-product-visual story-product-visual--seed">
+{% render 'inchy-packaging', image_class: 'story-packaging', loading: 'eager' %}
+<img class="story-product-pod" src="{{ 'inchy-single-pod.webp' | asset_url }}" width="640" height="640" loading="lazy" alt="A star-shaped sacha inchi pod, the source of INCHY">
+</figure>
 <div class="story-product-copy" id="shop-inchy">
 <p class="story-kicker">{{ block.settings.heading | escape }}</p>
 <h2 class="story-heading" id="product-title"><span>One seed.</span><span>Made for your food.</span></h2>
 <p class="story-pouch-position">Whole-food satiety</p>
 <div class="story-copy">{{ block.settings.copy }}</div>
+<ul class="story-product-facts" aria-label="Ingredients at a glance"><li>One ingredient</li><li>No sweeteners</li><li>No added flavours</li></ul>
 {% capture story_product_url %}{% render 'inchy-shop-url' %}{% endcapture %}
 {% assign story_product_url = story_product_url | strip %}
 {% if story_product_url contains '#shop-inchy' %}{% assign story_product_url = '#process' %}{% endif %}
 <a class="story-text-link" href="{{ story_product_url | strip | escape }}">Explore INCHY</a>
 </div>
 </div>
-<dl class="story-stats">
-<div><dt>Sacha inchi</dt><dd>One seed</dd></div>
-<div><dt>From the same food</dt><dd>Protein + fibre</dd></div>
-<div><dt>Sweeteners</dt><dd>0</dd></div>
-<div><dt>Flavours</dt><dd>0</dd></div>
-</dl>
 </div>
 </section>
 {% when 'founder' %}
@@ -62,7 +60,7 @@
 <h2 class="story-heading" id="process-title"><span>What's in the pouch: sacha inchi.</span><span>What isn't: everything else.</span></h2>
 <div class="story-formulation-grid">
 <figure class="story-formulation-visual">
-<img class="story-formulation-pouch" src="{{ 'inchy-form1-reference.jpg' | asset_url }}" width="1126" height="1397" loading="lazy" alt="INCHY sacha inchi pouch">
+<img class="story-formulation-pouch" src="{{ 'inchy-reference-pouch.jpg' | asset_url }}" width="928" height="1152" loading="lazy" alt="INCHY sacha inchi pouch">
 <img class="story-formulation-pod" src="{{ 'inchy-single-pod.webp' | asset_url }}" width="640" height="640" loading="lazy" alt="A single mature sacha inchi pod resting beside the pouch">
 </figure>
 <div class="story-refusal story-copy">
