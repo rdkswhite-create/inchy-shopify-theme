@@ -31,7 +31,7 @@
         "industry": {
           "type": "industry",
           "settings": {
-            "copy": "<p>The quality of FORM1 begins with the people who grow its seed. That is why we helped form ASIN with producers in Santander, Colombia, and put growers at the centre of how we source sacha inchi.</p>",
+            "copy": "<p>Premium sacha inchi doesn't happen by accident. It begins with the people who grow it. We helped form ASIN with growers in Santander, Colombia, because quality has to be built at the source—before the seed reaches our process.</p>",
             "founder_url": "https://www.instagram.com/reluctantruss/"
           }
         },
@@ -46,7 +46,7 @@
         "faq": {
           "type": "faq",
           "settings": {
-            "association_answer": "<p>We helped growers in Santander form ASIN, the Asociación de Sachaincheros del Nororiente Colombiano. Working together on quality, prices and purchasing commitments before planting gives growers a clearer basis for what they produce and gives us a direct relationship with the people behind the seed.</p>"
+            "association_answer": "<p>ASIN is the Asociación de Sachaincheros del Nororiente Colombiano—the Association of Sacha Inchi Farmers of Northeastern Colombia. We helped form it with growers in Santander because premium sacha inchi starts with cultivation. We work together on standards, prices and purchasing commitments before planting.</p>"
           }
         },
         "launch": {
