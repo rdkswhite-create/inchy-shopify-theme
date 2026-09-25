@@ -274,7 +274,6 @@
       "announcement": "Announcement",
       "announcement_bar": "Announcement bar"
     },
-
     "header": {
       "announcement": "Announcement",
       "menu": "Menu",
@@ -527,6 +526,46 @@
       "max_characters": "{{ max_chars }} characters max",
       "send_on": "YYYY-MM-DD",
       "send_on_label": "Send on (optional)"
+    }
+  },
+  "inchy_launch": {
+    "form": {
+      "offer_label": "Planned launch offer",
+      "success": "Thanks for joining the U.S. launch list. If a confirmation email arrives, follow its link to finish subscribing. We’ll email you when ordering opens.",
+      "email": "Email address",
+      "interest": "What interests you most? (optional)",
+      "interest_placeholder": "Choose an option",
+      "interest_satiety": "The focus on satiety",
+      "interest_routine": "Adding it to food I already eat",
+      "interest_ingredient": "The ingredient and how it is made",
+      "interest_curious": "I’m curious and want to learn more",
+      "us_consent": "I’m in the United States and want INCHY launch emails.",
+      "button": "Join the U.S. launch list",
+      "consent": "Launch news, ways to use INCHY and an email when ordering opens. Unsubscribe at any time.",
+      "privacy": "Privacy policy",
+      "outside_us": "Outside the United States? Get in touch."
+    },
+    "page": {
+      "kicker": "INCHY / U.S. launch",
+      "heading": "Be there when INCHY arrives.",
+      "description": "Developed around satiety. Protein and fibre from sacha inchi, kept together in a powder made for food you already eat.",
+      "caption": "One ingredient. Its own natural taste.",
+      "timing": "U.S. launch planned for {{ window }}.",
+      "signup_heading": "Join the U.S. launch list.",
+      "signup_intro": "Get launch updates, practical ways to use INCHY and an email when ordering opens.",
+      "no_order": "Joining is free. It does not place an order or reserve stock. We’ll confirm the date, price and delivery details before ordering opens.",
+      "available_heading": "Explore INCHY.",
+      "explore": "Explore the product",
+      "food_heading": "Made for your food",
+      "food_text": "Stir into yoghurt, oats or a drink. Follow the finished product label for the serving amount and directions.",
+      "taste_heading": "A distinctive natural taste",
+      "taste_text": "Sacha inchi has its own flavour. INCHY contains no added flavourings or sweeteners; what you mix it into makes a difference.",
+      "updates_heading": "Know when it arrives",
+      "updates_text": "We’re preparing for our U.S. launch. Join the list for progress updates and the opening announcement.",
+      "more": "More about INCHY",
+      "how_to_use": "How to use it",
+      "research": "Explore the research",
+      "header_cta": "Join the U.S. list"
     }
   }
 }

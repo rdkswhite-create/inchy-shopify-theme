@@ -1,23 +1,66 @@
-<article class="inchy-shell inchy-guide inchy-launch-page">
-  <header>
-    <a class="inchy-quiet-link" href="{{ routes.root_url }}">← BACK TO INCHY</a>
-    <p class="inchy-kicker">INCHY / UNITED STATES</p>
-    <h1>{% if settings.inchy_prelaunch %}U.S. LAUNCH<br>COMING SOON.{% else %}EXPLORE INCHY.{% endif %}</h1>
-    <p>A sacha inchi nutraceutical focused on satiety. Made for everyday use.</p>
+<article class="story-container inchy-us-page">
+  <header class="inchy-us-page__intro">
+    <p class="story-kicker">{{ 'inchy_launch.page.kicker' | t }}</p>
+    <h1 class="story-heading">{{ 'inchy_launch.page.heading' | t }}</h1>
+    <p class="inchy-us-page__description">{{ 'inchy_launch.page.description' | t }}</p>
   </header>
-  {% if settings.inchy_prelaunch %}
-    <div id="launch-signup">
-      <h2>BE THERE WHEN WE LAUNCH.</h2>
-      <p>Leave your email to hear when INCHY is available to order in the United States.</p>
-      {% render 'inchy-launch-signup', instance_id: section.id %}
-      <p class="inchy-small">Online ordering opens at launch. Signing up does not place an order or reserve stock.</p>
+  <div class="inchy-us-page__grid">
+    <div class="inchy-us-page__product">
+      {% render 'inchy-packaging' %}
+      <p class="inchy-us-page__caption">{{ 'inchy_launch.page.caption' | t }}</p>
     </div>
-  {% else %}
-    <p>Explore the product for current availability.</p>
-    <a class="inchy-button" href="{% render 'inchy-shop-url' %}">SHOP INCHY</a>
-  {% endif %}
-  <div class="inchy-guide__links"><a href="{% render 'inchy-shop-url' %}">Explore the product</a><a href="{{ routes.root_url }}?view=research">Explore the evidence</a><a href="{{ routes.root_url }}?view=support">Contact INCHY</a></div>
+    <div class="inchy-us-page__signup" id="launch-signup">
+      {% if settings.inchy_prelaunch %}
+        <p class="inchy-us-page__timing">{% render 'inchy-us-timing' %}</p>
+        <h2>{{ 'inchy_launch.page.signup_heading' | t }}</h2>
+        <p>{{ 'inchy_launch.page.signup_intro' | t }}</p>
+        {% render 'inchy-prelaunch-form', instance_id: section.id, placement: 'launch-page' %}
+        <p class="inchy-us-page__small">{{ 'inchy_launch.page.no_order' | t }}</p>
+      {% else %}
+        <h2>{{ 'inchy_launch.page.available_heading' | t }}</h2>
+        <a class="story-button" href="{% render 'inchy-shop-url' %}">{{ 'inchy_launch.page.explore' | t }}</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="inchy-us-page__facts">
+    <div><h2>{{ 'inchy_launch.page.food_heading' | t }}</h2><p>{{ 'inchy_launch.page.food_text' | t }}</p></div>
+    <div><h2>{{ 'inchy_launch.page.taste_heading' | t }}</h2><p>{{ 'inchy_launch.page.taste_text' | t }}</p></div>
+    <div><h2>{{ 'inchy_launch.page.updates_heading' | t }}</h2><p>{{ 'inchy_launch.page.updates_text' | t }}</p></div>
+  </div>
+  <nav class="inchy-us-page__links" aria-label="{{ 'inchy_launch.page.more' | t }}">
+    <a href="{{ routes.root_url }}#product">{{ 'inchy_launch.page.explore' | t }}</a>
+    <a href="{{ routes.root_url }}?view=how-to-use">{{ 'inchy_launch.page.how_to_use' | t }}</a>
+    <a href="{{ routes.root_url }}?view=research">{{ 'inchy_launch.page.research' | t }}</a>
+  </nav>
 </article>
+
+{% stylesheet %}
+  .inchy-us-page { padding-block: 64px 80px; }
+  .inchy-us-page__intro { max-width: 860px; }
+  .inchy-us-page__intro .story-heading { font-size: clamp(40px, 5.5vw, 72px); line-height: 1.08; margin-block: 18px 24px; }
+  .inchy-us-page__description { max-width: 650px; font-size: 18px; line-height: 1.75; }
+  .inchy-us-page__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 72px; margin-top: 40px; }
+  .inchy-us-page__product { text-align: center; }
+  .inchy-us-page__product img { width: 100%; max-width: 330px; height: auto; object-fit: contain; }
+  .inchy-us-page__caption { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
+  .inchy-us-page__signup { scroll-margin-top: 100px; }
+  .inchy-us-page__signup h2 { font-size: 27px; line-height: 1.25; font-weight: 500; }
+  .inchy-us-page__signup > p { font-size: 15px; line-height: 1.65; }
+  .inchy-us-page__signup .inchy-us-page__timing { font-size: 12px; text-transform: uppercase; letter-spacing: .09em; }
+  .inchy-us-page__signup .inchy-us-page__small { color: #62625d; font-size: 12px; margin-top: 18px; }
+  .inchy-us-page__facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; padding-top: 40px; margin-top: 56px; border-top: 1px solid #d6d6cd; }
+  .inchy-us-page__facts h2 { font-size: 18px; font-weight: 500; line-height: 1.4; }
+  .inchy-us-page__facts p { font-size: 15px; line-height: 1.7; }
+  .inchy-us-page__links { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 40px; font-size: 14px; }
+  .inchy-us-page__links a { color: inherit; text-underline-offset: 4px; }
+  @media (max-width: 767px) {
+    .inchy-us-page { padding-block: 32px 48px; }
+    .inchy-us-page__grid { grid-template-columns: 1fr; gap: 28px; margin-top: 28px; }
+    .inchy-us-page__product { order: 2; }
+    .inchy-us-page__product img { max-width: 230px; }
+    .inchy-us-page__facts { grid-template-columns: 1fr; gap: 16px; margin-top: 28px; }
+  }
+{% endstylesheet %}
 {% schema %}
 {"name":"INCHY U.S. launch","settings":[],"presets":[{"name":"INCHY U.S. launch"}]}
 {% endschema %}

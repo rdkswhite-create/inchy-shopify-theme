@@ -1,0 +1,116 @@
+{% doc %}
+  Renders a native Shopify form for the U.S. launch list.
+  @param {string} instance_id - Unique form instance.
+  @param {string} [placement] - Form placement identifier.
+{% enddoc %}
+{%- liquid
+  assign launch_id = 'InchyUS-' | append: instance_id
+  assign launch_return = routes.root_url | append: '?view=launch#launch-signup'
+  assign launch_placement = placement | default: 'website'
+  assign launch_tags = 'newsletter,inchy-us-launch,inchy-us-prelaunch-v1,inchy-market-us,inchy-placement-' | append: launch_placement
+  if settings.inchy_launch_offer != blank
+    assign launch_tags = launch_tags | append: ',inchy-offer-shown'
+  else
+    assign launch_tags = launch_tags | append: ',inchy-offer-not-shown'
+  endif
+-%}
+<div class="inchy-prelaunch" data-inchy-prelaunch>
+  {% if settings.inchy_launch_offer != blank %}
+    <p class="inchy-prelaunch__offer"><strong>{{ 'inchy_launch.form.offer_label' | t }}</strong> {{ settings.inchy_launch_offer | escape }}</p>
+  {% endif %}
+  {% form 'customer', id: launch_id, class: 'inchy-prelaunch__form', return_to: launch_return %}
+    {% if form.errors %}
+      <div class="inchy-prelaunch__status" id="{{ launch_id }}-error" role="alert">{{ form.errors | default_errors }}</div>
+    {% endif %}
+    {% if form.posted_successfully? %}
+      <p class="inchy-prelaunch__status" role="status">{{ 'inchy_launch.form.success' | t }}</p>
+    {% endif %}
+    <label for="{{ launch_id }}-email">{{ 'inchy_launch.form.email' | t }}</label>
+    <input id="{{ launch_id }}-email" type="email" name="contact[email]" value="{{ form.email | escape }}" autocomplete="email" autocapitalize="off" autocorrect="off" required aria-describedby="{{ launch_id }}-consent{% if form.errors %} {{ launch_id }}-error{% endif %}" {% if form.errors %}aria-invalid="true"{% endif %}>
+    <div class="inchy-prelaunch__interest" data-inchy-interest-wrap hidden>
+      <label for="{{ launch_id }}-interest">{{ 'inchy_launch.form.interest' | t }}</label>
+      <select id="{{ launch_id }}-interest" data-inchy-interest>
+        <option value="">{{ 'inchy_launch.form.interest_placeholder' | t }}</option>
+        <option value="satiety">{{ 'inchy_launch.form.interest_satiety' | t }}</option>
+        <option value="routine">{{ 'inchy_launch.form.interest_routine' | t }}</option>
+        <option value="ingredient">{{ 'inchy_launch.form.interest_ingredient' | t }}</option>
+        <option value="curious">{{ 'inchy_launch.form.interest_curious' | t }}</option>
+      </select>
+    </div>
+    <label class="inchy-prelaunch__check" for="{{ launch_id }}-us">
+      <input id="{{ launch_id }}-us" type="checkbox" name="contact[tags]" value="{{ launch_tags | escape }}" data-inchy-tags data-base-tags="{{ launch_tags | escape }}" required>
+      <span>{{ 'inchy_launch.form.us_consent' | t }}</span>
+    </label>
+    <button type="submit" name="commit" class="story-button inchy-prelaunch__button">{{ 'inchy_launch.form.button' | t }}</button>
+    <p class="inchy-prelaunch__consent" id="{{ launch_id }}-consent">{{ 'inchy_launch.form.consent' | t }}{% if shop.privacy_policy != blank %} <a href="{{ shop.privacy_policy.url }}">{{ 'inchy_launch.form.privacy' | t }}</a>.{% endif %}</p>
+    <p class="inchy-prelaunch__outside"><a href="{{ routes.root_url }}?view=support">{{ 'inchy_launch.form.outside_us' | t }}</a></p>
+  {% endform %}
+</div>
+{% stylesheet %}
+  .inchy-prelaunch { width: 100%; max-width: 560px; }
+  .inchy-prelaunch__form { display: grid; gap: 12px; text-align: left; }
+  .inchy-prelaunch__form > label, .inchy-prelaunch__interest > label { display: block; font: 500 13px/1.5 Arial, sans-serif; color: #242422; }
+  .inchy-prelaunch input[type="email"], .inchy-prelaunch select { width: 100%; min-width: 0; min-height: 48px; padding: 12px 14px; box-sizing: border-box; border: 1px solid #b9b9b1; border-radius: 0; background: #fff; color: #222; font: 400 16px/1.5 Arial, sans-serif; }
+  .inchy-prelaunch input:focus-visible, .inchy-prelaunch select:focus-visible, .inchy-prelaunch button:focus-visible, .inchy-prelaunch a:focus-visible { outline: 2px solid #222; outline-offset: 3px; }
+  .inchy-prelaunch__interest > label { margin-bottom: 7px; }
+  .inchy-prelaunch__form .inchy-prelaunch__check { display: flex; align-items: flex-start; gap: 10px; font-weight: 400; padding: 4px 0; cursor: pointer; }
+  .inchy-prelaunch__check input { width: 18px; height: 18px; flex: 0 0 18px; margin: 1px 0 0; accent-color: #242422; }
+  .inchy-prelaunch__button { width: 100%; white-space: normal; min-height: 48px; padding: 14px 18px; background: #242422; color: #fff; border: 1px solid #242422; cursor: pointer; font: 500 14px/1.5 Arial, sans-serif; }
+  .inchy-prelaunch__consent, .inchy-prelaunch__outside { margin: 0; color: #62625d; font: 400 12px/1.6 Arial, sans-serif; }
+  .inchy-prelaunch__outside { font-size: 13px; }
+  .inchy-prelaunch a { color: inherit; text-underline-offset: 3px; }
+  .inchy-prelaunch__status { padding: 16px; border: 1px solid #727269; background: #f1f1ec; color: #222; font: 400 15px/1.6 Arial, sans-serif; }
+  .inchy-prelaunch__offer { padding: 16px 0; margin: 0 0 12px; border-block: 1px solid #d9d9d1; color: #242422; font: 400 15px/1.6 Arial, sans-serif; }
+  .inchy-prelaunch__offer strong { display: block; }
+  .inchy-prelaunch [hidden] { display: none !important; }
+{% endstylesheet %}
+{% javascript %}
+  (() => {
+    const campaignRules = {
+      utm_source: /^(meta|facebook|instagram|tiktok|google|email|founder|partner)$/,
+      utm_medium: /^(paid_social|organic_social|cpc|email|referral)$/,
+      utm_campaign: /^us_launch_(0[1-9]|1[0-9])$/,
+      utm_content: /^c0[1-3]_(video|image)_v[1-9]$/
+    };
+    const campaign = new URLSearchParams();
+    const incoming = new URLSearchParams(window.location.search);
+    Object.entries(campaignRules).forEach(([key, rule]) => {
+      const value = incoming.get(key);
+      if (value && rule.test(value)) campaign.set(key, value);
+    });
+    const initialise = (scope) => {
+      scope.querySelectorAll('[data-inchy-prelaunch]').forEach((container) => {
+        if (container.dataset.initialised) return;
+        container.dataset.initialised = 'true';
+        const form = container.querySelector('form');
+        const tags = form.querySelector('[data-inchy-tags]');
+        const interest = form.querySelector('[data-inchy-interest]');
+        container.querySelector('[data-inchy-interest-wrap]').hidden = false;
+        const updateTags = () => {
+          const values = tags.dataset.baseTags.split(',');
+          const reasons = ['satiety', 'routine', 'ingredient', 'curious'];
+          if (reasons.includes(interest.value)) values.push('inchy-interest-' + interest.value);
+          if (!campaign.has('utm_source')) values.push('inchy-source-unattributed');
+          campaign.forEach((value, key) => values.push('inchy-' + key.replace('utm_', '') + '-' + value));
+          tags.value = values.join(',');
+        };
+        interest.addEventListener('change', updateTags);
+        form.addEventListener('submit', updateTags);
+        updateTags();
+      });
+      if (campaign.size) scope.querySelectorAll('a[href]').forEach((link) => {
+        const raw = link.getAttribute('href');
+        if (!raw || raw.startsWith('#')) return;
+        let target;
+        try { target = new URL(raw, window.location.href); } catch { return; }
+        if (target.origin !== window.location.origin) return;
+        if (target.pathname !== '/' && !target.pathname.startsWith('/products/')) return;
+        campaign.forEach((value, key) => { if (!target.searchParams.has(key)) target.searchParams.set(key, value); });
+        link.href = target.href;
+      });
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => initialise(document), { once: true });
+    else initialise(document);
+    document.addEventListener('shopify:section:load', (event) => initialise(event.target));
+  })();
+{% endjavascript %}

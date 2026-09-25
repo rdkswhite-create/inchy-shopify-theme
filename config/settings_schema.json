@@ -10,16 +10,53 @@
   {
     "name": "INCHY launch",
     "settings": [
-      { "type": "checkbox", "id": "inchy_prelaunch", "label": "U.S. coming-soon mode", "default": true, "info": "Shows launch sign-up instead of prices and purchase controls in the storefront. Turn off when ready to sell. Product and inventory records are unchanged." }
+      {
+        "type": "checkbox",
+        "id": "inchy_prelaunch",
+        "label": "U.S. coming-soon mode",
+        "default": true,
+        "info": "Shows launch sign-up instead of prices and purchase controls in the storefront. Turn off when ready to sell. Product and inventory records are unchanged."
+      },
+      {
+        "type": "text",
+        "id": "inchy_launch_window",
+        "label": "Planned U.S. launch window",
+        "default": "winter 2026–27",
+        "info": "Keep this provisional until the launch date is confirmed."
+      },
+      {
+        "type": "textarea",
+        "id": "inchy_launch_offer",
+        "label": "Planned launch offer",
+        "info": "Leave blank until price, pack size and shipping terms are approved. When entered, shown next to every new launch form and tagged as offer shown."
+      }
     ]
   },
   {
     "name": "INCHY product & directions",
     "settings": [
-      { "type": "product", "id": "inchy_product", "label": "Main INCHY product", "info": "Used by Shop links and the homepage. If left blank and your store has one published product, it is selected automatically." },
-      { "type": "text", "id": "inchy_serving", "label": "Confirmed serving amount", "info": "Enter only the amount approved on the finished product label." },
-      { "type": "textarea", "id": "inchy_directions", "label": "Confirmed usage directions" },
-      { "type": "textarea", "id": "inchy_storage", "label": "Confirmed storage directions" }
+      {
+        "type": "product",
+        "id": "inchy_product",
+        "label": "Main INCHY product",
+        "info": "Used by Shop links and the homepage. If left blank and your store has one published product, it is selected automatically."
+      },
+      {
+        "type": "text",
+        "id": "inchy_serving",
+        "label": "Confirmed serving amount",
+        "info": "Enter only the amount approved on the finished product label."
+      },
+      {
+        "type": "textarea",
+        "id": "inchy_directions",
+        "label": "Confirmed usage directions"
+      },
+      {
+        "type": "textarea",
+        "id": "inchy_storage",
+        "label": "Confirmed storage directions"
+      }
     ]
   },
   {

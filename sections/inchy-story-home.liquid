@@ -4,7 +4,8 @@
 {% case block.type %}
 {% when 'hero' %}
 <section class="story-section story-section--hero" id="story-intro" aria-labelledby="story-intro-title" {{ block.shopify_attributes }}>
-<div class="story-container">
+<div class="story-container story-hero-grid">
+<div class="story-hero-content">
 <p class="story-kicker">Whole-food satiety</p>
 <h1 class="story-heading story-heading--hero" id="story-intro-title">{% if block.settings.headline == 'Satiety is the starting point.' %}<span class="story-hero-line">Satiety is the</span> <span class="story-hero-line">starting point.</span>{% else %}{{ block.settings.headline | escape }}{% endif %}</h1>
 <div class="story-copy story-hero__intro">{{ block.settings.intro }}</div>
@@ -12,29 +13,29 @@
 {% render 'inchy-story-signup', instance_id: signup_instance %}
 <p class="story-note">{{ block.settings.note | escape }}</p>
 </div>
+<figure class="story-hero-pack" id="product"><span id="shop-inchy"></span>{% render 'inchy-packaging', image_class: 'story-hero-pack__image', loading: 'eager' %}</figure>
+</div>
 </section>
 {% when 'pouch' %}
 <section class="story-section story-section--pouch" id="product" aria-labelledby="product-title" {{ block.shopify_attributes }}>
 <div class="story-container">
 <div class="story-product-grid">
-<div class="story-product-visual">{% render 'inchy-packaging', image_class: 'story-packaging', loading: 'eager' %}</div>
+<figure class="story-product-visual story-product-visual--seed">
+{% render 'inchy-packaging', image_class: 'story-packaging', loading: 'eager' %}
+<img class="story-product-pod" src="{{ 'inchy-single-pod.webp' | asset_url }}" width="640" height="640" loading="lazy" alt="A star-shaped sacha inchi pod, the source of INCHY">
+</figure>
 <div class="story-product-copy" id="shop-inchy">
 <p class="story-kicker">{{ block.settings.heading | escape }}</p>
 <h2 class="story-heading" id="product-title"><span>One seed.</span><span>Made for your food.</span></h2>
 <p class="story-pouch-position">Whole-food satiety</p>
 <div class="story-copy">{{ block.settings.copy }}</div>
+<ul class="story-product-facts" aria-label="Ingredients at a glance"><li>One ingredient</li><li>No sweeteners</li><li>No added flavours</li></ul>
 {% capture story_product_url %}{% render 'inchy-shop-url' %}{% endcapture %}
 {% assign story_product_url = story_product_url | strip %}
 {% if story_product_url contains '#shop-inchy' %}{% assign story_product_url = '#process' %}{% endif %}
 <a class="story-text-link" href="{{ story_product_url | strip | escape }}">Explore INCHY</a>
 </div>
 </div>
-<dl class="story-stats">
-<div><dt>Sacha inchi</dt><dd>One seed</dd></div>
-<div><dt>From the same food</dt><dd>Protein + fibre</dd></div>
-<div><dt>Sweeteners</dt><dd>0</dd></div>
-<div><dt>Flavours</dt><dd>0</dd></div>
-</dl>
 </div>
 </section>
 {% when 'founder' %}
@@ -62,7 +63,7 @@
 <h2 class="story-heading" id="process-title"><span>What's in the pouch: sacha inchi.</span><span>What isn't: everything else.</span></h2>
 <div class="story-formulation-grid">
 <figure class="story-formulation-visual">
-<img class="story-formulation-pouch" src="{{ 'inchy-form1-reference.jpg' | asset_url }}" width="1126" height="1397" loading="lazy" alt="INCHY sacha inchi pouch">
+<img class="story-formulation-pouch" src="{{ 'inchy-reference-pouch.jpg' | asset_url }}" width="928" height="1152" loading="lazy" alt="INCHY sacha inchi pouch">
 <img class="story-formulation-pod" src="{{ 'inchy-single-pod.webp' | asset_url }}" width="640" height="640" loading="lazy" alt="A single mature sacha inchi pod resting beside the pouch">
 </figure>
 <div class="story-refusal story-copy">
@@ -159,7 +160,7 @@
 <div><p class="story-kicker">Whole-food satiety</p><h2 class="story-heading" id="first-access-title">Put satiety first.</h2><p class="story-close__tagline">A non-pharmaceutical approach built from one remarkable seed.</p></div>
 <div>
 {% render 'inchy-story-signup', instance_id: signup_instance %}
-<p class="story-note">U.S. launch coming soon. Join the list for launch news and an email when ordering opens.</p>
+<p class="story-note">{% render 'inchy-us-timing' %}</p>
 </div>
 </div>
 </section>
@@ -192,7 +193,7 @@
           "type": "text",
           "id": "note",
           "label": "Launch note",
-          "default": "U.S. launch coming soon. Join the list for launch news and an email when ordering opens."
+          "default": "U.S. launch planned for winter 2026–27. Exact timing will be confirmed by email."
         }
       ]
     },
