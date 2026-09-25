@@ -18,14 +18,14 @@
           "type": "hero",
           "settings": {
             "headline": "Satiety is the starting point.",
-            "intro": "<p>Native to the Amazon rainforest, sacha inchi has been known for generations and overlooked by much of the world. We transform this remarkable seed into FORM1, keeping its protein and fibre together in a non-pharmaceutical approach to satiety.</p>",
+            "intro": "<p>Native to the Amazon rainforest, sacha inchi has been known for generations and overlooked by much of the world. INCHY transforms this remarkable seed, keeping its protein and fibre together in a non-pharmaceutical approach to satiety.</p>",
             "note": "U.S. launch coming soon. Join the list for launch news and an email when ordering opens."
           }
         },
         "pouch": {
           "type": "pouch",
           "settings": {
-            "heading": "FORM1 · The pouch",
+            "heading": "The pouch",
             "copy": "<p>An unflavoured sacha inchi preparation for yoghurt, oats and everyday food. Our proprietary process transforms the seed into a powder while keeping its protein and fibre together.</p>"
           }
         },
@@ -40,7 +40,7 @@
         "industry": {
           "type": "industry",
           "settings": {
-            "copy": "<p>The quality of FORM1 begins before our process. We helped form ASIN with growers in Santander, Colombia, so cultivation, quality and purchasing are part of the work from the start. The people growing our seed belong at the centre of it.</p>",
+            "copy": "<p>The quality of INCHY begins before our process. We helped form ASIN with growers in Santander, Colombia, so cultivation, quality and purchasing are part of the work from the start. The people growing our seed belong at the centre of it.</p>",
             "founder_url": "https://www.instagram.com/reluctantruss/"
           }
         },
