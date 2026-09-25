@@ -189,6 +189,8 @@ img{max-width:100%;height:auto;display:block}figure{margin:0}.story-container{wi
 }
 
 .story-hero-use { margin:0 0 28px; }
+.story-heading--hero { font-size:8.4cqw; font-weight:600; line-height:1.02; letter-spacing:-.045em; }
+@media(max-width:899px) { .story-heading--hero { font-size:11cqw; } }
 .story-routine-instructions { max-width:800px; margin-top:34px; }
 .story-routine-instructions h3 { font-size:clamp(23px,2.3vw,32px); font-weight:400; line-height:1.25; margin:0 0 18px; }
 .story-taste-note { color:var(--story-muted); font-size:17px; }
