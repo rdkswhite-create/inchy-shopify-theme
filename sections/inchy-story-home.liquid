@@ -89,8 +89,14 @@
 <section class="story-section story-section--industry" id="origin" aria-labelledby="origin-title" {{ block.shopify_attributes }}>
 <div class="story-container">
 <p class="story-kicker">Our origin</p>
-<h2 class="story-heading" id="origin-title"><span>Most companies build a product.</span><span>We had to build the industry first.</span></h2>
+<h2 class="story-heading" id="origin-title"><span>Why did we help form</span><span>a growers association?</span></h2>
 <div class="story-industry-grid"><div class="story-copy">{{ block.settings.copy }}</div><figure class="story-grower"><img src="{{ 'inchy-growers-harvest.jpg' | asset_url }}" width="1280" height="854" alt="Emilio holding harvested sacha inchi fruit in the field" loading="lazy"><figcaption>Emilio · ASIN grower · Santander, Colombia.</figcaption></figure></div>
+<div class="story-origin-facts">
+<div><h3>ASIN, Santander</h3><p>We helped growers form their association, the Asociación de Sachaincheros del Nororiente Colombiano.</p></div>
+<div><h3>Growers at the centre</h3><p>We work with its members on cultivation and quality standards for the seed used in FORM1.</p></div>
+<div><h3>Before planting</h3><p>We discuss quality, prices and purchasing commitments before growers put seed in the ground.</p></div>
+<div><h3>For the product</h3><p>This direct relationship helps us source sacha inchi to the standard our process demands.</p></div>
+</div>
 <p class="story-industry__statement">If it doesn't work for the people who grow it, it doesn't work as a business.</p>
 {% comment %}Future verified metric: families under signed contract. Add only after contracts are signed; never show an estimated or placeholder count.{% endcomment %}
 <p class="story-industry__follow">Meet the growers. See the production decisions. Follow the work behind the first launch with <a href="{{ block.settings.founder_url | default: 'https://www.instagram.com/reluctantruss/' }}" target="_blank" rel="noopener noreferrer">@reluctantruss<span class="story-sr"> (opens in a new tab)</span></a></p>
@@ -243,7 +249,7 @@
           "type": "richtext",
           "id": "copy",
           "label": "Industry story",
-          "default": "<p>In Santander, Colombia, we helped growers form ASIN—the Asociación de Sachaincheros del Nororiente Colombiano. We work with its members on quality, prices and purchasing commitments before the seed is planted.</p><p>We know who grows our sacha inchi and where it comes from. The product begins in that relationship, long before the seed reaches our process.</p>"
+          "default": "<p>The quality of FORM1 begins with the people who grow its seed. That is why we helped form ASIN with producers in Santander, Colombia, and put growers at the centre of how we source sacha inchi.</p>"
         },
         {
           "type": "url",
