@@ -3,11 +3,11 @@
   @param {string} instance_id - Unique section and block identifier
 {% enddoc %}
 {%- assign story_form_id = 'StoryAccess-' | append: instance_id -%}
-{%- assign story_form_return = routes.root_url | append: '#' | append: story_form_id -%}
-{% form 'customer', id: story_form_id, class: 'story-form story-form--tracked', return_to: story_form_return %}
+{% form 'customer', id: story_form_id, class: 'story-form story-form--tracked' %}
   <input type="hidden" name="contact[tags]" data-inchy-tags data-placement="{{ instance_id | escape }}" value="newsletter,inchy-us-launch,inchy-industry-story,inchy-source-unattributed">
   {% if form.errors %}<div class="story-form__status story-form__status--error" id="{{ story_form_id }}-error" role="alert">{{ form.errors | default_errors }}</div>{% endif %}
-  {% if form.posted_successfully? %}<p class="story-form__status" role="status">{{ 'inchy_signup.success' | t }}</p>{% endif %}
+  {% if form.posted_successfully? %}<p class="story-form__status story-form__status--success" data-inchy-success tabindex="-1" role="status">{{ 'inchy_signup.success' | t }}</p>{% endif %}
+  <p class="story-form__status story-form__status--pending" data-inchy-pending role="status" hidden>{{ 'inchy_signup.pending' | t }}</p>
   <label class="story-sr" for="{{ story_form_id }}-email">{{ 'inchy_signup.email' | t }}</label>
   <div class="story-form__fields">
     <input type="email" id="{{ story_form_id }}-email" name="contact[email]" value="{{ form.email | escape }}" placeholder="{{ 'inchy_signup.email' | t }}" autocomplete="email" autocapitalize="off" autocorrect="off" required aria-describedby="{{ story_form_id }}-consent{% if form.errors %} {{ story_form_id }}-error{% endif %}" {% if form.errors %}aria-invalid="true"{% endif %}>
@@ -41,6 +41,18 @@
       });
       input.value = tags.join(',');
     });
+    document.querySelectorAll('.story-form--tracked').forEach(form => {
+      if (form.dataset.feedbackReady) return;
+      form.dataset.feedbackReady = 'true';
+      const pending = form.querySelector('[data-inchy-pending]');
+      const success = form.querySelector('[data-inchy-success]');
+      if (success && window.location.hash === '#' + form.id) success.focus();
+      const showPending = () => {
+        if (pending && form.checkValidity()) pending.hidden = false;
+      };
+      form.addEventListener('submit', showPending, true);
+      form.querySelector('button[type="submit"]')?.addEventListener('click', showPending);
+    });
     if (!Object.keys(campaign).length) return;
     document.querySelectorAll('a[href]').forEach(link => {
       const url = new URL(link.href, current);
@@ -56,3 +68,16 @@
   document.addEventListener('shopify:section:load', setup);
 })();
 {% endjavascript %}
+
+{% stylesheet %}
+.story-form__status--success,
+.story-form__status--pending {
+  padding: 16px;
+  margin: 0 0 18px;
+  border: 1px solid currentColor;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.story-form__status--success { font-weight: 600; }
+.story-form__status--pending[hidden] { display: none; }
+{% endstylesheet %}

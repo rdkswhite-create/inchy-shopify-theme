@@ -226,6 +226,10 @@
     }
   },
   "templates": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "404"
+    },
     "search": {
       "no_results": "No results found for “{{ terms }}”. Check the spelling or use a different word or phrase.",
       "page": "Page",
@@ -269,10 +273,6 @@
         "post_success": "Thanks for contacting us. We'll get back to you as soon as possible.",
         "error_heading": "Please adjust the following:"
       }
-    },
-    "404": {
-      "title": "Page not found",
-      "subtext": "404"
     }
   },
   "sections": {
@@ -542,7 +542,8 @@
     "email": "Email address",
     "consent": "Get INCHY U.S. launch updates and an email when ordering opens. Unsubscribe at any time.",
     "privacy": "Privacy policy",
-    "success": "Thanks for joining. We’ll email you when U.S. ordering opens. If you receive a confirmation email, follow its link to finish subscribing.",
-    "launch_note": "Launching in the United States. Join for launch updates and first access."
+    "success": "You’re on the U.S. launch list. We’ll email you when ordering opens. If you receive an email asking you to confirm your subscription, please follow its link.",
+    "launch_note": "Launching in the United States. Join for launch updates and first access.",
+    "pending": "Complete any verification that appears. Your signup is only confirmed when you see “You’re on the U.S. launch list.” If nothing happens, refresh this page and try again."
   }
 }
