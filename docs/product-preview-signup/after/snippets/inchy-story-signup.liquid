@@ -3,17 +3,17 @@
   @param {string} instance_id - Unique section and block identifier
 {% enddoc %}
 {%- assign story_form_id = 'StoryAccess-' | append: instance_id -%}
-{% form 'customer', id: story_form_id, class: 'story-form story-form--tracked' %}
+{% form 'customer', id: story_form_id, class: 'story-form story-form--tracked', data-shopify-captcha: 'true' %}
   <input type="hidden" name="contact[tags]" data-inchy-tags data-placement="{{ instance_id | escape }}" value="newsletter,inchy-us-launch,inchy-industry-story,inchy-source-unattributed">
   {% if form.errors %}<div class="story-form__status story-form__status--error" id="{{ story_form_id }}-error" role="alert">{{ form.errors | default_errors }}</div>{% endif %}
   {% if form.posted_successfully? %}<p class="story-form__status story-form__status--success" data-inchy-success tabindex="-1" role="status">{{ 'inchy_signup.success' | t }}</p>{% endif %}
-  <p class="story-form__status story-form__status--pending" data-inchy-pending role="status" hidden>{{ 'inchy_signup.pending' | t }}</p>
   <label class="story-sr" for="{{ story_form_id }}-email">{{ 'inchy_signup.email' | t }}</label>
   <div class="story-form__fields">
     <input type="email" id="{{ story_form_id }}-email" name="contact[email]" value="{{ form.email | escape }}" placeholder="{{ 'inchy_signup.email' | t }}" autocomplete="email" autocapitalize="off" autocorrect="off" required aria-describedby="{{ story_form_id }}-consent{% if form.errors %} {{ story_form_id }}-error{% endif %}" {% if form.errors %}aria-invalid="true"{% endif %}>
     <button class="story-button" type="submit" name="commit">{{ 'inchy_signup.button' | t }}</button>
   </div>
   <p class="story-form__consent" id="{{ story_form_id }}-consent">{{ 'inchy_signup.consent' | t }}{% if shop.privacy_policy != blank %} <a href="{{ shop.privacy_policy.url }}">{{ 'inchy_signup.privacy' | t }}</a>.{% endif %}</p>
+  <p class="story-form__status story-form__status--pending" data-inchy-pending role="status" hidden>{{ 'inchy_signup.pending' | t }}</p>
 {% endform %}
 
 {% javascript %}
