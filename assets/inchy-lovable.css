@@ -70,4 +70,4 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 }
 
 #MainContent #research .grid > div { container-type: inline-size; }
-#MainContent #research .lovable-peptide-title { font-size: clamp(1rem, 6.5cqw, 3.6rem); white-space: nowrap; }
+#MainContent #research h3 { font-size: clamp(1rem, 6.5cqw, 3.6rem); white-space: nowrap; }
