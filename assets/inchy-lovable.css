@@ -11,3 +11,60 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .lovable-form-message { font-size: 13px; line-height: 1.8; margin-bottom: 20px; }
 .lovable-payment svg { width: 38px; height: 24px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+#MainContent, .lovable-skip { font-size: 1.5rem; }
+#MainContent .text-base { font-size: 1.5rem; }
+#MainContent .text-\[0\.5rem\] { font-size: 0.75rem; }
+#MainContent .text-\[0\.6rem\] { font-size: 0.9rem; }
+#MainContent .text-\[0\.7rem\] { font-size: 1.05rem; }
+#MainContent .text-\[0\.55rem\] { font-size: 0.825rem; }
+#MainContent .text-\[0\.58rem\] { font-size: 0.87rem; }
+#MainContent .text-\[0\.62rem\] { font-size: 0.93rem; }
+#MainContent .text-\[0\.68rem\] { font-size: 1.02rem; }
+#MainContent .text-\[0\.76rem\] { font-size: 1.14rem; }
+#MainContent .text-\[0\.78rem\] { font-size: 1.17rem; }
+#MainContent .text-\[1\.05rem\] { font-size: 1.575rem; }
+#MainContent .text-\[1\.5rem\] { font-size: 2.25rem; }
+#MainContent .text-\[1\.6rem\] { font-size: 2.4rem; }
+#MainContent .text-\[1\.15rem\] { font-size: 1.725rem; }
+#MainContent .text-\[1\.35rem\] { font-size: 2.025rem; }
+#MainContent .text-\[2\.6rem\] { font-size: 3.9rem; }
+@media (min-width: 48rem) {
+  #MainContent .md\:text-\[0\.6rem\] { font-size: 0.9rem; }
+  #MainContent .md\:text-\[0\.62rem\] { font-size: 0.93rem; }
+  #MainContent .md\:text-\[0\.68rem\] { font-size: 1.02rem; }
+  #MainContent .md\:text-\[0\.72rem\] { font-size: 1.08rem; }
+  #MainContent .md\:text-\[0\.82rem\] { font-size: 1.23rem; }
+  #MainContent .md\:text-\[0\.85rem\] { font-size: 1.275rem; }
+  #MainContent .md\:text-\[1\.5rem\] { font-size: 2.25rem; }
+  #MainContent .md\:text-\[1\.9rem\] { font-size: 2.85rem; }
+  #MainContent .md\:text-\[2\.4rem\] { font-size: 3.6rem; }
+  #MainContent .md\:text-\[2\.25rem\] { font-size: 3.375rem; }
+  #MainContent .md\:text-\[3\.6rem\] { font-size: 5.4rem; }
+}
+#MainContent .max-w-5xl { max-width: 90rem; }
+#MainContent .max-w-3xl { max-width: 72rem; }
+#MainContent .max-w-2xl { max-width: 63rem; }
+#MainContent .max-w-xl { max-width: 48rem; }
+#MainContent .max-w-lg { max-width: 42rem; }
+#MainContent .max-w-md { max-width: 42rem; }
+#MainContent .lovable-mobile-links { font-size: 16.5px; }
+#MainContent .lovable-form-message { font-size: 19.5px; }
+#MainContent input { min-width: 0; }
+@media (min-width: 48rem) and (max-width: 63.999rem) {
+  #MainContent header nav.hidden { display: none; }
+  #MainContent header > div > div { display: flex; }
+}
+@media (max-width: 47.999rem) {
+  #MainContent section > .flex.items-start { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 1rem; row-gap: 0; }
+  #MainContent section > .flex.items-start > div { display: contents; }
+  #MainContent section > .flex.items-start h2 { grid-column: 1 / -1; margin-top: 1.25rem; }
+}
+@media (max-width: 63.999rem) {
+  #MainContent .flex.flex-nowrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; text-align: center; letter-spacing: .04em; }
+}
+@media (max-width: 39.999rem) {
+  #MainContent ol.grid-cols-3 { grid-template-columns: minmax(0, 1fr); }
+  #MainContent ol.grid-cols-3 > li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); align-items: baseline; gap: 1rem; }
+  #MainContent ol.grid-cols-3 > li > p { margin-top: 0; }
+}
