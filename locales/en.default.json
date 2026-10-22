@@ -591,11 +591,11 @@
     "text_60": "in oats",
     "text_61": "in a drink",
     "text_62": "Our process turns sacha inchi into a versatile ingredient. Add it to yogurt, oats or a drink you already enjoy. Measure the serving stated on your pouch and mix thoroughly.",
-    "text_63": "04",
+    "text_63": "05",
     "text_64": "The bar",
     "text_65": "inchy chock.",
     "text_66": "The same seed, pressed into a bar. Cacao, sacha inchi protein and fibre. Nothing else. For the hours when a spoon is not an option.",
-    "text_67": "05",
+    "text_67": "06",
     "text_68": "A small seed. A world of possibility.",
     "text_69": "Rooted in biodiversity.",
     "text_70": "Heart-shaped leaves. A star-shaped fruit. Within it, a seed with a 3,000-year history of use. A story that began long before inchy.",
@@ -616,6 +616,12 @@
     "email": "Email",
     "register": "Register",
     "success": "Thanks for registering. If you receive a confirmation email, follow its link to finish subscribing.",
-    "skip": "Skip to content"
+    "skip": "Skip to content",
+    "cloud_number": "04",
+    "cloud_status": "In development",
+    "cloud_title": "INCHY Cloud.",
+    "cloud_alt": "INCHY Cloud silver box and slim 10 g sachets",
+    "cloud_body": "Designed around satiety. Protein and fibre from sacha inchi, developed into a drink with a clear ambition: to help you feel satisfied and give you more choice over when you eat.",
+    "cloud_directions": "Mix with water. Shake or froth. Drink."
   }
 }
