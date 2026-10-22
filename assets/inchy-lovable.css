@@ -1,0 +1,13 @@
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 90px; }
+.shopify-section:has(> header.sticky) { display: contents; }
+.lovable-sr-only, .lovable-skip:not(:focus) { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.lovable-skip:focus { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 12px; background: #fff; color: #111; }
+a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+.lovable-mobile-menu summary { cursor: pointer; list-style: none; padding: 8px; }
+.lovable-mobile-menu summary::-webkit-details-marker { display: none; }
+.lovable-mobile-links { position: absolute; left: 0; right: 0; top: 100%; padding: 24px; background: white; border-bottom: 1px solid #ddd; display: grid; gap: 20px; font-size: 11px; letter-spacing: .25em; text-transform: uppercase; }
+.lovable-mobile-links a { padding: 6px 0; }
+.lovable-form-message { font-size: 13px; line-height: 1.8; margin-bottom: 20px; }
+.lovable-payment svg { width: 38px; height: 24px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

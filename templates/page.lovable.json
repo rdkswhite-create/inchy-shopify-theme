@@ -1,0 +1,12 @@
+{
+  "layout": "lovable",
+  "sections": {
+    "main": {
+      "type": "inchy-lovable-home",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    {% render 'inchy-metadata' %}
+    {{ 'lovable-styles-BRWnLf4F.css' | asset_url | stylesheet_tag }}
+    {{ 'inchy-lovable.css' | asset_url | stylesheet_tag }}
+    {{ content_for_header }}
+  </head>
+  <body>
+    <a class="lovable-skip" href="#MainContent">{{ 'lovable_home.skip' | t }}</a>
+    <main id="MainContent" class="min-h-screen bg-background font-mono text-foreground" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+  </body>
+</html>
