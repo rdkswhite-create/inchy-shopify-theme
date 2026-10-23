@@ -3,7 +3,10 @@
   "sections": {
     "main": {
       "type": "inchy-lovable-home",
-      "settings": {}
+      "settings": {
+        "protein": "64%",
+        "fibre": "14%"
+      }
     }
   },
   "order": [
