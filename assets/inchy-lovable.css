@@ -86,3 +86,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   #MainContent .leading-\[1\.08\] { line-height: 1.072; }
   #MainContent .leading-\[1\.1\] { line-height: 1.09; }
 }
+
+/* Carry the mobile heading hierarchy and tighter leading onto desktop. */
+@media (min-width: 48rem) {
+  #MainContent .lovable-product-support,
+  #MainContent #research h3 { font-size: 2.85rem; }
+  #MainContent #research h3 { white-space: normal; }
+  #MainContent .lovable-origin-support { font-size: 2.25rem; }
+  #MainContent .leading-\[2\] { line-height: 1.8; }
+  #MainContent .leading-\[2\.15\] { line-height: 1.935; }
+  #MainContent .leading-\[1\.9\] { line-height: 1.71; }
+  #MainContent .leading-\[1\.08\] { line-height: 1.072; }
+  #MainContent .leading-\[1\.1\] { line-height: 1.09; }
+}
