@@ -99,3 +99,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   #MainContent .leading-\[1\.08\] { line-height: 1.072; }
   #MainContent .leading-\[1\.1\] { line-height: 1.09; }
 }
+
+/* Balanced, centred pouch description and mission on desktop. */
+@media (min-width: 48rem) {
+  #MainContent .lovable-pouch-copy { max-width: 46rem; }
+  #MainContent .lovable-pouch-copy .lovable-balanced-copy { text-wrap: balance; }
+}
