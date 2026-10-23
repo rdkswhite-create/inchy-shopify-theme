@@ -76,8 +76,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 @media (max-width: 47.999rem) {
   #MainContent .lovable-title-line { display: block; white-space: nowrap; }
   #MainContent .lovable-craving-title { font-size: clamp(1.25rem, 6.3vw, 2.25rem); }
-  #MainContent .lovable-research-title { font-size: clamp(1.5rem, 7.5vw, 2.25rem); }
+  #MainContent .lovable-research-title,
   #MainContent .lovable-product-support,
+  #MainContent #research h3 { font-size: clamp(1.5rem, 7.5vw, 2.25rem); }
+  #MainContent #research h3 { white-space: normal; }
   #MainContent .lovable-origin-support { font-size: clamp(1.2rem, 5.6vw, 1.8rem); }
   #MainContent .leading-\[2\] { line-height: 1.8; }
   #MainContent .leading-\[2\.15\] { line-height: 1.935; }
