@@ -100,8 +100,14 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   #MainContent .leading-\[1\.1\] { line-height: 1.09; }
 }
 
-/* Balanced, centred pouch description and mission on desktop. */
+/* Give the description and mission one line each on desktop. */
 @media (min-width: 48rem) {
-  #MainContent .lovable-pouch-copy { max-width: 46rem; }
-  #MainContent .lovable-pouch-copy .lovable-balanced-copy { text-wrap: balance; }
+  #MainContent .lovable-pouch-copy { max-width: 100%; container-type: inline-size; }
+}
+@media (min-width: 64rem) {
+  #MainContent .lovable-pouch-copy .lovable-balanced-copy {
+    font-size: clamp(1rem, 1.65cqw, 1.23rem);
+    white-space: nowrap;
+    text-wrap: nowrap;
+  }
 }
