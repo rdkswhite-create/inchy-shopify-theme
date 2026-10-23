@@ -111,3 +111,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
     text-wrap: nowrap;
   }
 }
+
+/* Rotate the original origin photograph exactly 90 degrees clockwise. */
+#MainContent .lovable-origin-rotated { position: relative; aspect-ratio: 3 / 4; overflow: hidden; }
+#MainContent .lovable-origin-rotated img {
+  position: absolute; left: 50%; top: 50%;
+  width: 133.333333%; height: 75%; max-width: none;
+  object-fit: contain;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
